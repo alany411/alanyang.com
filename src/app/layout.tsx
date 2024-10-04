@@ -71,7 +71,7 @@ export default function RootLayout({
               >
                 {children}
               </main>
-              <footer>
+              <footer className='border-t border-neutral-200 pt-4 dark:border-neutral-800'>
                 <SocialLinks />
                 <svg
                   aria-hidden={true}
