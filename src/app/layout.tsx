@@ -61,7 +61,14 @@ export default function RootLayout({
         >
           <div className='flex flex-col px-8 pb-8 pt-24'>
             <div className='mx-auto w-full max-w-[55ch] space-y-6'>
-              <main className='prose prose-neutral dark:prose-invert'>
+              <main
+                className={cn(
+                  'prose prose-neutral max-w-none dark:prose-invert',
+                  'prose-a:whitespace-nowrap prose-a:decoration-sky-400 prose-a:decoration-2 prose-a:underline-offset-[3px] prose-a:transition-colors focus:prose-a:outline-none focus:prose-a:ring-2 focus:prose-a:ring-sky-400 focus:prose-a:ring-offset-0 focus:prose-a:ring-offset-white dark:focus:prose-a:ring-offset-neutral-900',
+                  'prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-base prose-h6:text-base',
+                  'prose-p:text-pretty'
+                )}
+              >
                 {children}
               </main>
               <footer>

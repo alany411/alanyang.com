@@ -13,27 +13,25 @@ export default function Home() {
           src='/me.jpg'
           width={144}
         />
-        <h1 className='mb-6 text-center text-xl font-medium'>Alan Yang</h1>
+        <h1 className='mb-0 text-center text-2xl'>Alan Yang</h1>
       </div>
-      <div className='space-y-4'>
-        <p className='text-pretty'>
-          I am a software engineer who enjoys learning and building. I currently
-          work at the{' '}
-          <a
-            aria-label='University of Florida, opens in a new tab'
-            href='https://www.ufl.edu/'
-          >
-            University of Florida
-          </a>
-          , where I develop accessible web and mobile solutions with a focus on
-          user experience.
-        </p>
-        <p>
-          Occasionally, I write <Link href='/posts'>posts</Link> about coding,
-          tutorials, and challenges I have encountered. Outside of programming,
-          I enjoy traveling, photography, and gaming.
-        </p>
-      </div>
+      <p>
+        I am a software engineer who enjoys learning and building. I currently
+        work at the{' '}
+        <a
+          aria-label='University of Florida, opens in a new tab'
+          href='https://www.ufl.edu/'
+        >
+          University of Florida
+        </a>
+        , where I develop accessible web and mobile solutions with a focus on
+        user experience.
+      </p>
+      <p>
+        Occasionally, I write <Link href='/posts'>posts</Link> about coding,
+        tutorials, and challenges I have encountered. Outside of programming, I
+        enjoy traveling, photography, and gaming.
+      </p>
     </div>
   )
 }

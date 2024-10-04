@@ -69,12 +69,12 @@ const NETWORKS = [
 
 export default function SocialLinks() {
   return (
-    <ul className='flex flex-row gap-3'>
+    <ul className='prose prose-neutral flex flex-row gap-3 dark:prose-invert'>
       {NETWORKS.map(({ name, href, icon: Icon }) => (
-        <li key={name}>
+        <li key={name} className='m-0 list-none'>
           <a
             aria-label={`Alan Yang's ${name} profile, opens in new tab`}
-            className='relative block overflow-hidden rounded-full p-1.5 outline-none transition-all hover:scale-125 hover:text-[var(--link-color)] hover:outline-none focus:scale-125 focus:text-[var(--link-color)] focus:outline-none focus:ring-2 focus:ring-[var(--link-color)] focus:ring-offset-1 focus:ring-offset-[var(--background)]'
+            className='relative block overflow-hidden rounded-full p-1.5 text-[var(--tw-prose-body)] outline-none transition-all hover:scale-125 hover:text-[var(--tw-prose-links)] focus:scale-125 focus:rounded-full focus:text-[var(--tw-prose-links)] focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-neutral-900'
             href={href}
             rel='noopener noreferrer'
             target='_blank'
