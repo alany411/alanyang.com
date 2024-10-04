@@ -56,12 +56,14 @@ export default function RootLayout({
           className={cn(
             geistSans.variable,
             geistMono.variable,
-            'font-sans antialiased'
+            'bg-white font-sans antialiased dark:bg-neutral-900'
           )}
         >
           <div className='flex flex-col px-8 pb-8 pt-24'>
             <div className='mx-auto w-full max-w-[55ch] space-y-6'>
-              <main>{children}</main>
+              <main className='prose prose-neutral dark:prose-invert'>
+                {children}
+              </main>
               <footer>
                 <SocialLinks />
                 <svg

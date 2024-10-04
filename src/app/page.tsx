@@ -1,6 +1,5 @@
 import Image from 'next/image'
-
-import TextLink from './components/TextLink'
+import { Link } from 'next-view-transitions'
 
 export default function Home() {
   return (
@@ -20,23 +19,19 @@ export default function Home() {
         <p className='text-pretty'>
           I am a software engineer who enjoys learning and building. I currently
           work at the{' '}
-          <TextLink
-            ariaLabel='University of Florida, opens in new tab'
-            external={true}
+          <a
+            aria-label='University of Florida, opens in a new tab'
             href='https://www.ufl.edu/'
           >
             University of Florida
-          </TextLink>
+          </a>
           , where I develop accessible web and mobile solutions with a focus on
           user experience.
         </p>
         <p>
-          Occasionally, I write{' '}
-          <TextLink ariaLabel='posts' href='/posts'>
-            posts
-          </TextLink>{' '}
-          about coding, tutorials, and challenges I have encountered. Outside of
-          programming, I enjoy traveling, photography, and gaming.
+          Occasionally, I write <Link href='/posts'>posts</Link> about coding,
+          tutorials, and challenges I have encountered. Outside of programming,
+          I enjoy traveling, photography, and gaming.
         </p>
       </div>
     </div>
