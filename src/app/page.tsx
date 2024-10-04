@@ -19,18 +19,30 @@ export default function Home() {
             />
             <h1 className='mb-6 text-center text-xl font-medium'>Alan Yang</h1>
           </div>
-          <p className='text-pretty'>
-            I am a software engineer that enjoys learning and building. I
-            currently work at the{' '}
-            <TextLink
-              ariaLabel='University of Florida, opens in new tab'
-              href='https://www.ufl.edu/'
-            >
-              University of Florida
-            </TextLink>{' '}
-            developing accessible web and mobile solutions that prioritize user
-            experience.
-          </p>
+          <div className='space-y-4'>
+            <p className='text-pretty'>
+              I am a software engineer who enjoys learning and building. I
+              currently work at the{' '}
+              <TextLink
+                ariaLabel='University of Florida, opens in new tab'
+                external={true}
+                href='https://www.ufl.edu/'
+              >
+                University of Florida
+              </TextLink>
+              , where I develop accessible web and mobile solutions with a focus
+              on user experience.
+            </p>
+            <p>
+              Occasionally, I write{' '}
+              <TextLink ariaLabel='posts' href='/posts'>
+                posts
+              </TextLink>{' '}
+              about coding, tutorials, and challenges I have encountered.
+              Outside of programming, I enjoy traveling, photography, and
+              gaming.
+            </p>
+          </div>
         </main>
         <footer>
           <svg
