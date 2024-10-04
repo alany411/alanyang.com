@@ -1,8 +1,8 @@
-import { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 import { cn } from '~/utils/cn'
 
-type TextLinkProps = {
+interface TextLinkProps {
   ariaLabel: string
   children: ReactNode
   className?: string
