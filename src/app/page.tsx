@@ -1,101 +1,138 @@
 import Image from 'next/image'
 
+import TextLink from '~/app/components/TextLink'
+
 export default function Home() {
   return (
-    <div className='grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20'>
-      <main className='row-start-2 flex flex-col items-center gap-8 sm:items-start'>
-        <Image
-          alt='Next.js logo'
-          className='dark:invert'
-          height={38}
-          priority={true}
-          src='https://nextjs.org/icons/next.svg'
-          width={180}
-        />
-        <ol className='list-inside list-decimal text-center font-mono text-sm sm:text-left'>
-          <li className='mb-2'>
-            Get started by editing{' '}
-            <code className='rounded bg-black/[.05] px-1 py-0.5 font-semibold dark:bg-white/[.06]'>
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className='flex flex-col items-center gap-4 sm:flex-row'>
-          <a
-            className='flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent bg-foreground px-4 text-sm text-background transition-colors hover:bg-[#383838] sm:h-12 sm:px-5 sm:text-base dark:hover:bg-[#ccc]'
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
+    <div className='flex min-h-screen flex-col px-8 pb-8 pt-24'>
+      <div className='mx-auto w-full max-w-[55ch] space-y-6'>
+        <main>
+          <div className='inline-flex flex-col'>
             <Image
-              alt='Vercel logomark'
-              className='dark:invert'
-              height={20}
-              src='https://nextjs.org/icons/vercel.svg'
-              width={20}
+              alt='Alan Yang'
+              className='mb-4 h-36 w-36 select-none overflow-hidden rounded-full'
+              height={144}
+              priority={true}
+              src='/me.jpg'
+              width={144}
             />
-            Deploy now
-          </a>
-          <a
-            className='flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
-            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            rel='noopener noreferrer'
-            target='_blank'
+            <h1 className='mb-6 text-center text-xl font-medium'>Alan Yang</h1>
+          </div>
+          <p className='text-pretty'>
+            I am a software engineer that enjoys learning and building. I
+            currently work at the{' '}
+            <TextLink
+              ariaLabel='University of Florida, opens in new tab'
+              href='https://www.ufl.edu/'
+            >
+              University of Florida
+            </TextLink>{' '}
+            developing accessible web and mobile solutions that prioritize user
+            experience.
+          </p>
+        </main>
+        <footer>
+          <svg
+            aria-hidden={true}
+            className='m-0 select-none dark:invert'
+            height={144}
+            preserveAspectRatio='xMidYMid meet'
+            version='1.0'
+            viewBox='0 0 400 400'
+            width={144}
+            xmlns='http://www.w3.org/2000/svg'
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className='row-start-3 flex flex-wrap items-center justify-center gap-6'>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Image
-            alt='File icon'
-            aria-hidden={true}
-            height={16}
-            src='https://nextjs.org/icons/file.svg'
-            width={16}
-          />
-          Learn
-        </a>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Image
-            alt='Window icon'
-            aria-hidden={true}
-            height={16}
-            src='https://nextjs.org/icons/window.svg'
-            width={16}
-          />
-          Examples
-        </a>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <Image
-            alt='Globe icon'
-            aria-hidden={true}
-            height={16}
-            src='https://nextjs.org/icons/globe.svg'
-            width={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <g fill='#000' stroke='none'>
+              <path
+                d='M3116 3485 c-53 -19 -102 -69 -136 -140 -101 -213 -73 -440 82 -666 l46 -66 -39 -46 c-53 -62 -155 -141 -220 -172 -78 -36 -138 -34 -183 5 -60 53 -71 104 -71 338 0 188 -1 205 -19 217 -23 18 -53 4 -66 -30 -5 -13 -12 -62 -16 -109 -4 -47 -11 -86 -16 -86 -6 0 -52 -16 -103 -35 -81 -30 -296 -95 -316 -95 -14 0 -176 153 -252 238 -111 125 -176 222 -166 247 25 64 -5 120 -51 95 -18 -10 -22 -6 -41 37 -11 26 -27 80 -36 118 -21 104 -31 120 -73 120 -32 0 -35 -3 -38 -32 -2 -17 9 -89 24 -160 25 -124 26 -135 19 -349 -5 -166 -12 -249 -29 -338 -13 -64 -27 -121 -32 -125 -16 -15 -379 -81 -555 -102 -209 -24 -238 -31 -270 -65 l-24 -26 25 -20 c22 -18 33 -19 105 -13 44 4 136 17 205 30 111 21 195 31 433 51 l67 5 -6 -53 c-4 -38 -2 -64 10 -91 13 -33 19 -38 43 -35 34 4 51 35 61 115 l7 58 45 -3 c25 -2 179 -30 344 -63 538 -109 696 -116 696 -34 0 32 -57 79 -256 212 -90 59 -163 110 -164 113 0 3 52 20 115 37 64 18 142 43 174 56 l57 23 12 -90 c32 -254 181 -345 391 -240 68 34 193 133 244 193 l28 33 72 -70 c40 -39 144 -126 232 -193 226 -172 299 -234 402 -342 225 -236 203 -365 -82 -475 -121 -46 -240 -66 -360 -58 -241 14 -493 122 -577 247 -56 83 -59 157 -13 249 52 103 247 277 348 311 48 16 52 20 55 53 3 31 0 36 -24 42 -63 16 -189 -60 -330 -201 -132 -131 -169 -201 -169 -320 0 -65 5 -90 26 -136 80 -169 328 -301 641 -339 159 -20 337 14 507 97 123 59 193 126 216 207 21 71 14 115 -31 205 -69 138 -187 253 -509 499 -99 75 -217 172 -262 215 l-82 78 45 70 c91 141 124 238 124 371 0 191 -66 365 -158 415 -53 29 -82 33 -126 18z m94 -112 c85 -71 126 -319 77 -463 -21 -63 -105 -220 -116 -220 -4 0 -21 23 -40 51 -91 139 -133 292 -113 409 17 97 50 180 88 218 39 39 63 40 104 5z m-1393 -673 c67 -68 120 -126 117 -129 -4 -4 -409 -100 -425 -101 -7 0 -3 56 12 173 8 62 44 204 75 295 2 8 23 -12 51 -50 26 -34 103 -119 170 -188z m328 -281 c61 -44 143 -101 183 -126 40 -25 71 -47 70 -48 -4 -3 -355 56 -553 93 -88 17 -188 34 -223 38 -35 4 -60 10 -55 14 4 4 55 17 113 29 58 12 155 35 215 50 61 16 117 29 125 30 9 1 65 -35 125 -80z'
+                transform='translate(-40.000000,440.000000) scale(0.100000,-0.100000)'
+              />
+              <path
+                d='M3864 2366 c-39 -33 -39 -89 0 -122 40 -35 68 -31 110 16 42 47 44 59 14 87 -54 48 -85 53 -124 19z'
+                transform='translate(-40.000000,440.000000) scale(0.100000,-0.100000)'
+              />
+            </g>
+          </svg>
+          <ul className='flex flex-wrap gap-3'>
+            <li>
+              <TextLink
+                ariaLabel="Alan's GitHub profile, opens in new tab"
+                className='inline-flex items-center gap-1'
+                href='https://github.com/alany411'
+              >
+                <svg
+                  aria-hidden={true}
+                  fill='currentColor'
+                  height={20}
+                  viewBox='0 0 24 24'
+                  width={20}
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12' />
+                </svg>
+                <span>GitHub</span>
+              </TextLink>
+            </li>
+            <li>
+              <TextLink
+                ariaLabel="Alan's Twitter profile, opens in new tab"
+                className='inline-flex items-center gap-1'
+                href='https://x.com/iam_alanyang'
+              >
+                <svg
+                  aria-hidden={true}
+                  fill='currentColor'
+                  height={20}
+                  viewBox='0 0 24 24'
+                  width={20}
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z' />
+                </svg>
+                <span>Twitter</span>
+              </TextLink>
+            </li>
+            <li>
+              <TextLink
+                ariaLabel="Alan's Instagram profile, opens in new tab"
+                className='inline-flex items-center gap-1'
+                href='https://www.instagram.com/iam.alanyang/'
+              >
+                <svg
+                  aria-hidden={true}
+                  fill='currentColor'
+                  height={20}
+                  viewBox='0 0 24 24'
+                  width={20}
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z' />
+                </svg>
+                <span>Instagram</span>
+              </TextLink>
+            </li>
+            <li>
+              <TextLink
+                ariaLabel="Alan's LinkedIn profile, opens in new tab"
+                className='inline-flex items-center gap-1'
+                href='https://www.linkedin.com/in/iam-alan-yang/'
+              >
+                <svg
+                  aria-hidden={true}
+                  fill='currentColor'
+                  height={20}
+                  viewBox='0 0 24 24'
+                  width={20}
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' />
+                </svg>
+                <span>LinkedIn</span>
+              </TextLink>
+            </li>
+          </ul>
+        </footer>
+      </div>
     </div>
   )
 }
