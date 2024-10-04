@@ -9,7 +9,7 @@ export default function Home() {
         <main>
           <div className='inline-flex flex-col'>
             <Image
-              alt='Alan Yang'
+              alt='Alan Yang profile'
               className='mb-4 h-36 w-36 select-none overflow-hidden rounded-full'
               height={144}
               priority={true}
@@ -56,7 +56,7 @@ export default function Home() {
           <ul className='flex flex-wrap gap-3'>
             <li>
               <TextLink
-                ariaLabel="Alan's GitHub profile, opens in new tab"
+                ariaLabel="Alan Yang's GitHub profile, opens in new tab"
                 className='inline-flex items-center gap-1'
                 href='https://github.com/alany411'
               >
@@ -75,7 +75,7 @@ export default function Home() {
             </li>
             <li>
               <TextLink
-                ariaLabel="Alan's Twitter profile, opens in new tab"
+                ariaLabel="Alan Yang's Twitter profile, opens in new tab"
                 className='inline-flex items-center gap-1'
                 href='https://x.com/iam_alanyang'
               >
@@ -94,7 +94,7 @@ export default function Home() {
             </li>
             <li>
               <TextLink
-                ariaLabel="Alan's Instagram profile, opens in new tab"
+                ariaLabel="Alan Yang's Instagram profile, opens in new tab"
                 className='inline-flex items-center gap-1'
                 href='https://www.instagram.com/iam.alanyang/'
               >
@@ -113,7 +113,7 @@ export default function Home() {
             </li>
             <li>
               <TextLink
-                ariaLabel="Alan's LinkedIn profile, opens in new tab"
+                ariaLabel="Alan Yang's LinkedIn profile, opens in new tab"
                 className='inline-flex items-center gap-1'
                 href='https://www.linkedin.com/in/iam-alan-yang/'
               >
