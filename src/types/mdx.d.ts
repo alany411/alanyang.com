@@ -1,4 +1,4 @@
-interface Metadata {
+type Metadata = {
   title: string
   date: string
   summary: string

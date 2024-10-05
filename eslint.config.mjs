@@ -22,14 +22,7 @@ const baseConfig = tseslint.config(
       ...tseslint.configs.stylisticTypeChecked,
     ],
     rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-        },
-      ],
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       '@typescript-eslint/consistent-type-imports': [
         'warn',
         { prefer: 'type-imports', fixStyle: 'separate-type-imports' },
@@ -38,11 +31,19 @@ const baseConfig = tseslint.config(
         'error',
         { checksVoidReturn: { attributes: false } },
       ],
+      '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/no-unnecessary-condition': [
         'error',
         { allowConstantLoopConditions: true },
       ],
-      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
     },
   },
