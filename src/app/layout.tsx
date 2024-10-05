@@ -1,4 +1,4 @@
-import './globals.css'
+import './styles/globals.css'
 
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
@@ -9,11 +9,11 @@ import { cn } from '~/utils/cn'
 import SocialLinks from './components/SocialLinks'
 
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+  src: './assets/GeistVF.woff',
   variable: '--font-geist-sans',
 })
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
+  src: './assets/GeistMonoVF.woff',
   variable: '--font-geist-mono',
 })
 

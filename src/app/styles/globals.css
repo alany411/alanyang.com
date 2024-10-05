@@ -32,7 +32,7 @@
 
 .hljs {
   color: var(--code-color);
-  background: var(--code-background);
+  background-color: var(--code-background);
 }
 
 .hljs-comment,
