@@ -7,6 +7,45 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/posts',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/posts/:slug',
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/uses',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/work',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/work/:slug',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({})
