@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next"
   },
   "dependencies": {
     "@mdx-js/react": "3.0.1",
@@ -20,7 +21,7 @@
     "react-syntax-highlighter": "15.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.11.1",
+    "@eslint/js": "9.12.0",
     "@mdx-js/loader": "3.0.1",
     "@next/eslint-plugin-next": "14.2.14",
     "@tailwindcss/typography": "0.5.15",
@@ -32,7 +33,7 @@
     "@types/react-syntax-highlighter": "15.5.13",
     "autoprefixer": "10.4.20",
     "clsx": "2.1.1",
-    "eslint": "9.11.1",
+    "eslint": "9.12.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-prettier": "5.2.1",
