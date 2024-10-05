@@ -1,0 +1,61 @@
+export const metadata = {
+  title: 'Fix Bluetooth Audio Issues with Android Simulator on macOS',
+  date: 'October 30, 2022',
+  summary:
+    'Steps to fix audio issues when using Bluetooth and Android Simulator on macOS.',
+  alternates: {
+    canonical:
+      '/posts/fix-bluetooth-audio-issues-with-android-simulator-on-macos',
+  },
+}
+
+There is an issue with Android Simulator where sometimes when Bluetooth audio is being used, the current audio will completely stop working when starting an emulated Android device. To fix this issue, we have to modify the config files for each of the Android devices.
+
+## Instructions
+
+### Manual Method
+
+1. Change directories into the `avd` folder for Android and open this directory in your editor (I used VS Code)
+
+```sh
+cd ~/.android/avd
+code .
+```
+
+2. There should be folders titled with the device and OS version. For each of these folders, modify the `config.ini` file.
+3. Change or add the following lines to the file:
+
+```sh
+hw.audioInput=no
+hw.audioOutput=no
+```
+
+4. Open the `Virtual Device Manager` in Android Studio
+5. For each of the devices that where the config was edited, they will need to be reset
+   - `Wipe Data`
+   - `Cold Boot Now`
+
+### Bash Script Method
+
+Alternatively, running this bash script that should try to do steps 1-4 from above.
+
+```bash
+#!/bin/bash
+
+# Find all config.ini files in the ~/.android/avd directory and its subdirectories
+find ~/.android/avd -name "config.ini" | while read line
+do
+  # Remove any lines in the config.ini file that contain the string "hw.audio" and save to a temporary file
+  awk '!/hw.audio/' $line > tmp
+
+  # Remove the original config.ini file
+  rm $line
+
+  # Rename the temporary file to config.ini
+  mv tmp $line
+
+  # Add the hw.audioInput and hw.audioOutput properties and set them to "no"
+  echo "hw.audioInput=no" >> $line
+  echo "hw.audioOutput=no" >> $line
+done
+```

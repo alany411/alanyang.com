@@ -4,9 +4,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { ViewTransitions } from 'next-view-transitions'
 
+import SocialLinks from '~/app/components/SocialLinks'
 import { cn } from '~/utils/cn'
-
-import SocialLinks from './components/SocialLinks'
 
 const geistSans = localFont({
   src: './assets/GeistVF.woff',

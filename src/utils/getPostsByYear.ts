@@ -1,70 +1,29 @@
 import fs from 'fs'
 import path from 'path'
 
-interface Metadata {
-  title: string
-  date: string
-  summary: string
-}
+import { getPostMetadata } from './getPostMetadata'
 
-type Post = Metadata & {
-  slug: string
-}
+export async function getPostsByYear() {
+  const postsDirectory = path.join(process.cwd(), 'src/posts')
+  const postFilePaths = fs
+    .readdirSync(postsDirectory)
+    .map((fileName) => path.join(postsDirectory, fileName))
+    .filter((filePath) => fs.statSync(filePath).isFile())
 
-const postsDirectory = path.join(process.cwd(), 'src', 'app', 'posts')
+  const postsPromises = postFilePaths.map(async (filePath) => {
+    const fileName = path.basename(filePath, '.mdx')
+    const slug = fileName.replace(/^\d+-/, '')
+    const metadata = await getPostMetadata(slug)
 
-function getPostFiles() {
-  const directories = fs.readdirSync(postsDirectory)
+    return metadata
+  })
 
-  const postFiles = directories
-    .filter((filename) =>
-      fs.statSync(path.join(postsDirectory, filename)).isDirectory()
-    )
-    .map((filename) => path.join(filename, 'page.mdx'))
+  const posts = await Promise.all(postsPromises)
 
-  return postFiles
-}
-
-function getPostMetadata(file: string) {
-  const contents = fs.readFileSync(file, 'utf8')
-
-  const metadataRegex = /export\s+const\s+metadata\s*=\s*(\{[\s\S]*\})/
-  const metadataMatch = metadataRegex.exec(contents)
-
-  if (!metadataMatch?.[1]) {
-    throw new Error('Metadata not found')
-  }
-
-  const metadata = metadataMatch[1]
-  const formattedMetadataString = metadata
-    .replace(/(\w+):/g, '"$1":')
-    .replace(/'/g, '"')
-    .replace(/,\s*}/g, '}')
-
-  const formattedMetadata = JSON.parse(formattedMetadataString) as Metadata
-
-  return formattedMetadata
-}
-
-export function getPostsByYear() {
-  const postFiles = getPostFiles()
-
-  const postsByYear = postFiles
-    .map((postFile) => {
-      const metadata = getPostMetadata(path.join(postsDirectory, postFile))
-      const slug = postFile.replace('page.mdx', '')
-
-      return {
-        ...metadata,
-        slug,
-      } as Post
-    })
-    .reduce<Record<string, Post[]>>((acc, post) => {
-      const year = new Date(post.date).getFullYear().toString()
-      acc[year] = acc[year] ?? []
-      acc[year].push(post)
-      return acc
-    }, {})
-
-  return postsByYear
+  return posts.reduce<Record<string, Post[]>>((acc, post) => {
+    const year = new Date(post.date).getFullYear().toString()
+    acc[year] = acc[year] ?? []
+    acc[year].push(post)
+    return acc
+  }, {})
 }
