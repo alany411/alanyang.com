@@ -2,6 +2,10 @@ import { Link } from 'next-view-transitions'
 
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
+export const metadata = {
+  title: 'Posts',
+}
+
 export default async function PostsPage() {
   const postsByYear = await getPostsByYear()
 

@@ -4,11 +4,17 @@ import path from 'path'
 import { getPostMetadata } from './getPostMetadata'
 
 export async function getPostsByYear() {
-  const postsDirectory = path.join(process.cwd(), 'src/posts')
+  const postsDirectory = path.join(
+    process.cwd(),
+    'src',
+    'app',
+    'posts',
+    '(posts)'
+  )
   const postFilePaths = fs
     .readdirSync(postsDirectory)
     .map((fileName) => path.join(postsDirectory, fileName))
-    .filter((filePath) => fs.statSync(filePath).isFile())
+    .filter((filePath) => fs.statSync(filePath).isDirectory())
 
   const postsPromises = postFilePaths.map(async (filePath) => {
     const fileName = path.basename(filePath, '.mdx')
