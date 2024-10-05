@@ -1,3 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --code-color: #383a42;
+  --code-background: #fafafa;
+  --code-comment: #a0a1a7;
+  --code-keyword: #a626a4;
+  --code-section: #e45649;
+  --code-literal: #0184bb;
+  --code-string: #50a14f;
+  --code-built_in: #c18401;
+  --code-attr: #986801;
+  --code-symbol: #4078f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --code-color: #abb2bf;
+    --code-background: #282c34;
+    --code-comment: #5c6370;
+    --code-keyword: #c678dd;
+    --code-section: #e06c75;
+    --code-literal: #56b6c2;
+    --code-string: #98c379;
+    --code-built_in: #e6c07b;
+    --code-attr: #d19a66;
+    --code-symbol: #61aeee;
+  }
+}
+
+.hljs {
+  color: var(--code-color);
+  background: var(--code-background);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: var(--code-keyword);
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: var(--code-section);
+}
+
+.hljs-literal {
+  color: var(--code-literal);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: var(--code-string);
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: var(--code-built_in);
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: var(--code-attr);
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: var(--code-symbol);
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
