@@ -20,6 +20,7 @@ export default function Home() {
         work at the{' '}
         <a
           aria-label='University of Florida, opens in a new tab'
+          className='whitespace-nowrap'
           href='https://www.ufl.edu/'
         >
           University of Florida
