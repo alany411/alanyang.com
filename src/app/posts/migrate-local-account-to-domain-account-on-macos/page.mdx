@@ -1,0 +1,44 @@
+export const metadata = {
+  title: 'Migrate a Local Account to Domain Account on macOS',
+  date: 'May 19, 2022',
+  summary:
+    'Steps to migrate a local account to an Active Directory domain account on macOS.',
+  alternates: {
+    canonical: '/posts/migrate-local-account-to-domain-account-on-macos',
+  },
+}
+
+A situation came up recently where a local account was created on a user's old MacBook and they wanted to migrate all of their data over to a new MacBook from their [Time Machine backup](https://support.apple.com/en-us/HT201250).
+
+When we setup new computers at my current company, we want to make sure the computer is linked to an Active Directory object in our organization. This caused an issue because the old MacBook was never linked to an Active Directory object, so all of the files and folders did not have the correct permissions set.
+
+Below are the steps I took to make sure our user's files and folders were migrated successfully with the correct permissions.
+
+## Instructions
+
+1. Migrate using Time Machine as normal
+2. Log into the computer using the user's local account
+3. Make sure the files were migrated
+4. Logout of the computer
+5. Create a new computer object in Active Directory
+6. Add the user's account to the `User or Group` field of the new computer object
+7. Make sure the computer is connected to the domain's internet
+8. Create or login to an account that is not being migrated with administrative access
+9. Change the computer name to match the computer name of the computer object in Active Directory in `System Preferences > Sharing`
+10. Join the computer to the domain by going to `System Preferences > User and Groups > Login Options` and clicking `Join`
+11. Make sure the `Computer ID` matches the computer name of the computer object in Active Directory
+12. Change the user's local account's password to match their Active Directory domain account's password
+13. Delete the user's local account, but keep the local account's Home folder
+14. Rename the user's local account's Home folder to match the user's Active Directory domain account's username
+15. Open Terminal and run the following commands replacing `ADUSERNAME` with the user's Active Directory domain account's username and `DOMAIN` with the domain:
+
+```sh:Test
+# Recursively unlocks the files within the user's Home folder
+sudo chflags -R nouchg /Users/ADUSERNAME
+
+# Recursively changes ownership of the files within the user's Home folder to the user's Active Directory domain account
+sudo chown -R ADUSERNAME:"DOMAIN\Domain Users" /Users/ADUSERNAME
+```
+
+16. Logout and have the user login with their domain credentials
+17. Create a mobile/local account for the user's Active Directory domain account by going to `System Preferences > User and Groups` and clicking `Create` next to `Mobile account`

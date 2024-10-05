@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Image from 'next/image'
+import { Link } from 'next-view-transitions'
 
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
@@ -11,7 +12,24 @@ export default function PostsPage() {
 
   return (
     <div>
-      <h1>Posts</h1>
+      <div className='mb-6 flex flex-row items-center gap-4'>
+        <Link
+          aria-label='Back to home page'
+          className='not-prose group focus:no-underline focus:outline-none focus:ring-0'
+          href='/'
+        >
+          <Image
+            alt='Alan Yang profile'
+            aria-hidden={true}
+            className='m-0 overflow-hidden rounded-full outline-none transition-all group-hover:scale-125 group-hover:text-[var(--tw-prose-links)] group-focus:scale-125 group-focus:rounded-full group-focus:outline-none group-focus:ring-2 group-focus:ring-sky-400 group-focus:ring-offset-2 group-focus:ring-offset-white dark:group-focus:ring-offset-neutral-900'
+            height={36}
+            priority={true}
+            src='/me.jpg'
+            width={36}
+          />
+        </Link>
+        <h1 className='m-0'>Posts</h1>
+      </div>
       {Object.entries(postsByYear).map(([year, posts]) => (
         <div key={year}>
           <h2>{year}</h2>
