@@ -4,15 +4,23 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 
 const customComponents: MDXComponents = {
   a: (props) => {
-    const { children } = props
+    const { children, href } = props
 
-    const ariaLabel =
-      props.href?.startsWith('/') || props.href?.startsWith('#')
-        ? undefined
-        : `${children as string}, opens in new tab`
+    if (href?.startsWith('/') || href?.startsWith('#')) {
+      return (
+        <a href={href} {...props}>
+          {children}
+        </a>
+      )
+    }
 
     return (
-      <a aria-label={ariaLabel} {...props}>
+      <a
+        aria-label={`${children as string}, opens in new tab`}
+        href={href}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
         {children}
       </a>
     )
