@@ -17,7 +17,7 @@ export default async function PostsPage() {
       <div className='mb-6 flex'>
         <h1 className='m-0'>Posts</h1>
       </div>
-      {Object.entries(postsByYear).map(([year, posts]) => (
+      {postsByYear.map(([year, posts]) => (
         <div key={year}>
           <h2>{year}</h2>
           <ul>

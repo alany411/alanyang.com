@@ -26,10 +26,17 @@ export async function getPostsByYear() {
 
   const posts = await Promise.all(postsPromises)
 
-  return posts.reduce<Record<string, Post[]>>((acc, post) => {
-    const year = new Date(post.date).getFullYear().toString()
-    acc[year] = acc[year] ?? []
-    acc[year].push(post)
-    return acc
-  }, {})
+  const postsByYearObject = posts.reduce<Record<string, Post[]>>(
+    (acc, post) => {
+      const year = new Date(post.date).getFullYear().toString()
+      acc[year] = acc[year] ?? []
+      acc[year].push(post)
+      return acc
+    },
+    {}
+  )
+
+  return Object.entries(postsByYearObject).sort((a, b) =>
+    b[0].localeCompare(a[0])
+  )
 }
