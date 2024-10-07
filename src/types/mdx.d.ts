@@ -1,8 +1,8 @@
 type Metadata = {
-  title: string
-  date: string
-  summary: string
-  alternates: {
+  title?: string
+  date?: string
+  summary?: string
+  alternates?: {
     canonical: string
   }
 }
