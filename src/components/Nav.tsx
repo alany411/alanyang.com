@@ -15,7 +15,7 @@ export default function Nav({ links }: NavProps) {
     <nav className={cn('text-lg', links.length > 0 && 'space-x-1')}>
       {links.map(({ href, title }, index) => (
         <Fragment key={href}>
-          {index !== 0 && <span>/</span>}
+          {index !== 0 && <span className='text-sky-400'>/</span>}
           <Link href={href}>{title}</Link>
         </Fragment>
       ))}
