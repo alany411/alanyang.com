@@ -1,3 +1,5 @@
+import Date from './_components/Date'
+
 export const metadata = {
   title: 'Fix Bluetooth Audio Issues with Android Simulator on macOS',
   date: 'October 30, 2022',
@@ -11,7 +13,7 @@ export const metadata = {
 
 # {metadata.title}
 
-<div className='-mt-5'>{metadata.date}</div>
+<Date>{metadata.date}</Date>
 
 There is an issue with Android Simulator where sometimes when Bluetooth audio is being used, the current audio will completely stop working when starting an emulated Android device. To fix this issue, we have to modify the config files for each of the Android devices.
 

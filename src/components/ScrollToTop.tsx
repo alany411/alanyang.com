@@ -31,7 +31,12 @@ export default function ScrollToTop() {
       <button
         aria-hidden={!isVisible}
         aria-label='Scroll to top'
-        className='group prose prose-neutral inline-flex items-center justify-center space-x-1 bg-neutral-200 p-2 text-xs dark:prose-invert focus:outline-none dark:bg-neutral-800'
+        className={`
+          group prose prose-neutral inline-flex items-center justify-center
+          space-x-1 bg-neutral-200 p-2 text-xs
+          dark:prose-invert dark:bg-neutral-800
+          focus:outline-none
+        `}
         onClick={() => {
           window.scrollTo({
             top: 0,
@@ -41,7 +46,13 @@ export default function ScrollToTop() {
         }}
       >
         <span>Scroll to top</span>
-        <span className='transition-colors group-hover:text-sky-400 group-focus:text-sky-400'>
+        <span
+          className={`
+            transition-colors
+            group-focus:text-sky-400
+            group-hover:text-sky-400
+          `}
+        >
           <svg
             className='size-4'
             fill='currentColor'

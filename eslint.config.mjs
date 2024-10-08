@@ -6,6 +6,7 @@ import importPlugin from 'eslint-plugin-import'
 import prettierPluginConfig from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import tseslint from 'typescript-eslint'
 
@@ -108,6 +109,25 @@ const nextjsConfig = [
   },
 ]
 
+const readableTailwindConfig = [
+  {
+    files: ['**/*.{ts,tsx}'],
+    plugins: {
+      'readable-tailwind': readableTailwindPlugin,
+    },
+    rules: {
+      ...readableTailwindPlugin.configs.warning.rules,
+      ...readableTailwindPlugin.configs.error.rules,
+      'readable-tailwind/multiline': [
+        'error',
+        {
+          group: 'newLine',
+        },
+      ],
+    },
+  },
+]
+
 const simpleImportSortConfig = [
   {
     plugins: {
@@ -129,4 +149,5 @@ export default [
   ...nextjsConfig,
   ...simpleImportSortConfig,
   ...prettierConfig,
+  ...readableTailwindConfig,
 ]

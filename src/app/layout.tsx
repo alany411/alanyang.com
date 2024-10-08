@@ -49,7 +49,10 @@ export default function RootLayout({
           className={cn(
             GeistSans.variable,
             GeistMono.variable,
-            'bg-white font-sans antialiased dark:bg-neutral-900'
+            `
+              bg-white font-sans antialiased
+              dark:bg-neutral-900
+            `
           )}
         >
           <SkipToMain />
@@ -57,27 +60,47 @@ export default function RootLayout({
             <div className='mx-auto w-full max-w-[55ch] space-y-6'>
               <main
                 id='main-content'
-                className={cn(
-                  'prose prose-neutral max-w-none dark:prose-invert',
-                  'prose-a:decoration-transparent prose-a:decoration-2 prose-a:underline-offset-[3px] prose-a:transition-colors hover:prose-a:decoration-sky-400 focus:prose-a:outline-none focus:prose-a:ring-2 focus:prose-a:ring-sky-400 focus:prose-a:ring-offset-0 focus:prose-a:ring-offset-white dark:focus:prose-a:ring-offset-neutral-900',
-                  'prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-base prose-h6:text-base',
-                  'prose-p:text-pretty'
-                )}
+                className={`
+                  prose prose-neutral max-w-none
+                  dark:prose-invert dark:focus:prose-a:ring-offset-neutral-900
+                  focus:prose-a:outline-none focus:prose-a:ring-2
+                  focus:prose-a:ring-sky-400 focus:prose-a:ring-offset-0
+                  focus:prose-a:ring-offset-white
+                  hover:prose-a:decoration-sky-400
+                  prose-a:decoration-transparent prose-a:decoration-2
+                  prose-a:underline-offset-[3px] prose-a:transition-colors
+                  prose-h1:text-2xl
+                  prose-h2:text-xl
+                  prose-h3:text-lg
+                  prose-h4:text-base
+                  prose-h5:text-base
+                  prose-h6:text-base
+                  prose-p:text-pretty
+                `}
               >
                 {children}
               </main>
-              <footer className='flex w-full flex-row justify-between space-x-3 border-t border-neutral-200 dark:border-neutral-800'>
+              <footer
+                className={`
+                  flex w-full flex-row justify-between space-x-3 border-t
+                  border-neutral-200
+                  dark:border-neutral-800
+                `}
+              >
                 <div className='pt-4'>
                   <SocialLinks />
                   <svg
                     aria-hidden={true}
-                    className='m-0 select-none dark:invert'
                     height={144}
                     preserveAspectRatio='xMidYMid meet'
                     version='1.0'
                     viewBox='0 0 400 400'
                     width={144}
                     xmlns='http://www.w3.org/2000/svg'
+                    className={`
+                      m-0 select-none
+                      dark:invert
+                    `}
                   >
                     <g fill='#000' stroke='none'>
                       <path
