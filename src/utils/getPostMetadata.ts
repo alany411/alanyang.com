@@ -1,5 +1,5 @@
 export async function getPostMetadata(slug: string) {
-  const file = (await import('~/app/posts/(posts)/' + slug + '/page.mdx')) as {
+  const file = (await import('~/posts/(posts)/' + slug + '/page.mdx')) as {
     metadata?: Metadata
   }
 
