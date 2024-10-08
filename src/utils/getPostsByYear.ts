@@ -1,7 +1,7 @@
-import fs from 'fs'
 import path from 'path'
 
 import { getPostMetadata } from './getPostMetadata'
+import { getPostSlugs } from './getPostSlugs'
 
 export async function getPostsByYear() {
   const postsDirectory = path.join(
@@ -11,16 +11,9 @@ export async function getPostsByYear() {
     'posts',
     '(posts)'
   )
-  const postFilePaths = fs
-    .readdirSync(postsDirectory)
-    .map((fileName) => path.join(postsDirectory, fileName))
-    .filter((filePath) => fs.statSync(filePath).isDirectory())
 
-  const postsPromises = postFilePaths.map(async (filePath) => {
-    const fileName = path.basename(filePath, '.mdx')
-    const slug = fileName.replace(/^\d+-/, '')
+  const postsPromises = getPostSlugs(postsDirectory).map(async (slug) => {
     const metadata = await getPostMetadata(slug)
-
     return metadata
   })
 
@@ -36,7 +29,9 @@ export async function getPostsByYear() {
     {}
   )
 
-  return Object.entries(postsByYearObject).sort((a, b) =>
+  const sortedPostsByYear = Object.entries(postsByYearObject).sort((a, b) =>
     b[0].localeCompare(a[0])
   )
+
+  return sortedPostsByYear
 }
