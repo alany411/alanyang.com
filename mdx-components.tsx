@@ -38,14 +38,16 @@ const customComponents: MDXComponents = {
     }
 
     return (
-      <SyntaxHighlighter
-        className='border border-neutral-300 font-mono dark:border-neutral-700'
-        language={language}
-        useInlineStyles={false}
-      >
-        {/* SyntaxHighlighter throws a fit if we don't render the children as a string */}
-        {children as string}
-      </SyntaxHighlighter>
+      <div className='my-8 overflow-hidden rounded-md border border-neutral-300 dark:border-neutral-700'>
+        <SyntaxHighlighter
+          className='my-0 rounded-none font-mono'
+          language={language}
+          useInlineStyles={false}
+        >
+          {/* SyntaxHighlighter throws a fit if we don't render the children as a string */}
+          {children as string}
+        </SyntaxHighlighter>
+      </div>
     )
   },
   pre: Fragment,
