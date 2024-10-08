@@ -7,7 +7,7 @@ export default function Home() {
       <div className='inline-flex flex-col'>
         <Image
           alt='Alan Yang profile'
-          className='mb-4 h-36 w-36 select-none overflow-hidden rounded-full'
+          className='mb-4 mt-0 h-36 w-36 select-none overflow-hidden rounded-full'
           height={144}
           priority={true}
           src='/me.jpg'
