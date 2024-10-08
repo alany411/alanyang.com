@@ -1,21 +1,25 @@
 import { Link } from 'next-view-transitions'
 
+import Nav from '~/components/Nav'
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
 export const metadata = {
   title: 'Posts',
 }
 
+const links = [
+  {
+    href: '/',
+    title: 'Home',
+  },
+]
+
 export default async function PostsPage() {
   const postsByYear = await getPostsByYear()
 
   return (
     <div>
-      <div className='text-lg'>
-        <Link aria-label='Back to home page' href='/'>
-          Home
-        </Link>
-      </div>
+      <Nav links={links} />
       <div className='mb-6 flex'>
         <h1 className='m-0'>Posts</h1>
       </div>

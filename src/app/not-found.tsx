@@ -1,17 +1,20 @@
-import { Link } from 'next-view-transitions'
+import Nav from '~/components/Nav'
 
 export const metadata = {
   title: 'Not Found',
 }
 
+const links = [
+  {
+    href: '/',
+    title: 'Home',
+  },
+]
+
 export default function NotFound() {
   return (
     <div>
-      <div className='text-lg'>
-        <Link aria-label='Back to home page' href='/'>
-          Home
-        </Link>
-      </div>
+      <Nav links={links} />
       <div className='mb-6 flex'>
         <h1 className='m-0'>Not Found</h1>
       </div>
