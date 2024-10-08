@@ -30,6 +30,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/sitemap',
+        destination: '/sitemap.xml',
+        permanent: false,
+      },
+      {
         source: '/uses',
         destination: '/',
         permanent: true,
