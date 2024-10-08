@@ -7,6 +7,6 @@ type Metadata = {
   }
 }
 
-type Post = Omit<Metadata, 'alternates'> & {
+type Post = Required<Omit<Metadata, 'alternates'>> & {
   slug: string
 }
