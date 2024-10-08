@@ -1,11 +1,11 @@
-import './styles/globals.css'
+import '~/styles/globals.css'
 
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { ViewTransitions } from 'next-view-transitions'
 
-import SocialLinks from '~/app/components/SocialLinks'
+import SocialLinks from '~/components/SocialLinks'
 import { cn } from '~/utils/cn'
 
 export const metadata: Metadata = {
