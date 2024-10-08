@@ -11,9 +11,11 @@ export default async function PostsPage() {
 
   return (
     <div>
-      <Link aria-label='Back to home page' className='text-lg' href='/'>
-        Home
-      </Link>
+      <div className='text-lg'>
+        <Link aria-label='Back to home page' href='/'>
+          Home
+        </Link>
+      </div>
       <div className='mb-6 flex'>
         <h1 className='m-0'>Posts</h1>
       </div>
