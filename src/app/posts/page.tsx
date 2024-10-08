@@ -22,8 +22,21 @@ export default async function PostsPage() {
           <h2>{year}</h2>
           <ul>
             {posts.map((post) => (
-              <li key={post.slug}>
-                <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+              <li
+                key={post.slug}
+                aria-label={`${post.title} posted ${post.date}`}
+              >
+                <div className='flex justify-between space-x-4'>
+                  <span>
+                    <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+                  </span>
+                  <span className='shrink-0'>
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                    })}
+                  </span>
+                </div>
               </li>
             ))}
           </ul>
