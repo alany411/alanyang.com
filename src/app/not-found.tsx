@@ -1,3 +1,5 @@
+import { Link } from 'next-view-transitions'
+
 export const metadata = {
   title: 'Not Found',
 }
@@ -5,7 +7,12 @@ export const metadata = {
 export default function NotFound() {
   return (
     <div>
-      <h1>Not Found</h1>
+      <Link aria-label='Back to home page' className='text-lg' href='/'>
+        Home
+      </Link>
+      <div className='mb-6 flex'>
+        <h1 className='m-0'>Not Found</h1>
+      </div>
       <p>You seem to be lost... This path does not exist.</p>
       <p>
         Maybe it was moved or deleted.{' '}
