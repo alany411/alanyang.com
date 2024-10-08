@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html className='scroll-smooth' lang='en'>
+      <html className='overflow-y-scroll scroll-smooth' lang='en'>
         <body
           className={cn(
             GeistSans.variable,
