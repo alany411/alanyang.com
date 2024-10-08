@@ -1,20 +1,12 @@
 import './styles/globals.css'
 
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
 import { ViewTransitions } from 'next-view-transitions'
 
 import SocialLinks from '~/app/components/SocialLinks'
 import { cn } from '~/utils/cn'
-
-const geistSans = localFont({
-  src: './assets/GeistVF.woff',
-  variable: '--font-geist-sans',
-})
-const geistMono = localFont({
-  src: './assets/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alanyang.com'),
@@ -53,8 +45,8 @@ export default function RootLayout({
       <html lang='en'>
         <body
           className={cn(
-            geistSans.variable,
-            geistMono.variable,
+            GeistSans.variable,
+            GeistMono.variable,
             'bg-white font-sans antialiased dark:bg-neutral-900'
           )}
         >
