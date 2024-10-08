@@ -1,17 +1,17 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { cn } from '~/utils/cn'
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
-  const handleScroll = useCallback(() => {
-    setIsVisible(window.scrollY > 50)
-  }, [])
-
   useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 50)
+    }
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {
