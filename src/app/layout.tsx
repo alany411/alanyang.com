@@ -5,6 +5,7 @@ import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { ViewTransitions } from 'next-view-transitions'
 
+import SkipToMain from '~/components/SkipToMain'
 import SocialLinks from '~/components/SocialLinks'
 import { cn } from '~/utils/cn'
 
@@ -42,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang='en'>
+      <html className='scroll-smooth' lang='en'>
         <body
           className={cn(
             GeistSans.variable,
@@ -50,9 +51,11 @@ export default function RootLayout({
             'bg-white font-sans antialiased dark:bg-neutral-900'
           )}
         >
+          <SkipToMain />
           <div className='flex flex-col px-8 pb-8 pt-24'>
             <div className='mx-auto w-full max-w-[55ch] space-y-6'>
               <main
+                id='main-content'
                 className={cn(
                   'prose prose-neutral max-w-none dark:prose-invert',
                   'prose-a:decoration-transparent prose-a:decoration-2 prose-a:underline-offset-[3px] prose-a:transition-colors hover:prose-a:decoration-sky-400 focus:prose-a:outline-none focus:prose-a:ring-2 focus:prose-a:ring-sky-400 focus:prose-a:ring-offset-0 focus:prose-a:ring-offset-white dark:focus:prose-a:ring-offset-neutral-900',
