@@ -69,7 +69,7 @@ const NETWORKS = [
 
 export default function SocialLinks() {
   return (
-    <ul className='prose prose-neutral flex flex-row gap-3 dark:prose-invert'>
+    <ul className='prose prose-neutral flex w-full flex-row flex-wrap gap-3 dark:prose-invert'>
       {NETWORKS.map(({ name, href, icon: Icon }) => (
         <li key={name} className='m-0 list-none'>
           <a
