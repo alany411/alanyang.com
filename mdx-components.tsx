@@ -4,11 +4,11 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 
 const customComponents: MDXComponents = {
   a: (props) => {
-    const { children, href } = props
+    const { children, href, ...otherProps } = props
 
     if (href?.startsWith('/') || href?.startsWith('#')) {
       return (
-        <a href={href} {...props}>
+        <a href={href} {...otherProps}>
           {children}
         </a>
       )
@@ -20,6 +20,7 @@ const customComponents: MDXComponents = {
         href={href}
         rel='noopener noreferrer'
         target='_blank'
+        {...otherProps}
       >
         {children}
       </a>
@@ -30,7 +31,7 @@ const customComponents: MDXComponents = {
 
     if (!language) {
       return (
-        <code className='bg-neutral-100 py-1 dark:bg-neutral-800'>
+        <code className='bg-neutral-100 py-1 font-mono dark:bg-neutral-800'>
           {children}
         </code>
       )
@@ -38,7 +39,7 @@ const customComponents: MDXComponents = {
 
     return (
       <SyntaxHighlighter
-        className='border border-neutral-300 dark:border-neutral-700'
+        className='border border-neutral-300 font-mono dark:border-neutral-700'
         language={language}
         useInlineStyles={false}
       >
