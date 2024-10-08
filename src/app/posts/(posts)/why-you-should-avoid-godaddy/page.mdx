@@ -8,6 +8,10 @@ export const metadata = {
   },
 }
 
+# {metadata.title}
+
+<div className='-mt-5'>{metadata.date}</div>
+
 ## What is GoDaddy?
 
 GoDaddy is one of the world's largest domain registrars and web hosts; however, they also spend a lot of money on marketing and advertising, which is a big reason why they have such a large customer base. In addition to those services, they offer email hosting, SSL certificates, and even a website builder. To the average, non-technical person, this all seems great, but when it comes to GoDaddy, all these services come with major drawbacks.
@@ -18,15 +22,52 @@ GoDaddy often tries to lure customers with low prices, but these prices are ofte
 
 Below is a comparison of pricing for [GoDaddy](https://www.godaddy.com/), [DreamHost](https://www.dreamhost.com/), and [NameCheap](https://www.namecheap.com/) for similar services.
 
-| \*                    | GoDaddy     | DreamHost   | NameCheap  |
-| --------------------- | ----------- | ----------- | ---------- |
-| **Domain (.com)**     | $18.99      | $15.99      | $12.98     |
-| **Hosting**           | $143.88     | $155.88     | $58.56     |
-| **SSL Certificate**   | $94.99      | Free        | Free       |
-| **Email**             | $71.88      | Free        | Free       |
-| **Total Yearly Cost** | **$329.74** | **$171.87** | **$71.54** |
+<div className='my-8 overflow-x-auto'>
+  <table className='m-0'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>GoDaddy</th>
+        <th>DreamHost</th>
+        <th>NameCheap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Domain (.com)</th>
+        <td>$18.99</td>
+        <td>$15.99</td>
+        <td>$12.98</td>
+      </tr>
+      <tr>
+        <th>Hosting</th>
+        <td>$143.88</td>
+        <td>$155.88</td>
+        <td>$58.56</td>
+      </tr>
+      <tr>
+        <th>SSL Certificate</th>
+        <td>$94.99</td>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>$71.88</td>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <th>Total Yearly Cost</th>
+        <td>$329.74</td>
+        <td>$171.87</td>
+        <td>$71.54</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-> Note that these pricings are the yearly renewal prices as of this posting date and do not include the first-year promotional offers.
+> Note that these pricings are the yearly renewal prices as of 2021 and do not include the first-year promotional offers.
 
 Hosting plans sourced:
 
@@ -51,19 +92,9 @@ GoDaddy has been involved in their fair share of controversies which include but
 
 You can find more listed in this [Wikipedia Article](https://en.wikipedia.org/wiki/GoDaddy#Controversies).
 
-## Alternatives
+## What Do I Use?
 
-Below are some listed alternatives that I have found recommended by multiple forums.
-
-| Domain Registrar                          | Hosting                                       |
-| ----------------------------------------- | --------------------------------------------- |
-| [Google Domains](https://domains.google/) | [Vercel](https://vercel.com/)                 |
-| [NameCheap](https://www.namecheap.com/)   | [Netlify](https://www.netlify.com/)           |
-| [NameSilo](https://www.namesilo.com/)     | [DigitalOcean](https://www.digitalocean.com/) |
-| [porkbun](https://porkbun.com/)           | [Siteground](https://www.siteground.com/)     |
-| [iwantmyname](https://iwantmyname.com/)   | [DreamHost](https://www.dreamhost.com/)       |
-
-I personally use Google Domains for my domain registrar and Vercel and Netlify for my hosting.
+I personally use [Porkbun](https://porkbun.com) for my domain registrar and [Vercel](https://vercel.com) for my hosting.
 
 ## Conclusion
 
