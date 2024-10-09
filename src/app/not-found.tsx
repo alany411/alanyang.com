@@ -1,6 +1,8 @@
+import type { Metadata } from 'next'
+
 import Nav from '~/components/Nav'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Not Found',
 }
 
