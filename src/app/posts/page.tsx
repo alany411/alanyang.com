@@ -1,10 +1,14 @@
+import type { Metadata } from 'next'
 import { Link } from 'next-view-transitions'
 
 import Nav from '~/components/Nav'
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Posts',
+  alternates: {
+    canonical: '/posts',
+  },
 }
 
 const links = [
