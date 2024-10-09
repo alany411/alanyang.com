@@ -86,8 +86,7 @@ export default function RootLayout({
               </main>
               <footer
                 className={`
-                  flex w-full flex-row justify-between space-x-3 border-t
-                  border-neutral-200
+                  relative border-t border-neutral-200
                   dark:border-neutral-800
                 `}
               >

@@ -22,7 +22,7 @@ export default function ScrollToTop() {
   return (
     <span
       className={cn(
-        'shrink-0 transition-all',
+        'absolute -top-4 right-0 shrink-0 transition-opacity',
         isVisible
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0'
@@ -31,6 +31,7 @@ export default function ScrollToTop() {
       <button
         aria-hidden={!isVisible}
         aria-label='Scroll to top'
+        tabIndex={isVisible ? 0 : -1}
         className={`
           group prose prose-neutral inline-flex items-center justify-center
           space-x-1 bg-neutral-200 p-2 text-xs
