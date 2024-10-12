@@ -90,6 +90,7 @@ export default function RootLayout({
                   dark:border-neutral-800
                 `}
               >
+                <ScrollToTop />
                 <div className='pt-4'>
                   <SocialLinks />
                   <svg
@@ -117,7 +118,6 @@ export default function RootLayout({
                     </g>
                   </svg>
                 </div>
-                <ScrollToTop />
               </footer>
             </div>
           </div>
