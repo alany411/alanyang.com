@@ -7,7 +7,7 @@
   --background-color: hsl(230, 1%, 98%);
   --color-main: hsl(230, 8%, 24%);
   --selection-background: hsl(230, 1%, 90%);
-  --code-block-background: hsl(230, 1%, 90%);
+  --code-block-background: hsl(0, 0%, 89.8%);
   --comment-color: hsl(230, 4%, 64%);
   --attr-name-color: hsl(35, 99%, 36%);
   --keyword-color: hsl(301, 63%, 40%);
@@ -35,7 +35,7 @@
     --background-color: hsl(220, 13%, 18%);
     --color-main: hsl(220, 14%, 71%);
     --selection-background: hsl(220, 13%, 28%);
-    --code-block-background: hsl(220, 13%, 18%);
+    --code-block-background: hsl(0, 0%, 14.9%);
     --comment-color: hsl(220, 10%, 40%);
     --attr-name-color: hsl(29, 54%, 61%);
     --keyword-color: hsl(286, 60%, 67%);
