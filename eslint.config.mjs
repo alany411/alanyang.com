@@ -118,12 +118,6 @@ const readableTailwindConfig = [
     rules: {
       ...readableTailwindPlugin.configs.warning.rules,
       ...readableTailwindPlugin.configs.error.rules,
-      'readable-tailwind/multiline': [
-        'error',
-        {
-          group: 'newLine',
-        },
-      ],
     },
   },
 ]

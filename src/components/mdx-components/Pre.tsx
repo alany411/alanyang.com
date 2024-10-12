@@ -24,30 +24,35 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
     <div className='my-8'>
       <div
         ref={contentRef}
-        className={`
+        className={cn(`
           overflow-hidden rounded-2xl rounded-bl-none border-2
           border-neutral-200
+
           dark:border-neutral-800
-        `}
+        `)}
       >
         <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
       </div>
       <button
         aria-label='Copy code block'
-        className={`
+        className={cn(`
           group prose prose-neutral inline-flex items-center justify-center
           space-x-1 bg-neutral-200 p-2 text-xs
+
           dark:prose-invert dark:bg-neutral-800
+
           focus:outline-none
-        `}
+        `)}
         onClick={handleOnClick}
       >
         <span
-          className={`
+          className={cn(`
             transition-colors
+
             group-focus:text-sky-400
+
             group-hover:text-sky-400
-          `}
+          `)}
         >
           {isCopied ? (
             <svg

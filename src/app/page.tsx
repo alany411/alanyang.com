@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Link } from 'next-view-transitions'
 
+import { cn } from '~/utils/cn'
+
 export default function Home() {
   return (
     <div>
@@ -11,9 +13,9 @@ export default function Home() {
           priority={true}
           src='/me.jpg'
           width={144}
-          className={`
+          className={cn(`
             mb-4 mt-0 h-36 w-36 select-none overflow-hidden rounded-full
-          `}
+          `)}
         />
         <h1 className='mb-0 text-center text-2xl'>Alan Yang</h1>
       </div>
