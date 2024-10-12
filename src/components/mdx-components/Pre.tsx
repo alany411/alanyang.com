@@ -25,8 +25,9 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
       <div
         ref={contentRef}
         className={`
-          overflow-hidden rounded-md border border-neutral-300
-          dark:border-neutral-700
+          overflow-hidden rounded-2xl rounded-bl-none border-2
+          border-neutral-200
+          dark:border-neutral-800
         `}
       >
         <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
@@ -34,7 +35,7 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
       <button
         aria-label='Copy code block'
         className={`
-          group prose prose-neutral ml-6 inline-flex items-center justify-center
+          group prose prose-neutral inline-flex items-center justify-center
           space-x-1 bg-neutral-200 p-2 text-xs
           dark:prose-invert dark:bg-neutral-800
           focus:outline-none

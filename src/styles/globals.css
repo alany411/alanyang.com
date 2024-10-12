@@ -15,7 +15,7 @@
   }
 
   pre::-webkit-scrollbar {
-    @apply h-2.5 bg-transparent;
+    @apply h-3 bg-transparent;
   }
 
   pre::-webkit-scrollbar-thumb {
@@ -23,7 +23,7 @@
   }
 
   .table-container::-webkit-scrollbar {
-    @apply h-2.5 bg-transparent;
+    @apply h-3 bg-transparent;
   }
 
   .table-container::-webkit-scrollbar-thumb {
