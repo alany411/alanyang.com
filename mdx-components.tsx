@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 
 import Pre from '~/components/mdx-components/Pre'
+import { cn } from '~/utils/cn'
 
 const customComponents: MDXComponents = {
   a: (props) => {
@@ -28,8 +29,8 @@ const customComponents: MDXComponents = {
   },
   pre: (props) => <Pre {...props} />,
   table: ({ children }) => (
-    <div className='table-container my-8 overflow-x-auto'>
-      <table className='m-0'>{children}</table>
+    <div className={cn('table-container my-8 overflow-x-auto')}>
+      <table className={cn('m-0')}>{children}</table>
     </div>
   ),
 }

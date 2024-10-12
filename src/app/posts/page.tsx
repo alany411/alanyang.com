@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Link } from 'next-view-transitions'
 
 import Nav from '~/components/Nav'
+import { cn } from '~/utils/cn'
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
 export const metadata: Metadata = {
@@ -24,8 +25,8 @@ export default async function PostsPage() {
   return (
     <div>
       <Nav links={links} />
-      <div className='mb-6 flex'>
-        <h1 className='m-0'>Posts</h1>
+      <div className={cn('mb-6 flex')}>
+        <h1 className={cn('m-0')}>Posts</h1>
       </div>
       {postsByYear.map(([year, posts]) => (
         <div key={year}>
@@ -36,11 +37,11 @@ export default async function PostsPage() {
                 key={post.slug}
                 aria-label={`${post.title} posted ${post.date}`}
               >
-                <div className='flex justify-between space-x-4'>
+                <div className={cn('flex justify-between space-x-4')}>
                   <span>
                     <Link href={`/posts/${post.slug}`}>{post.title}</Link>
                   </span>
-                  <span className='shrink-0'>
+                  <span className={cn('shrink-0')}>
                     {new Date(post.date).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',

@@ -6,7 +6,7 @@ import { cn } from '~/utils/cn'
 export default function Home() {
   return (
     <div>
-      <div className='inline-flex flex-col'>
+      <div className={cn('inline-flex flex-col')}>
         <Image
           alt='Alan Yang profile'
           height={144}
@@ -17,14 +17,14 @@ export default function Home() {
             mb-4 mt-0 h-36 w-36 select-none overflow-hidden rounded-full
           `)}
         />
-        <h1 className='mb-0 text-center text-2xl'>Alan Yang</h1>
+        <h1 className={cn('mb-0 text-center text-2xl')}>Alan Yang</h1>
       </div>
       <p>
         I am a software engineer who enjoys learning and building. I currently
         work at the{' '}
         <a
           aria-label='University of Florida, opens in a new tab'
-          className='whitespace-nowrap'
+          className={cn('whitespace-nowrap')}
           href='https://www.ufl.edu/'
         >
           University of Florida

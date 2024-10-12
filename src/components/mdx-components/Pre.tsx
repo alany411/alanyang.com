@@ -21,7 +21,7 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
   }
 
   return (
-    <div className='my-8'>
+    <div className={cn('my-8')}>
       <div
         ref={contentRef}
         className={cn(`
@@ -56,7 +56,7 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
         >
           {isCopied ? (
             <svg
-              className='size-4'
+              className={cn('size-4')}
               fill='currentColor'
               viewBox='0 0 16 16'
               xmlns='http://www.w3.org/2000/svg'
@@ -69,7 +69,7 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
             </svg>
           ) : (
             <svg
-              className='size-4'
+              className={cn('size-4')}
               fill='currentColor'
               viewBox='0 0 16 16'
               xmlns='http://www.w3.org/2000/svg'

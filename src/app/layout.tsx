@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html className='overflow-y-scroll scroll-smooth' lang='en'>
+      <html className={cn('overflow-y-scroll scroll-smooth')} lang='en'>
         <body
           className={cn(
             GeistSans.variable,
@@ -59,8 +59,8 @@ export default function RootLayout({
           )}
         >
           <SkipToMain />
-          <div className='flex flex-col px-8 pb-8 pt-24'>
-            <div className='mx-auto w-full max-w-[55ch] space-y-6'>
+          <div className={cn('flex flex-col px-8 pb-8 pt-24')}>
+            <div className={cn('mx-auto w-full max-w-[55ch] space-y-6')}>
               <main
                 id='main-content'
                 className={cn(`
@@ -104,7 +104,7 @@ export default function RootLayout({
                 `)}
               >
                 <ScrollToTop />
-                <div className='pt-4'>
+                <div className={cn('pt-4')}>
                   <SocialLinks />
                   <svg
                     aria-hidden={true}

@@ -79,7 +79,7 @@ export default function SocialLinks() {
       `)}
     >
       {NETWORKS.map(({ name, href, icon: Icon }) => (
-        <li key={name} className='m-0 list-none'>
+        <li key={name} className={cn('m-0 list-none')}>
           <a
             aria-label={`Alan Yang's ${name} profile, opens in new tab`}
             href={href}
@@ -98,7 +98,7 @@ export default function SocialLinks() {
               hover:scale-125 hover:text-[var(--tw-prose-links)]
             `)}
           >
-            <span className='sr-only'>{name}</span>
+            <span className={cn('sr-only')}>{name}</span>
             <Icon />
           </a>
         </li>
