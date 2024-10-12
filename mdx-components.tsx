@@ -1,6 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
-import { Fragment } from 'react'
-import SyntaxHighlighter from 'react-syntax-highlighter'
+
+import { cn } from '~/utils/cn'
 
 const customComponents: MDXComponents = {
   a: (props) => {
@@ -26,31 +26,11 @@ const customComponents: MDXComponents = {
       </a>
     )
   },
-  code: ({ children, className }) => {
-    const language = className?.replace('language-', '')
-
-    if (!language) {
-      return (
-        <code className='bg-neutral-100 py-1 font-mono dark:bg-neutral-800'>
-          {children}
-        </code>
-      )
-    }
-
-    return (
-      <div className='my-8 overflow-hidden rounded-md border border-neutral-300 dark:border-neutral-700'>
-        <SyntaxHighlighter
-          className='my-0 rounded-none font-mono'
-          language={language}
-          useInlineStyles={false}
-        >
-          {/* SyntaxHighlighter throws a fit if we don't render the children as a string */}
-          {children as string}
-        </SyntaxHighlighter>
-      </div>
-    )
-  },
-  pre: Fragment,
+  pre: ({ children, className }) => (
+    <div className='my-8 overflow-hidden rounded-md border border-neutral-300 dark:border-neutral-700'>
+      <pre className={cn('my-0', className)}>{children}</pre>
+    </div>
+  ),
   table: ({ children }) => (
     <div className='table-container my-8 overflow-x-auto'>
       <table className='m-0'>{children}</table>

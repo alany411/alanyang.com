@@ -1,0 +1,458 @@
+/*
+ * Code Highlighting
+ * Based on One Light and Dark themes for prism.js 
+ */
+
+:root {
+  --background-color: hsl(230, 1%, 98%);
+  --color-main: hsl(230, 8%, 24%);
+  --selection-background: hsl(230, 1%, 90%);
+  --code-block-background: hsl(230, 1%, 90%);
+  --comment-color: hsl(230, 4%, 64%);
+  --attr-name-color: hsl(35, 99%, 36%);
+  --keyword-color: hsl(301, 63%, 40%);
+  --punctuation-color: hsl(344, 84%, 43%);
+  --property-color: hsl(5, 74%, 59%);
+  --string-color: hsl(119, 34%, 47%);
+  --function-color: hsl(221, 87%, 60%);
+  --url-color: hsl(198, 99%, 37%);
+  --line-highlight-bg: hsla(230, 8%, 24%, 0.05);
+  --line-highlight-number-bg: hsl(230, 1%, 90%);
+  --line-number-color: hsl(230, 1%, 62%);
+  --deleted-bg: hsla(353, 100%, 66%, 0.15);
+  --deleted-selection-bg: hsla(353, 95%, 66%, 0.25);
+  --inserted-bg: hsla(137, 100%, 55%, 0.15);
+  --inserted-selection-bg: hsla(135, 73%, 55%, 0.25);
+  --previewer-border-color: hsl(0, 0, 95%);
+  --previewer-bg: hsl(0, 0%, 100%);
+  --previewer-stroke: hsl(230, 8%, 24%);
+  --toolbar-bg: hsl(230, 1%, 90%);
+  --toolbar-color: hsl(230, 6%, 44%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(220, 13%, 18%);
+    --color-main: hsl(220, 14%, 71%);
+    --selection-background: hsl(220, 13%, 28%);
+    --code-block-background: hsl(220, 13%, 18%);
+    --comment-color: hsl(220, 10%, 40%);
+    --attr-name-color: hsl(29, 54%, 61%);
+    --keyword-color: hsl(286, 60%, 67%);
+    --punctuation-color: hsl(220, 14%, 71%);
+    --property-color: hsl(355, 65%, 65%);
+    --string-color: hsl(95, 38%, 62%);
+    --function-color: hsl(207, 82%, 66%);
+    --url-color: hsl(187, 47%, 55%);
+    --line-highlight-bg: hsla(220, 100%, 80%, 0.04);
+    --line-highlight-number-bg: hsl(220, 13%, 26%);
+    --line-number-color: hsl(220, 14%, 45%);
+    --deleted-bg: hsla(353, 100%, 66%, 0.15);
+    --deleted-selection-bg: hsla(353, 95%, 66%, 0.25);
+    --inserted-bg: hsla(137, 100%, 55%, 0.15);
+    --inserted-selection-bg: hsla(135, 73%, 55%, 0.25);
+    --previewer-border-color: hsl(224, 13%, 17%);
+    --previewer-bg: hsl(219, 13%, 22%);
+    --previewer-stroke: hsl(220, 14%, 71%);
+    --toolbar-bg: hsl(220, 13%, 26%);
+    --toolbar-color: hsl(220, 9%, 55%);
+  }
+}
+
+/* Add for code-highlight and line-numbers */
+
+.code-highlight {
+  float: left;
+  min-width: 100%;
+}
+
+.code-line {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-left: 4px solid transparent;
+}
+
+.code-line.inserted {
+  background-color: var(--inserted-bg);
+}
+
+.code-line.deleted {
+  background-color: var(--deleted-bg);
+}
+
+.highlight-line {
+  margin-left: -16px;
+  margin-right: -16px;
+  background-color: var(--line-highlight-bg);
+  border-left: 4px solid var(--line-highlight-number-bg);
+}
+
+.line-number::before {
+  display: inline-block;
+  width: 1rem;
+  text-align: right;
+  margin-right: 16px;
+  margin-left: -8px;
+  color: var(--comment-color);
+  content: attr(line);
+}
+
+/* One theme for prism.js */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--background-color);
+  color: var(--color-main);
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code[class*='language-']::-moz-selection,
+code[class*='language-'] *::-moz-selection,
+pre[class*='language-'] *::-moz-selection {
+  background: var(--selection-background);
+  color: inherit;
+}
+
+code[class*='language-']::selection,
+code[class*='language-'] *::selection,
+pre[class*='language-'] *::selection {
+  background: var(--selection-background);
+  color: inherit;
+}
+
+:not(pre) > code {
+  background: var(--code-block-background);
+  padding: 0.2rem 0.3rem;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: var(--comment-color);
+}
+
+.token.doctype,
+.token.punctuation,
+.token.entity {
+  color: var(--color-main);
+}
+
+.token.attr-name,
+.token.class-name,
+.token.boolean,
+.token.constant,
+.token.number,
+.token.atrule {
+  color: var(--attr-name-color);
+}
+
+.token.keyword {
+  color: var(--keyword-color);
+}
+
+.token.property,
+.token.tag,
+.token.symbol,
+.token.deleted,
+.token.important {
+  color: var(--property-color);
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.regex,
+.token.attr-value,
+.token.attr-value > .token.punctuation {
+  color: var(--string-color);
+}
+
+.token.variable,
+.token.operator,
+.token.function {
+  color: var(--function-color);
+}
+
+.token.url {
+  color: var(--url-color);
+}
+
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
+  color: var(--color-main);
+}
+
+.language-css .token.selector {
+  color: var(--property-color);
+}
+
+.language-css .token.property {
+  color: var(--color-main);
+}
+
+.language-css .token.function,
+.language-css .token.url > .token.function {
+  color: var(--url-color);
+}
+
+.language-css .token.url > .token.string.url {
+  color: var(--string-color);
+}
+
+.language-css .token.important,
+.language-css .token.atrule .token.rule {
+  color: var(--keyword-color);
+}
+
+.language-javascript .token.operator {
+  color: var(--keyword-color);
+}
+
+.language-javascript
+  .token.template-string
+  > .token.interpolation
+  > .token.interpolation-punctuation.punctuation {
+  color: var(--punctuation-color);
+}
+
+.language-json .token.operator {
+  color: var(--color-main);
+}
+
+.language-json .token.null.keyword {
+  color: var(--attr-name-color);
+}
+
+.language-markdown .token.url,
+.language-markdown .token.url > .token.operator,
+.language-markdown .token.url-reference.url > .token.string {
+  color: var(--color-main);
+}
+
+.language-markdown .token.url > .token.content {
+  color: var(--function-color);
+}
+
+.language-markdown .token.url > .token.url,
+.language-markdown .token.url-reference.url {
+  color: var(--url-color);
+}
+
+.language-markdown .token.blockquote.punctuation,
+.language-markdown .token.hr.punctuation {
+  color: var(--comment-color);
+  font-style: italic;
+}
+
+.language-markdown .token.code-snippet {
+  color: var(--string-color);
+}
+
+.language-markdown .token.bold .token.content {
+  color: var(--attr-name-color);
+}
+
+.language-markdown .token.italic .token.content {
+  color: var(--keyword-color);
+}
+
+.language-markdown .token.strike .token.content,
+.language-markdown .token.strike .token.punctuation,
+.language-markdown .token.list.punctuation,
+.language-markdown .token.title.important > .token.punctuation {
+  color: var(--property-color);
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.comment,
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.namespace {
+  opacity: 0.8;
+}
+
+.token.token.tab:not(:empty):before,
+.token.token.cr:before,
+.token.token.lf:before,
+.token.token.space:before {
+  color: hsla(230, 8%, 24%, 0.2);
+}
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item {
+  margin-right: 0.4em;
+}
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span {
+  background: var(--toolbar-bg);
+  color: var(--toolbar-color);
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+}
+
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus {
+  color: var(--color-main);
+}
+
+.line-highlight.line-highlight {
+  background: var(--line-highlight-bg);
+}
+
+.line-highlight.line-highlight:before,
+.line-highlight.line-highlight[data-end]:after {
+  background: var(--line-highlight-number-bg);
+  color: var(--color-main);
+  padding: 0.1em 0.6em;
+  border-radius: 0.3em;
+}
+
+pre[id].linkable-line-numbers.linkable-line-numbers
+  span.line-numbers-rows
+  > span:hover:before {
+  background-color: var(--line-highlight-bg);
+}
+
+.line-numbers.line-numbers .line-numbers-rows,
+.command-line .command-line-prompt {
+  border-right-color: hsla(230, 8%, 24%, 0.2);
+}
+
+.line-numbers .line-numbers-rows > span:before,
+.command-line .command-line-prompt > span:before {
+  color: var(--line-number-color);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-1,
+.rainbow-braces .token.token.punctuation.brace-level-5,
+.rainbow-braces .token.token.punctuation.brace-level-9 {
+  color: var(--property-color);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-2,
+.rainbow-braces .token.token.punctuation.brace-level-6,
+.rainbow-braces .token.token.punctuation.brace-level-10 {
+  color: var(--string-color);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-3,
+.rainbow-braces .token.token.punctuation.brace-level-7,
+.rainbow-braces .token.token.punctuation.brace-level-11 {
+  color: var(--function-color);
+}
+
+.rainbow-braces .token.token.punctuation.brace-level-4,
+.rainbow-braces .token.token.punctuation.brace-level-8,
+.rainbow-braces .token.token.punctuation.brace-level-12 {
+  color: var(--keyword-color);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix),
+pre > code.diff-highlight .token.token.deleted:not(.prefix) {
+  background-color: var(--deleted-bg);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::-moz-selection {
+  background-color: var(--deleted-selection-bg);
+}
+
+pre.diff-highlight > code .token.token.deleted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.deleted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.deleted:not(.prefix) *::selection {
+  background-color: var(--deleted-selection-bg);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix),
+pre > code.diff-highlight .token.token.inserted:not(.prefix) {
+  background-color: var(--inserted-bg);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::-moz-selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::-moz-selection {
+  background-color: var(--inserted-selection-bg);
+}
+
+pre.diff-highlight > code .token.token.inserted:not(.prefix)::selection,
+pre.diff-highlight > code .token.token.inserted:not(.prefix) *::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix)::selection,
+pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
+  background-color: var(--inserted-selection-bg);
+}
+
+.prism-previewer.prism-previewer:before,
+.prism-previewer-gradient.prism-previewer-gradient div {
+  border-color: var(--previewer-border-color);
+}
+
+.prism-previewer-color.prism-previewer-color:before,
+.prism-previewer-gradient.prism-previewer-gradient div,
+.prism-previewer-easing.prism-previewer-easing:before {
+  border-radius: 0.3em;
+}
+
+.prism-previewer.prism-previewer:after {
+  border-top-color: var(--previewer-border-color);
+}
+
+.prism-previewer-flipped.prism-previewer-flipped.after {
+  border-bottom-color: var(--previewer-border-color);
+}
+
+.prism-previewer-angle.prism-previewer-angle:before,
+.prism-previewer-time.prism-previewer-time:before,
+.prism-previewer-easing.prism-previewer-easing {
+  background: var(--previewer-bg);
+}
+
+.prism-previewer-angle.prism-previewer-angle circle,
+.prism-previewer-time.prism-previewer-time circle {
+  stroke: var(--previewer-stroke);
+  stroke-opacity: 1;
+}
+
+.prism-previewer-easing.prism-previewer-easing circle,
+.prism-previewer-easing.prism-previewer-easing path,
+.prism-previewer-easing.prism-previewer-easing line {
+  stroke: var(--previewer-stroke);
+}
+
+.prism-previewer-easing.prism-previewer-easing circle {
+  fill: transparent;
+}
