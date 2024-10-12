@@ -1,12 +1,11 @@
 import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
-  experimental: {
-    mdxRs: true,
-  },
+  experimental: { mdxRs: false },
   async redirects() {
     return [
       {
@@ -53,6 +52,11 @@ const nextConfig = {
   },
 }
 
-const withMDX = createMDX({})
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
+})
 
 export default withMDX(nextConfig)

@@ -51,6 +51,11 @@ const customComponents: MDXComponents = {
     )
   },
   pre: Fragment,
+  table: ({ children }) => (
+    <div className='table-container my-8 overflow-x-auto'>
+      <table className='m-0'>{children}</table>
+    </div>
+  ),
 }
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
