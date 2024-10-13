@@ -16,7 +16,11 @@ export default function IconButton({
   icon: { svg, position },
   ...buttonProps
 }: IconButtonProps) {
-  const { className, ...otherButtonProps } = buttonProps
+  const {
+    'aria-label': ariaLabel,
+    className,
+    ...otherButtonProps
+  } = buttonProps
 
   const Icon = useCallback(() => {
     return (
@@ -36,6 +40,8 @@ export default function IconButton({
 
   return (
     <button
+      aria-label={ariaLabel ? ariaLabel : children}
+      type='button'
       className={cn(
         `
           group prose prose-neutral inline-flex items-center justify-center
