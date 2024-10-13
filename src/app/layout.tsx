@@ -75,7 +75,7 @@ export default function RootLayout({
                   hover:prose-a:decoration-sky-400
 
                   prose-a:decoration-transparent prose-a:decoration-2
-                  prose-a:underline-offset-[3px] prose-a:transition-colors
+                  prose-a:underline-offset-[3.5px] prose-a:transition-colors
 
                   prose-h1:text-2xl
 
