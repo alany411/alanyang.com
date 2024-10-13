@@ -38,7 +38,7 @@ Below are the steps I took to make sure our user's files and folders were migrat
 14. Rename the user's local account's Home folder to match the user's Active Directory domain account's username
 15. Open Terminal and run the following commands replacing `ADUSERNAME` with the user's Active Directory domain account's username and `DOMAIN` with the domain:
 
-```bash
+```bash title="unlock-and-change-ownership.sh"
 # Recursively unlocks the files within the user's Home folder
 sudo chflags -R nouchg /Users/ADUSERNAME
 

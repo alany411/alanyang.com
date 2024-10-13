@@ -24,7 +24,7 @@ I have been redesigning and redeveloping my personal website for a couple of wee
 
 When using Remark or Rehype plugins with Next.js, you have to make sure that the experimental feature `mdxRs` is either not defined or explicitly set to `false` in your `next.config.mjs` file. I wasted some time trying to figure out why the plugins were not working with my setup, but I finally found the solution from a comment in a [StackOverflow post](https://stackoverflow.com/a/75571708) and [Next.js GitHub issue](https://github.com/vercel/next.js/issues/46659#issuecomment-1542183041).
 
-```js showLineNumbers
+```js title="next.config.mjs" showlinenumbers="true"
 import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */

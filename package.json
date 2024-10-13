@@ -47,6 +47,7 @@
     "postcss-import": "16.1.0",
     "postcss-load-config": "6.0.1",
     "prettier": "3.3.3",
+    "rehype-mdx-code-props": "3.0.1",
     "rehype-prism-plus": "2.0.0",
     "remark-gfm": "4.0.0",
     "tailwind-merge": "2.5.3",

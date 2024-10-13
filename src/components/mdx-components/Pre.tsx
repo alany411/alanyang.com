@@ -5,10 +5,17 @@ import { useRef, useState } from 'react'
 
 import { cn } from '~/utils/cn'
 
-export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
-  const { className, ...otherProps } = props
+type PreProps = HTMLAttributes<HTMLPreElement> & {
+  showLineNumbers?: string
+  title?: string
+}
+
+export default function Pre(props: PreProps) {
+  const { className, title, ...otherProps } = props
   const contentRef = useRef<HTMLDivElement | null>(null)
   const [isCopied, setIsCopied] = useState(false)
+
+  if (!title) throw new Error('Pre component requires a title prop')
 
   const handleOnClick = async () => {
     if (contentRef.current) {
@@ -21,12 +28,23 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
   }
 
   return (
-    <div className={cn('my-8')}>
+    <figure className={cn('my-8')}>
+      <figcaption
+        className={cn(
+          `
+            prose prose-neutral rounded-t-2xl border-2 border-b-0
+            border-neutral-200 bg-neutral-200 px-5 py-1 font-mono font-bold
+
+            dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
+          `
+        )}
+      >
+        {title}
+      </figcaption>
       <div
         ref={contentRef}
         className={cn(`
-          overflow-hidden rounded-2xl rounded-bl-none border-2
-          border-neutral-200
+          overflow-hidden rounded-br-2xl border-2 border-t-0 border-neutral-200
 
           dark:border-neutral-800
         `)}
@@ -34,7 +52,7 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
         <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
       </div>
       <button
-        aria-label='Copy code block'
+        aria-label={`Copy ${title} code`}
         className={cn(`
           group prose prose-neutral inline-flex items-center justify-center
           space-x-1 bg-neutral-200 p-2 text-xs
@@ -81,6 +99,6 @@ export default function Pre(props: HTMLAttributes<HTMLPreElement>) {
         </span>
         <span>{isCopied ? 'Copied' : 'Copy'}</span>
       </button>
-    </div>
+    </figure>
   )
 }

@@ -23,7 +23,7 @@ There is an issue with Android Simulator where sometimes when Bluetooth audio is
 2. There should be folders titled with the device and OS version. For each of these folders, modify the `config.ini` file
 3. Change or add the following lines to the file:
 
-```ini
+```ini title="config.ini"
 hw.audioInput=no
 hw.audioOutput=no
 ```
@@ -37,7 +37,7 @@ hw.audioOutput=no
 
 Alternatively, running this bash script that should try to do steps 1-4 from above.
 
-```bash showLineNumbers
+```bash title="fix-android-emulator-bluetooth-audio.sh" showlinenumbers="true"
 #!/bin/bash
 
 # Find all config.ini files in the ~/.android/avd directory and its subdirectories
