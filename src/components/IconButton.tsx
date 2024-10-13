@@ -1,4 +1,12 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+'use client'
+
+import { useRouter } from 'next/navigation'
+import type {
+  ButtonHTMLAttributes,
+  MouseEvent,
+  ReactElement,
+  SVGProps,
+} from 'react'
 import { useCallback } from 'react'
 
 import { cn } from '~/utils/cn'
@@ -6,21 +14,39 @@ import { cn } from '~/utils/cn'
 type IconButtonProps = {
   children: string
   icon: {
-    svg: ReactNode
+    svg: ReactElement<SVGProps<SVGSVGElement>>
     position: 'left' | 'right'
   }
+  navigate?: string
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'>
 
 export default function IconButton({
   children,
   icon: { svg, position },
+  navigate,
   ...buttonProps
 }: IconButtonProps) {
+  const router = useRouter()
+
   const {
     'aria-label': ariaLabel,
     className,
+    onClick,
     ...otherButtonProps
   } = buttonProps
+
+  const handleOnClick = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      if (navigate) {
+        router.push(navigate)
+      }
+
+      if (onClick) {
+        onClick(e)
+      }
+    },
+    [navigate, onClick, router]
+  )
 
   const Icon = useCallback(() => {
     return (
@@ -53,6 +79,7 @@ export default function IconButton({
         `,
         className
       )}
+      onClick={handleOnClick}
       {...otherButtonProps}
     >
       {position === 'left' && <Icon />}
