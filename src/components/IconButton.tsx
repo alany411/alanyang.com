@@ -1,12 +1,9 @@
 'use client'
 
+import dynamicIconImports from 'lucide-react/dynamicIconImports'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
-import type {
-  ButtonHTMLAttributes,
-  MouseEvent,
-  ReactElement,
-  SVGProps,
-} from 'react'
+import type { ButtonHTMLAttributes, MouseEvent } from 'react'
 import { useCallback } from 'react'
 
 import { cn } from '~/utils/cn'
@@ -14,7 +11,7 @@ import { cn } from '~/utils/cn'
 type IconButtonProps = {
   children: string
   icon: {
-    svg: ReactElement<SVGProps<SVGSVGElement>>
+    name: keyof typeof dynamicIconImports
     position: 'left' | 'right'
   }
   navigate?: string
@@ -22,11 +19,13 @@ type IconButtonProps = {
 
 export default function IconButton({
   children,
-  icon: { svg, position },
+  icon: { name, position },
   navigate,
   ...buttonProps
 }: IconButtonProps) {
   const router = useRouter()
+
+  const LucideIcon = dynamic(dynamicIconImports[name])
 
   const {
     'aria-label': ariaLabel,
@@ -59,10 +58,10 @@ export default function IconButton({
           group-hover:text-sky-400
         `)}
       >
-        {svg}
+        <LucideIcon absoluteStrokeWidth={true} size={16} />
       </span>
     )
-  }, [svg])
+  }, [LucideIcon])
 
   return (
     <button
