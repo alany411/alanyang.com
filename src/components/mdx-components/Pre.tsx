@@ -28,29 +28,32 @@ export default function Pre(props: PreProps) {
   }
 
   return (
-    <figure className={cn('my-8')}>
-      <figcaption
-        className={cn(
-          `
-            prose prose-neutral rounded-t-2xl border-2 border-b-0
-            border-neutral-200 bg-neutral-200 px-5 py-1 font-mono font-bold
+    <div className={cn('my-8')}>
+      <figure className={cn('my-0')}>
+        <figcaption
+          className={cn(
+            `
+              prose prose-neutral rounded-t-2xl border-2 border-b-0
+              border-neutral-200 bg-neutral-200 px-5 py-1 font-mono font-bold
 
-            dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
-          `
-        )}
-      >
-        {title}
-      </figcaption>
-      <div
-        ref={contentRef}
-        className={cn(`
-          overflow-hidden rounded-br-2xl border-2 border-t-0 border-neutral-200
+              dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
+            `
+          )}
+        >
+          {title}
+        </figcaption>
+        <div
+          ref={contentRef}
+          className={cn(`
+            overflow-hidden rounded-br-2xl border-2 border-t-0
+            border-neutral-200
 
-          dark:border-neutral-800
-        `)}
-      >
-        <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
-      </div>
+            dark:border-neutral-800
+          `)}
+        >
+          <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
+        </div>
+      </figure>
       <button
         aria-label={`Copy ${title} code`}
         className={cn(`
@@ -99,6 +102,6 @@ export default function Pre(props: PreProps) {
         </span>
         <span>{isCopied ? 'Copied' : 'Copy'}</span>
       </button>
-    </figure>
+    </div>
   )
 }
