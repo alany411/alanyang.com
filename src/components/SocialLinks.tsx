@@ -57,11 +57,11 @@ export default function SocialLinks() {
               relative block overflow-hidden rounded-full p-1.5
               text-[var(--tw-prose-body)] outline-none transition-all
 
-              dark:focus:ring-offset-neutral-900
+              dark:focus:ring-sky-400 dark:focus:ring-offset-neutral-900
 
               focus:scale-125 focus:rounded-full
               focus:text-[var(--tw-prose-links)] focus:outline-none focus:ring-2
-              focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white
+              focus:ring-sky-600 focus:ring-offset-2 focus:ring-offset-white
 
               hover:scale-125 hover:text-[var(--tw-prose-links)]
             `)}

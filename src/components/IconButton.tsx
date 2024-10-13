@@ -53,9 +53,11 @@ export default function IconButton({
         className={cn(`
           transition-colors
 
-          group-focus:text-sky-400
+          dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
 
-          group-hover:text-sky-400
+          group-focus:text-sky-600
+
+          group-hover:text-sky-600
         `)}
       >
         <LucideIcon absoluteStrokeWidth={true} size={16} />
@@ -70,7 +72,7 @@ export default function IconButton({
       className={cn(
         `
           group prose prose-neutral inline-flex items-center justify-center
-          space-x-1 bg-neutral-200 p-2 text-xs
+          space-x-1 bg-neutral-200 p-2 text-xs font-semibold
 
           dark:prose-invert dark:bg-neutral-800
 
