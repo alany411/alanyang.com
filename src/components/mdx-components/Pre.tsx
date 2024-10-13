@@ -1,8 +1,7 @@
 'use client'
 
 import type { HTMLAttributes } from 'react'
-import { useRef } from 'react'
-import { toast } from 'sonner'
+import { useRef, useState } from 'react'
 
 import IconButton from '~/components/IconButton'
 import { cn } from '~/utils/cn'
@@ -15,13 +14,17 @@ type PreProps = HTMLAttributes<HTMLPreElement> & {
 export default function Pre(props: PreProps) {
   const { className, title, ...otherProps } = props
   const contentRef = useRef<HTMLDivElement | null>(null)
+  const [isCopied, setIsCopied] = useState(false)
 
   if (!title) throw new Error('Pre component requires a title prop')
 
   const handleOnClick = async () => {
     if (contentRef.current) {
       await navigator.clipboard.writeText(contentRef.current.textContent ?? '')
-      toast.success(`Copied ${title} code to clipboard`)
+      setIsCopied(true)
+      setTimeout(() => {
+        setIsCopied(false)
+      }, 3000)
     }
   }
 
@@ -55,12 +58,12 @@ export default function Pre(props: PreProps) {
       <IconButton
         aria-label={`Copy ${title} code`}
         icon={{
-          name: 'clipboard-copy',
+          name: isCopied ? 'clipboard-check' : 'clipboard-copy',
           position: 'left',
         }}
         onClick={handleOnClick}
       >
-        Copy
+        {isCopied ? 'Copied' : 'Copy'}
       </IconButton>
     </div>
   )

@@ -6,7 +6,6 @@ import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { ViewTransitions } from 'next-view-transitions'
-import { Toaster } from 'sonner'
 
 import ScrollToTop from '~/components/ScrollToTop'
 import SkipToMain from '~/components/SkipToMain'
@@ -142,7 +141,6 @@ export default function RootLayout({
               </footer>
             </div>
           </div>
-          <Toaster duration={2000} position='top-center' richColors={true} />
         </body>
       </html>
     </ViewTransitions>
