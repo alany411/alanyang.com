@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
+import { Link } from 'next-view-transitions'
 
 import Pre from '~/components/mdx-components/Pre'
 import { cn } from '~/utils/cn'
@@ -9,9 +10,9 @@ const customComponents: MDXComponents = {
 
     if (href?.startsWith('/') || href?.startsWith('#')) {
       return (
-        <a href={href} {...otherProps}>
+        <Link href={href} {...otherProps}>
           {children}
-        </a>
+        </Link>
       )
     }
 
