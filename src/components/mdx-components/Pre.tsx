@@ -3,6 +3,7 @@
 import type { HTMLAttributes } from 'react'
 import { useRef, useState } from 'react'
 
+import IconButton from '~/components/IconButton'
 import { cn } from '~/utils/cn'
 
 type PreProps = HTMLAttributes<HTMLPreElement> & {
@@ -54,28 +55,10 @@ export default function Pre(props: PreProps) {
           <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
         </div>
       </figure>
-      <button
+      <IconButton
         aria-label={`Copy ${title} code`}
-        className={cn(`
-          group prose prose-neutral inline-flex items-center justify-center
-          space-x-1 bg-neutral-200 p-2 text-xs
-
-          dark:prose-invert dark:bg-neutral-800
-
-          focus:outline-none
-        `)}
-        onClick={handleOnClick}
-      >
-        <span
-          className={cn(`
-            transition-colors
-
-            group-focus:text-sky-400
-
-            group-hover:text-sky-400
-          `)}
-        >
-          {isCopied ? (
+        icon={{
+          svg: isCopied ? (
             <svg
               className={cn('size-4')}
               fill='currentColor'
@@ -98,10 +81,13 @@ export default function Pre(props: PreProps) {
               <path d='M5.5 3.5A1.5 1.5 0 0 1 7 2h2.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 1 .439 1.061V9.5A1.5 1.5 0 0 1 12 11V8.621a3 3 0 0 0-.879-2.121L9 4.379A3 3 0 0 0 6.879 3.5H5.5Z' />
               <path d='M4 5a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4 14h5a1.5 1.5 0 0 0 1.5-1.5V8.621a1.5 1.5 0 0 0-.44-1.06L7.94 5.439A1.5 1.5 0 0 0 6.878 5H4Z' />
             </svg>
-          )}
-        </span>
-        <span>{isCopied ? 'Copied' : 'Copy'}</span>
-      </button>
+          ),
+          position: 'left',
+        }}
+        onClick={handleOnClick}
+      >
+        {isCopied ? 'Copied' : 'Copy'}
+      </IconButton>
     </div>
   )
 }
