@@ -26,7 +26,7 @@ export default async function PostsPage() {
     <div>
       <Nav links={links} />
       <div className={cn('mb-6 flex')}>
-        <h1 className={cn('m-0')}>Posts</h1>
+        <h1 className={cn('m-0 posts-title')}>Posts</h1>
       </div>
       {postsByYear.map(([year, posts]) => (
         <div key={year}>

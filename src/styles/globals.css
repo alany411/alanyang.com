@@ -29,4 +29,9 @@
   .table-container::-webkit-scrollbar-thumb {
     @apply bg-neutral-300 dark:bg-neutral-700;
   }
+
+  .posts-title {
+    view-transition-name: posts-title;
+    @apply w-fit;
+  }
 }

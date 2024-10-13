@@ -16,7 +16,14 @@ export default function Nav({ links }: NavProps) {
       {links.map(({ href, title }, index) => (
         <Fragment key={href}>
           {index !== 0 && <span className={cn('text-sky-400')}>/</span>}
-          <Link href={href}>{title}</Link>
+          <Link
+            href={href}
+            className={cn(`
+              ${title.toLowerCase()}-title
+            `)}
+          >
+            {title}
+          </Link>
         </Fragment>
       ))}
     </nav>
