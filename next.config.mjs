@@ -9,7 +9,6 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
-  transpilePackages: ['lucide-react'],
   experimental: { mdxRs: false },
   async redirects() {
     return [

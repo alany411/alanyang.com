@@ -1,5 +1,6 @@
 'use client'
 
+import { CircleArrowUpIcon } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { cn } from '~/utils/cn'
@@ -43,7 +44,9 @@ export default function ScrollToTop() {
         aria-label='Scroll to top'
         tabIndex={isVisible ? 0 : -1}
         icon={{
-          name: 'circle-arrow-up',
+          lucideIcon: (
+            <CircleArrowUpIcon absoluteStrokeWidth={true} size={16} />
+          ),
           position: 'right',
         }}
         onClick={handleOnClick}

@@ -1,3 +1,4 @@
+import { HouseIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
 import IconButton from '~/components/IconButton'
@@ -42,7 +43,7 @@ export default function NotFound() {
         navigate='/'
         icon={{
           position: 'left',
-          name: 'house',
+          lucideIcon: <HouseIcon absoluteStrokeWidth={true} size={16} />,
         }}
       >
         Home

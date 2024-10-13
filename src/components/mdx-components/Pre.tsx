@@ -1,5 +1,6 @@
 'use client'
 
+import { ClipboardCheckIcon, ClipboardCopyIcon } from 'lucide-react'
 import type { HTMLAttributes } from 'react'
 import { useRef, useState } from 'react'
 
@@ -24,7 +25,7 @@ export default function Pre(props: PreProps) {
       setIsCopied(true)
       setTimeout(() => {
         setIsCopied(false)
-      }, 3000)
+      }, 2000)
     }
   }
 
@@ -58,7 +59,11 @@ export default function Pre(props: PreProps) {
       <IconButton
         aria-label={`Copy ${title} code`}
         icon={{
-          name: isCopied ? 'clipboard-check' : 'clipboard-copy',
+          lucideIcon: isCopied ? (
+            <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
+          ) : (
+            <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
+          ),
           position: 'left',
         }}
         onClick={handleOnClick}
