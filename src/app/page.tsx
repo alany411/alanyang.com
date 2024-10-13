@@ -10,6 +10,7 @@ export default function Home() {
         <Image
           alt='Alan Yang profile'
           height={144}
+          id='profile-picture'
           priority={true}
           src='/me.jpg'
           width={144}

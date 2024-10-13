@@ -30,7 +30,11 @@
     @apply bg-neutral-300 dark:bg-neutral-700;
   }
 
-  .posts-title {
+  #profile-picture {
+    view-transition-name: profile-picture;
+  }
+
+  #posts-title {
     view-transition-name: posts-title;
     @apply w-fit;
   }
