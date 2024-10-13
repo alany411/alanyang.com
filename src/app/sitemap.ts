@@ -3,11 +3,25 @@ import path from 'path'
 
 import { getPostSlugs } from '~/utils/getPostSlugs'
 
+const baseUrl = 'https://alanyang.com'
+
 export default function sitemap() {
   const lastModified = new Date().toISOString()
-  const routes: MetadataRoute.Sitemap = ['', '/posts'].map((route) => ({
-    url: `https://alanyang.com${route}`,
+
+  const home: MetadataRoute.Sitemap = [
+    {
+      url: baseUrl,
+      lastModified,
+      changeFrequency: 'daily',
+      priority: 1,
+    },
+  ]
+
+  const routes: MetadataRoute.Sitemap = ['/posts'].map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified,
+    changeFrequency: 'daily',
+    priority: 0.8,
   }))
 
   const postsDirectory = path.join(
@@ -20,9 +34,11 @@ export default function sitemap() {
   const slugs = getPostSlugs(postsDirectory)
 
   const posts: MetadataRoute.Sitemap = slugs.map((slug) => ({
-    url: `https://alanyang.com/posts/${slug}`,
+    url: `${baseUrl}/posts/${slug}`,
     lastModified,
+    changeFrequency: 'daily',
+    priority: 0.5,
   }))
 
-  return [...routes, ...posts]
+  return [...home, ...routes, ...posts]
 }
