@@ -56,14 +56,7 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      [
-        rehypePrismPlus,
-        {
-          showLineNumbers: true,
-        },
-      ],
-    ],
+    rehypePlugins: [rehypePrismPlus],
   },
 })
 
