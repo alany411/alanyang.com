@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
   },
+  openGraph: {
+    siteName: 'Alan Yang',
+    url: './',
+  },
 }
 
 const links = [

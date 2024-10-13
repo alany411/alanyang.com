@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
+
 import Nav from '~/components/Nav'
 
 export const metadata: Metadata = {
   alternates: {
     canonical: './',
+  },
+  openGraph: {
+    siteName: 'Alan Yang',
+    url: './',
   },
 }
 
