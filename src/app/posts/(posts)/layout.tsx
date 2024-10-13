@@ -1,5 +1,11 @@
 import Nav from '~/components/Nav'
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: './',
+  },
+}
+
 const links = [
   {
     href: '/',

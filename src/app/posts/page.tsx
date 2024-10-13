@@ -8,7 +8,7 @@ import { getPostsByYear } from '~/utils/getPostsByYear'
 export const metadata: Metadata = {
   title: 'Posts',
   alternates: {
-    canonical: '/posts',
+    canonical: './',
   },
 }
 
