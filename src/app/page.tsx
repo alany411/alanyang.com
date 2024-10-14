@@ -21,17 +21,10 @@ export default function Home() {
         <h1 className={cn('mb-0 text-center text-2xl')}>Alan Yang</h1>
       </div>
       <p>
-        I am a software engineer who enjoys learning and building. I currently
-        work at the{' '}
-        <a
-          aria-label='University of Florida, opens in a new tab'
-          className={cn('whitespace-nowrap')}
-          href='https://www.ufl.edu/'
-        >
-          University of Florida
-        </a>
-        , where I develop accessible web and mobile solutions with a focus on
-        user experience.
+        I am a software engineer who enjoys learning and building. I currently{' '}
+        <Link href='/work'>work</Link> at the University of Florida, where I
+        develop accessible web and mobile solutions with a focus on user
+        experience.
       </p>
       <p>
         Occasionally, I write <Link href='/posts'>posts</Link> about coding,
