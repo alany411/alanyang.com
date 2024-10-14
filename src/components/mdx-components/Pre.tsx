@@ -15,8 +15,7 @@ type PreProps = HTMLAttributes<HTMLPreElement> & {
   title?: string
 }
 
-export default function Pre(props: PreProps) {
-  const { className, title, ...otherProps } = props
+export default function Pre({ className, title, ...otherProps }: PreProps) {
   const contentRef = useRef<HTMLDivElement | null>(null)
   const [isCopied, setIsCopied] = useState(false)
 
