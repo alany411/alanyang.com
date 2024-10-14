@@ -23,8 +23,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/blog/:slug',
-        destination: '/posts/:slug',
+        source: '/blog/:slug*',
+        destination: '/posts/:slug*',
         permanent: true,
       },
       {
@@ -43,7 +43,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/work/:slug',
+        source: '/work/:slug*',
         destination: '/work',
         permanent: true,
       },

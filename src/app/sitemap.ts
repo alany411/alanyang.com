@@ -28,6 +28,7 @@ export default function sitemap() {
     process.cwd(),
     'src',
     'app',
+    '(routes)',
     'posts',
     '(posts)'
   )
