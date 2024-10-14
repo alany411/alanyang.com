@@ -11,7 +11,7 @@ export const metadata = {
 
 <Date>{metadata.date}</Date>
 
-I have been redesigning and redeveloping my personal website for a couple of weeks now. Before when I was using the Pages Router, I used [contentlayer](https://github.com/contentlayerdev/contentlayer) with Remark and Rehype plugins to transform my MDX content. While converting my website to the App Router, I thought it would be a good idea to try [@next/mdx](https://nextjs.org/docs/app/building-your-application/configuring/mdx#nextmdx) instead.
+I have been redesigning and redeveloping my personal website for a couple of weeks now. Before when I was using the Pages Router, I used [contentlayer](https://github.com/contentlayerdev/contentlayer) with Remark and Rehype plugins to transform my MDX content. Since I was basically redoing my entire website and [contentlayer is kind of no longer maintained](https://github.com/contentlayerdev/contentlayer/issues/429), I thought it would be a good time to try [@next/mdx](https://nextjs.org/docs/app/building-your-application/configuring/mdx#nextmdx) instead.
 
 ## What Are Remark and Rehype Plugins?
 
@@ -19,9 +19,11 @@ I have been redesigning and redeveloping my personal website for a couple of wee
 
 ## Get Remark and Rehype Plugins Working With Next.js 14
 
-When using Remark or Rehype plugins with Next.js, you have to make sure that the experimental feature `mdxRs` is either not defined or explicitly set to `false` in your `next.config.mjs` file. I spent some time trying to figure out why the plugins were not working with my setup, but I finally found the solution from a comment in a [StackOverflow post](https://stackoverflow.com/a/75571708) and [Next.js GitHub issue](https://github.com/vercel/next.js/issues/46659#issuecomment-1542183041). I guess that is why it is an experimental feature.
+Aftering getting most of my setup done, I had to some time trying to figure out why the plugins were not working. I ended up finding the solution from a comment on a [StackOverflow post](https://stackoverflow.com/a/75571708) and [Next.js GitHub issue](https://github.com/vercel/next.js/issues/46659#issuecomment-1542183041).
 
-Besides this one hiccup that I had, the usage of Remark and Rehype plugins was pretty straightforward. You would just install and import the plugins into your `next.config.mjs` file and then include them in your MDX options.
+I was using an experimental feature that I _probably_ should not have been using. When using Remark or Rehype plugins with Next.js, you have to make sure that the experimental feature `mdxRs` is either not defined or explicitly set to `false` in your `next.config.mjs`.
+
+Besides this one hiccup that I had, the usage of Remark and Rehype plugins was pretty straightforward. You would just install and import the plugins into your `next.config.mjs` and then include them in your MDX options.
 
 ```js title="next.config.mjs" showlinenumbers="true"
 import createMDX from '@next/mdx'
@@ -32,7 +34,7 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { mdxRs: false },
+  experimental: { mdxRs: false }, // Do not use experimental mdxRs feature
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
 }
