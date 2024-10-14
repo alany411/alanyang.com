@@ -10,6 +10,7 @@ import { ViewTransitions } from 'next-view-transitions'
 import ScrollToTop from '~/components/ScrollToTop'
 import SkipToMain from '~/components/SkipToMain'
 import SocialLinks from '~/components/SocialLinks'
+import OpenGraphImage from '~/opengraph-image.png'
 import { cn } from '~/utils/cn'
 
 export const metadata: Metadata = {
@@ -38,6 +39,14 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
+    images: [
+      {
+        url: OpenGraphImage.src,
+        type: 'image/png',
+        width: OpenGraphImage.width,
+        height: OpenGraphImage.height,
+      },
+    ],
     siteName: 'Alan Yang',
     url: '/',
   },
