@@ -32,7 +32,7 @@ const links = [
   },
 ]
 
-export default async function PostsPage() {
+export default async function Posts() {
   const postsByYear = await getPostsByYear()
 
   return (
