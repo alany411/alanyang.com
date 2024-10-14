@@ -1,13 +1,16 @@
+import { Link } from 'next-view-transitions'
+
 import { cn } from '~/utils/cn'
 
 export default function SkipToMain() {
   return (
-    <a
+    <Link
       aria-label='Skip to main content'
       href='#main-content'
       className={cn(`
-        prose prose-neutral absolute -top-full left-4 p-2 decoration-transparent
-        decoration-2 underline-offset-[3px] transition-all
+        prose prose-neutral absolute -top-full left-1/2 -translate-x-1/2 p-2
+        decoration-transparent decoration-2 underline-offset-[3px]
+        transition-all
 
         dark:prose-invert dark:hover:decoration-sky-400 dark:focus:ring-sky-400
         dark:focus:ring-offset-neutral-900
@@ -19,6 +22,6 @@ export default function SkipToMain() {
       `)}
     >
       Skip to main content
-    </a>
+    </Link>
   )
 }
