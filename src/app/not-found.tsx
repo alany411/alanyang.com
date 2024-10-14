@@ -30,6 +30,7 @@ export default function NotFound() {
         The page you are looking for does not exist. Maybe the page was moved or
         deleted.{' '}
         <span
+          aria-hidden={true}
           className={cn(
             'whitespace-nowrap font-semibold text-[var(--tw-prose-headings)]'
           )}
