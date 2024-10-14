@@ -1,7 +1,7 @@
 'use client'
 
 import type { LucideIcon } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import { useTransitionRouter } from 'next-view-transitions'
 import type { ButtonHTMLAttributes, MouseEvent, ReactElement } from 'react'
 import { memo, useCallback } from 'react'
 
@@ -40,7 +40,7 @@ function IconButton({
   navigate,
   ...buttonProps
 }: IconButtonProps) {
-  const router = useRouter()
+  const router = useTransitionRouter()
 
   const {
     'aria-label': ariaLabel,
