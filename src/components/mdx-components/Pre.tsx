@@ -63,8 +63,7 @@ export default function Pre(props: PreProps) {
         <div
           ref={contentRef}
           className={cn(`
-            overflow-hidden rounded-br-2xl border-2 border-t-0
-            border-neutral-200
+            overflow-hidden rounded-b-2xl border-2 border-t-0 border-neutral-200
 
             dark:border-neutral-800
           `)}
