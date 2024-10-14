@@ -55,7 +55,7 @@ export default function Work() {
           The User Experience and Portal Solutions team is responsible for the
           design and development of the university's central platform,{' '}
           <a
-            aria-label='ONE dot UF, opens in a new tab'
+            aria-label='ONE.UF, opens in a new tab'
             href='https://one.uf.edu/'
             rel='noopener noreferrer'
             target='_blank'
