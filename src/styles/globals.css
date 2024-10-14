@@ -7,7 +7,7 @@
 
 @layer base {
   body::-webkit-scrollbar {
-    @apply w-3 bg-transparent;
+    @apply w-3.5 bg-transparent;
   }
 
   body::-webkit-scrollbar-thumb {
@@ -15,7 +15,7 @@
   }
 
   pre::-webkit-scrollbar {
-    @apply h-3 bg-transparent;
+    @apply h-3.5 bg-neutral-200 dark:bg-neutral-800;
   }
 
   pre::-webkit-scrollbar-thumb {
@@ -23,7 +23,7 @@
   }
 
   .table-container::-webkit-scrollbar {
-    @apply h-3 bg-transparent;
+    @apply h-3.5 bg-transparent;
   }
 
   .table-container::-webkit-scrollbar-thumb {
