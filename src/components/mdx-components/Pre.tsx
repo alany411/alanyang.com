@@ -2,10 +2,13 @@
 
 import { ClipboardCheckIcon, ClipboardCopyIcon } from 'lucide-react'
 import type { HTMLAttributes } from 'react'
-import { useRef, useState } from 'react'
+import { memo, useRef, useState } from 'react'
 
 import IconButton from '~/components/IconButton'
 import { cn } from '~/utils/cn'
+
+const MemoizedClipboardCheckIcon = memo(ClipboardCheckIcon)
+const MemoizedClipboardCopyIcon = memo(ClipboardCopyIcon)
 
 type PreProps = HTMLAttributes<HTMLPreElement> & {
   showLineNumbers?: string
@@ -36,9 +39,9 @@ export default function Pre(props: PreProps) {
         className={cn('absolute right-4 top-[3px]')}
         icon={{
           lucideIcon: isCopied ? (
-            <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
+            <MemoizedClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
           ) : (
-            <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
+            <MemoizedClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
           ),
           position: 'right',
         }}

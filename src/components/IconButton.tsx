@@ -3,20 +3,38 @@
 import type { LucideIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import type { ButtonHTMLAttributes, MouseEvent, ReactElement } from 'react'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 
 import { cn } from '~/utils/cn'
+
+type LucideIconElement = ReactElement<LucideIcon>
+
+const Icon = memo(({ lucideIcon }: { lucideIcon: LucideIconElement }) => (
+  <span
+    className={cn(`
+      transition-colors
+
+      dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
+
+      group-focus:text-sky-500
+
+      group-hover:text-sky-500
+    `)}
+  >
+    {lucideIcon}
+  </span>
+))
 
 type IconButtonProps = {
   children: string
   icon: {
-    lucideIcon: ReactElement<LucideIcon>
+    lucideIcon: LucideIconElement
     position: 'left' | 'right'
   }
   navigate?: string
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'>
 
-export default function IconButton({
+function IconButton({
   children,
   icon: { lucideIcon, position },
   navigate,
@@ -44,24 +62,6 @@ export default function IconButton({
     [navigate, onClick, router]
   )
 
-  const Icon = useCallback(() => {
-    return (
-      <span
-        className={cn(`
-          transition-colors
-
-          dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
-
-          group-focus:text-sky-500
-
-          group-hover:text-sky-500
-        `)}
-      >
-        {lucideIcon}
-      </span>
-    )
-  }, [lucideIcon])
-
   return (
     <button
       aria-label={ariaLabel ? ariaLabel : children}
@@ -80,9 +80,13 @@ export default function IconButton({
       onClick={handleOnClick}
       {...otherButtonProps}
     >
-      {position === 'left' && <Icon />}
+      {position === 'left' && <Icon lucideIcon={lucideIcon} />}
       <span>{children}</span>
-      {position === 'right' && <Icon />}
+      {position === 'right' && <Icon lucideIcon={lucideIcon} />}
     </button>
   )
 }
+
+const MemoizedIconButton = memo(IconButton)
+
+export default MemoizedIconButton
