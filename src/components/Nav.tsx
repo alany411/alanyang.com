@@ -29,7 +29,7 @@ export default function Nav({ links }: NavProps) {
             {index !== 0 && (
               <span
                 className={cn(`
-                  text-sky-600
+                  text-sky-500
 
                   dark:text-sky-400
                 `)}

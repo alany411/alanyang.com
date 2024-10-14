@@ -75,10 +75,10 @@ export default function RootLayout({
                   dark:focus:prose-a:ring-offset-neutral-900
 
                   focus:prose-a:outline-none focus:prose-a:ring-2
-                  focus:prose-a:ring-sky-600 focus:prose-a:ring-offset-0
+                  focus:prose-a:ring-sky-500 focus:prose-a:ring-offset-0
                   focus:prose-a:ring-offset-white
 
-                  hover:prose-a:decoration-sky-600
+                  hover:prose-a:decoration-sky-500
 
                   prose-a:decoration-transparent prose-a:decoration-2
                   prose-a:underline-offset-[3.5px] prose-a:transition-colors

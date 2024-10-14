@@ -52,9 +52,9 @@ export default function IconButton({
 
           dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
 
-          group-focus:text-sky-600
+          group-focus:text-sky-500
 
-          group-hover:text-sky-600
+          group-hover:text-sky-500
         `)}
       >
         {lucideIcon}
@@ -73,7 +73,7 @@ export default function IconButton({
 
           dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
 
-          focus:outline-none focus:ring-2 focus:ring-sky-600
+          focus:outline-none focus:ring-2 focus:ring-sky-500
         `,
         className
       )}

@@ -61,7 +61,7 @@ export default function SocialLinks() {
 
               focus:scale-125 focus:rounded-full
               focus:text-[var(--tw-prose-links)] focus:outline-none focus:ring-2
-              focus:ring-sky-600
+              focus:ring-sky-500
 
               hover:scale-125 hover:text-[var(--tw-prose-links)]
             `)}
