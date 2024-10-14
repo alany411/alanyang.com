@@ -30,13 +30,29 @@ export default function Pre(props: PreProps) {
   }
 
   return (
-    <div className={cn('my-8')}>
+    <div className={cn('relative my-8')}>
+      <IconButton
+        aria-label={`Copy ${title} code`}
+        className={cn('absolute right-4 top-[3px]')}
+        icon={{
+          lucideIcon: isCopied ? (
+            <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
+          ) : (
+            <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
+          ),
+          position: 'right',
+        }}
+        onClick={handleOnClick}
+      >
+        {isCopied ? 'Copied' : 'Copy'}
+      </IconButton>
       <figure className={cn('my-0')}>
         <figcaption
           className={cn(
             `
-              prose prose-neutral rounded-t-2xl border-2 border-b-0
-              border-neutral-200 bg-neutral-200 px-5 py-1 font-mono font-bold
+              prose prose-neutral my-0 rounded-t-2xl border-2 border-b-0
+              border-neutral-200 bg-neutral-200 py-1 pl-5 pr-24 font-mono
+              font-bold
 
               dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
             `
@@ -56,20 +72,6 @@ export default function Pre(props: PreProps) {
           <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
         </div>
       </figure>
-      <IconButton
-        aria-label={`Copy ${title} code`}
-        icon={{
-          lucideIcon: isCopied ? (
-            <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
-          ) : (
-            <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
-          ),
-          position: 'left',
-        }}
-        onClick={handleOnClick}
-      >
-        {isCopied ? 'Copied' : 'Copy'}
-      </IconButton>
     </div>
   )
 }

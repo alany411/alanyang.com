@@ -54,19 +54,19 @@ export default function SocialLinks() {
             rel='noopener noreferrer'
             target='_blank'
             className={cn(`
-              relative block overflow-hidden rounded-full p-1.5
+              relative block overflow-hidden rounded-full p-2
               text-[var(--tw-prose-body)] outline-none transition-all
 
-              dark:focus:ring-sky-400 dark:focus:ring-offset-neutral-900
+              dark:focus:ring-sky-400
 
               focus:scale-125 focus:rounded-full
               focus:text-[var(--tw-prose-links)] focus:outline-none focus:ring-2
-              focus:ring-sky-600 focus:ring-offset-2 focus:ring-offset-white
+              focus:ring-sky-600
 
               hover:scale-125 hover:text-[var(--tw-prose-links)]
             `)}
           >
-            <Icon className={cn('pointer-events-none')} size={36} />
+            <Icon className={cn('pointer-events-none')} size={32} />
           </a>
         </li>
       ))}
