@@ -2,27 +2,11 @@ import type { Metadata } from 'next'
 import { Link } from 'next-view-transitions'
 
 import Nav from '~/components/Nav'
-import OpenGraphImage from '~/opengraph-image.png'
 import { cn } from '~/utils/cn'
 import { getPostsByYear } from '~/utils/getPostsByYear'
 
 export const metadata: Metadata = {
   title: 'Posts',
-  alternates: {
-    canonical: './',
-  },
-  openGraph: {
-    images: [
-      {
-        url: OpenGraphImage.src,
-        type: 'image/png',
-        width: OpenGraphImage.width,
-        height: OpenGraphImage.height,
-      },
-    ],
-    siteName: 'Alan Yang',
-    url: './',
-  },
 }
 
 const links = [
