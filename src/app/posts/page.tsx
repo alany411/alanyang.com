@@ -9,19 +9,12 @@ export const metadata: Metadata = {
   title: 'Posts',
 }
 
-const links = [
-  {
-    href: '/',
-    title: 'Home',
-  },
-]
-
 export default async function Posts() {
   const postsByYear = await getPostsByYear()
 
   return (
     <div>
-      <Nav links={links} />
+      <Nav />
       <div className={cn('mb-6 flex')}>
         <h1 className={cn('m-0')} id='posts-title'>
           Posts

@@ -7,17 +7,10 @@ export const metadata: Metadata = {
   title: 'Work',
 }
 
-const links = [
-  {
-    href: '/',
-    title: 'Home',
-  },
-]
-
 export default function Work() {
   return (
     <div>
-      <Nav links={links} />
+      <Nav />
       <div className={cn('mb-6 flex')}>
         <h1 className={cn('m-0')} id='work-title'>
           Work

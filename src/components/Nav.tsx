@@ -1,17 +1,30 @@
+'use client'
+
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Link } from 'next-view-transitions'
 import { Fragment } from 'react'
 
 import { cn } from '~/utils/cn'
+import { toCapitalize } from '~/utils/toCapitalize'
 
-type NavProps = {
-  links: {
-    href: string
-    title: string
-  }[]
+const home = {
+  href: '/',
+  title: 'Home',
 }
 
-export default function Nav({ links }: NavProps) {
+export default function Nav() {
+  const pathname = usePathname()
+
+  const firstPath = pathname.split('/').filter(Boolean).slice(0, -1)[0]
+  const links = [
+    home,
+    firstPath && {
+      href: `/${firstPath}`,
+      title: toCapitalize(firstPath),
+    },
+  ].filter(Boolean)
+
   return (
     <div className={cn('flex flex-row items-center space-x-2')}>
       <Image
