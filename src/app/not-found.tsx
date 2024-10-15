@@ -12,17 +12,10 @@ export const metadata: Metadata = {
   title: 'Not Found',
 }
 
-const links = [
-  {
-    href: '/',
-    title: 'Home',
-  },
-]
-
 export default function NotFound() {
   return (
     <div>
-      <Nav links={links} />
+      <Nav />
       <div className={cn('mb-6 flex')}>
         <h1 className={cn('m-0')}>Not Found</h1>
       </div>

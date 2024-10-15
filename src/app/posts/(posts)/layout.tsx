@@ -1,16 +1,5 @@
 import Nav from '~/components/Nav'
 
-const links = [
-  {
-    href: '/',
-    title: 'Home',
-  },
-  {
-    href: '/posts',
-    title: 'Posts',
-  },
-]
-
 export default function PostLayout({
   children,
 }: Readonly<{
@@ -18,7 +7,7 @@ export default function PostLayout({
 }>) {
   return (
     <div>
-      <Nav links={links} />
+      <Nav />
       {children}
     </div>
   )

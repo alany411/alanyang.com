@@ -54,6 +54,9 @@ importers:
       '@tailwindcss/typography':
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.13)
+      '@total-typescript/ts-reset':
+        specifier: 0.6.1
+        version: 0.6.1
       '@types/eslint__js':
         specifier: 8.42.3
         version: 8.42.3
@@ -343,6 +346,9 @@ packages:
     resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
+  '@total-typescript/ts-reset@0.6.1':
+    resolution: {integrity: sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -2841,6 +2847,8 @@ snapshots:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.13
+
+  '@total-typescript/ts-reset@0.6.1': {}
 
   '@trysound/sax@0.2.0': {}
 
