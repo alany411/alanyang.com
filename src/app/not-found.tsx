@@ -1,12 +1,9 @@
 import { HouseIcon } from 'lucide-react'
 import type { Metadata } from 'next'
-import { memo } from 'react'
 
 import IconButton from '~/components/IconButton'
 import Nav from '~/components/Nav'
 import { cn } from '~/utils/cn'
-
-const MemoizedHouseIcon = memo(HouseIcon)
 
 export const metadata: Metadata = {
   title: 'Not Found',
@@ -40,9 +37,7 @@ export default function NotFound() {
         navigate='/'
         icon={{
           position: 'left',
-          lucideIcon: (
-            <MemoizedHouseIcon absoluteStrokeWidth={true} size={16} />
-          ),
+          lucideIcon: <HouseIcon absoluteStrokeWidth={true} size={16} />,
         }}
       >
         Home

@@ -3,13 +3,12 @@
 import type { LucideIcon } from 'lucide-react'
 import { useTransitionRouter } from 'next-view-transitions'
 import type { ButtonHTMLAttributes, MouseEvent, ReactElement } from 'react'
-import { memo, useCallback } from 'react'
 
 import { cn } from '~/utils/cn'
 
 type LucideIconElement = ReactElement<LucideIcon>
 
-const Icon = memo(({ lucideIcon }: { lucideIcon: LucideIconElement }) => (
+const Icon = ({ lucideIcon }: { lucideIcon: LucideIconElement }) => (
   <span
     className={cn(`
       transition-colors
@@ -23,7 +22,7 @@ const Icon = memo(({ lucideIcon }: { lucideIcon: LucideIconElement }) => (
   >
     {lucideIcon}
   </span>
-))
+)
 
 type IconButtonProps = {
   children: string
@@ -34,7 +33,7 @@ type IconButtonProps = {
   navigate?: string
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'>
 
-function IconButton({
+export default function IconButton({
   children,
   icon: { lucideIcon, position },
   navigate,
@@ -49,18 +48,15 @@ function IconButton({
     ...otherButtonProps
   } = buttonProps
 
-  const handleOnClick = useCallback(
-    (e: MouseEvent<HTMLButtonElement>) => {
-      if (navigate) {
-        router.push(navigate)
-      }
+  const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    if (navigate) {
+      router.push(navigate)
+    }
 
-      if (onClick) {
-        onClick(e)
-      }
-    },
-    [navigate, onClick, router]
-  )
+    if (onClick) {
+      onClick(e)
+    }
+  }
 
   return (
     <button
@@ -86,7 +82,3 @@ function IconButton({
     </button>
   )
 }
-
-const MemoizedIconButton = memo(IconButton)
-
-export default MemoizedIconButton

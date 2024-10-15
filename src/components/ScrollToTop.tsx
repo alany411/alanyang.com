@@ -1,13 +1,11 @@
 'use client'
 
 import { CircleArrowUpIcon } from 'lucide-react'
-import { memo, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { cn } from '~/utils/cn'
 
 import IconButton from './IconButton'
-
-const MemoizedCircleArrowUpIcon = memo(CircleArrowUpIcon)
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,7 +45,7 @@ export default function ScrollToTop() {
         tabIndex={isVisible ? 0 : -1}
         icon={{
           lucideIcon: (
-            <MemoizedCircleArrowUpIcon absoluteStrokeWidth={true} size={16} />
+            <CircleArrowUpIcon absoluteStrokeWidth={true} size={16} />
           ),
           position: 'right',
         }}
