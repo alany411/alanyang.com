@@ -9,7 +9,10 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
-  experimental: { mdxRs: false },
+  experimental: {
+    mdxRs: false,
+    reactCompiler: true,
+  },
   async redirects() {
     return [
       {

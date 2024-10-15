@@ -5,6 +5,7 @@ import nextPlugin from '@next/eslint-plugin-next'
 import importPlugin from 'eslint-plugin-import'
 import prettierPluginConfig from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
+import reactCompilerPlugin from 'eslint-plugin-react-compiler'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
@@ -68,6 +69,7 @@ const reactConfig = [
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
+      'react-compiler': reactCompilerPlugin,
     },
     rules: {
       ...reactPlugin.configs['jsx-runtime'].rules,
@@ -85,6 +87,7 @@ const reactConfig = [
           locale: 'en',
         },
       ],
+      'react-compiler/react-compiler': 'error',
     },
     languageOptions: {
       globals: {
