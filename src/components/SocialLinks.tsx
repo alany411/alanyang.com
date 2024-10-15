@@ -5,7 +5,6 @@ import {
   SiLinkedin,
   SiX,
 } from '@icons-pack/react-simple-icons'
-import type { MemoExoticComponent } from 'react'
 import { memo } from 'react'
 
 import { cn } from '~/utils/cn'
@@ -18,7 +17,7 @@ const MemoizedSiX = memo(SiX)
 type Network = {
   name: string
   href: string
-  icon: MemoExoticComponent<IconType>
+  icon: IconType
 }
 
 const NETWORKS: Network[] = [

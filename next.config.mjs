@@ -5,11 +5,12 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
-  experimental: { mdxRs: false },
+  experimental: {
+    mdxRs: false,
+    reactCompiler: true,
+  },
   async redirects() {
     return [
       {
