@@ -37,6 +37,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+  openGraph: {
+    siteName: 'Alan Yang',
+    url: './',
+  },
 }
 
 export default function RootLayout({
