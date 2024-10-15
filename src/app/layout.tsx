@@ -15,7 +15,7 @@ import { cn } from '~/utils/cn'
 export const metadata: Metadata = {
   metadataBase: new URL('https://alanyang.com'),
   alternates: {
-    canonical: '/',
+    canonical: './',
   },
   title: {
     default: 'Alan Yang - Software Engineer',

@@ -5,9 +5,6 @@ import { cn } from '~/utils/cn'
 
 export const metadata: Metadata = {
   title: 'Work',
-  alternates: {
-    canonical: './',
-  },
 }
 
 const links = [
