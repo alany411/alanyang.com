@@ -8,7 +8,6 @@ export async function getPostsByYear() {
     process.cwd(),
     'src',
     'app',
-    '(routes)',
     'posts',
     '(posts)'
   )
