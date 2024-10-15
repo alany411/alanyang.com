@@ -43,13 +43,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/work',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/work/:slug',
-        destination: '/',
+        destination: '/work',
         permanent: true,
       },
     ]
