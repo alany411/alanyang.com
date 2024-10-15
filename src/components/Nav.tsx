@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Link } from 'next-view-transitions'
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 
 import { cn } from '~/utils/cn'
 import { toCapitalize } from '~/utils/toCapitalize'
@@ -16,14 +16,17 @@ const home = {
 export default function Nav() {
   const pathname = usePathname()
 
-  const firstPath = pathname.split('/').filter(Boolean).slice(0, -1)[0]
-  const links = [
-    home,
-    firstPath && {
-      href: `/${firstPath}`,
-      title: toCapitalize(firstPath),
-    },
-  ].filter(Boolean)
+  const links = useMemo(() => {
+    const firstPath = pathname.split('/').filter(Boolean).slice(0, -1)[0]
+
+    return [
+      home,
+      firstPath && {
+        href: `/${firstPath}`,
+        title: toCapitalize(firstPath),
+      },
+    ].filter(Boolean)
+  }, [pathname])
 
   return (
     <div className={cn('flex flex-row items-center space-x-2')}>
