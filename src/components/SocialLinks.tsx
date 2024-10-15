@@ -5,14 +5,8 @@ import {
   SiLinkedin,
   SiX,
 } from '@icons-pack/react-simple-icons'
-import { memo } from 'react'
 
 import { cn } from '~/utils/cn'
-
-const MemoizedSiGithub = memo(SiGithub)
-const MemoizedSiInstagram = memo(SiInstagram)
-const MemoizedSiLinkedin = memo(SiLinkedin)
-const MemoizedSiX = memo(SiX)
 
 type Network = {
   name: string
@@ -24,22 +18,22 @@ const NETWORKS: Network[] = [
   {
     name: 'GitHub',
     href: 'https://github.com/alany411',
-    icon: MemoizedSiGithub,
+    icon: SiGithub,
   },
   {
     name: 'X',
     href: 'https://x.com/iam_alanyang',
-    icon: MemoizedSiX,
+    icon: SiX,
   },
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/iam.alanyang/',
-    icon: MemoizedSiInstagram,
+    icon: SiInstagram,
   },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/iam-alan-yang/',
-    icon: MemoizedSiLinkedin,
+    icon: SiLinkedin,
   },
 ]
 
