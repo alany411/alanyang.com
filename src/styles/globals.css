@@ -4,14 +4,3 @@
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
-
-@layer base {
-  #profile-picture {
-    view-transition-name: profile-picture;
-  }
-
-  #posts-title {
-    view-transition-name: posts-title;
-    @apply w-fit;
-  }
-}

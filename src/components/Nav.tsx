@@ -29,12 +29,17 @@ export default function Nav() {
     <div className={cn('flex flex-row items-center space-x-2')}>
       <Image
         alt='Alan Yang profile'
-        className={cn(`my-0 size-6 select-none overflow-hidden rounded-full`)}
         height={24}
-        id='profile-picture'
         priority={true}
         src='/me.jpg'
         width={24}
+        className={cn(
+          `
+            my-0 size-6 select-none overflow-hidden rounded-full
+
+            [view-transition-name:profile-picture]
+          `
+        )}
       />
       <nav className={cn('text-lg', links.length > 0 && 'space-x-1')}>
         {links.map(({ href, title }, index) => (
@@ -50,7 +55,14 @@ export default function Nav() {
                 /
               </span>
             )}
-            <Link href={href} id={`${title.toLowerCase()}-title`}>
+            <Link
+              href={href}
+              className={cn(
+                `
+                  [view-transition-name:${title.toLowerCase()}-title]
+                `
+              )}
+            >
               {title}
             </Link>
           </Fragment>

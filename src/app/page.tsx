@@ -10,12 +10,13 @@ export default function Home() {
         <Image
           alt='Alan Yang profile'
           height={144}
-          id='profile-picture'
           priority={true}
           src='/me.jpg'
           width={144}
           className={cn(`
             mb-4 mt-0 h-36 w-36 select-none overflow-hidden rounded-full
+
+            [view-transition-name:profile-picture]
           `)}
         />
         <h1 className={cn('mb-0 text-center text-2xl')}>Alan Yang</h1>
