@@ -58,7 +58,11 @@ export default function RootLayout({
             `
               bg-white font-sans antialiased
 
-              dark:bg-neutral-900
+              dark:bg-neutral-900 dark:scrollbar-thumb:bg-neutral-700
+
+              scrollbar-thumb:rounded-full scrollbar-thumb:bg-neutral-300
+
+              scrollbar:w-3.5 scrollbar:bg-transparent
             `
           )}
         >

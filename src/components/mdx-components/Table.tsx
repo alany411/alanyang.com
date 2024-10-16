@@ -7,7 +7,17 @@ export default function Table({
   ...otherProps
 }: TableHTMLAttributes<HTMLTableElement>) {
   return (
-    <div className={cn('table-container my-8 overflow-x-auto')}>
+    <div
+      className={cn(`
+        table-container my-8 overflow-x-auto
+
+        dark:scrollbar-thumb:bg-neutral-700
+
+        scrollbar-thumb:bg-neutral-300
+
+        scrollbar:h-3.5 scrollbar:bg-transparent
+      `)}
+    >
       <table className={cn('m-0')} {...otherProps}>
         {children}
       </table>

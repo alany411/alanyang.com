@@ -67,7 +67,22 @@ export default function Pre({ className, title, ...otherProps }: PreProps) {
             dark:border-neutral-800
           `)}
         >
-          <pre className={cn('my-0 rounded-none', className)} {...otherProps} />
+          <pre
+            className={cn(
+              `
+                my-0 rounded-none
+
+                dark:scrollbar:bg-neutral-800
+                dark:scrollbar-thumb:bg-neutral-700
+
+                scrollbar-thumb:bg-neutral-300
+
+                scrollbar:h-3.5 scrollbar:bg-neutral-200
+              `,
+              className
+            )}
+            {...otherProps}
+          />
         </div>
       </figure>
     </div>
