@@ -19,7 +19,7 @@ I have been redesigning and redeveloping my personal website for a couple of wee
 
 ## Get Remark and Rehype Plugins Working With Next.js 14
 
-Aftering getting most of my setup done, I had to some time trying to figure out why the plugins were not working. I ended up finding the solution from a comment on a [StackOverflow post](https://stackoverflow.com/a/75571708) and [Next.js GitHub issue](https://github.com/vercel/next.js/issues/46659#issuecomment-1542183041).
+After getting most of my setup done, I had to some time trying to figure out why the plugins were not working. I ended up finding the solution from a comment on a [StackOverflow post](https://stackoverflow.com/a/75571708) and [Next.js GitHub issue](https://github.com/vercel/next.js/issues/46659#issuecomment-1542183041).
 
 I was using an experimental feature that I _probably_ should not have been using. When using Remark or Rehype plugins with Next.js, you have to make sure that the experimental feature `mdxRs` is either not defined or explicitly set to `false` in your `next.config.mjs`.
 
