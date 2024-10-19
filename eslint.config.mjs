@@ -1,5 +1,4 @@
-// @ts-check
-
+import { includeIgnoreFile } from '@eslint/compat'
 import eslint from '@eslint/js'
 import nextPlugin from '@next/eslint-plugin-next'
 import importPlugin from 'eslint-plugin-import'
@@ -9,9 +8,11 @@ import reactCompilerPlugin from 'eslint-plugin-react-compiler'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
+import path from 'path'
 import tseslint from 'typescript-eslint'
 
 const baseConfig = tseslint.config(
+  includeIgnoreFile(path.join(import.meta.dirname, './.gitignore')),
   {
     files: ['**/*.{js,ts,tsx}'],
     plugins: {
@@ -53,8 +54,6 @@ const baseConfig = tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: true,
-        // Disable this for now since 5.6.2 is not supported yet
-        warnOnUnsupportedTypeScriptVersion: false,
       },
     },
     linterOptions: {
@@ -140,7 +139,6 @@ const simpleImportSortConfig = [
 const prettierConfig = [prettierPluginConfig]
 
 export default [
-  { ignores: ['.next/**'] },
   ...baseConfig,
   ...reactConfig,
   ...nextjsConfig,
