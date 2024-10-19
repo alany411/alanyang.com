@@ -82,10 +82,10 @@ export default function Work() {
         </p>
         <p>
           During my time there, I worked with many different researchers and
-          labs to provide technical support and assistance, gained valuable
-          experience with various software tools and technologies, and
-          contributed to the development of tools, automation, and
-          documentation.
+          labs to provide technical support and assistance. I gained valuable
+          experience with a wide range of software tools and technologies, while
+          also contributing to the development of tools, automation processes,
+          and comprehensive documentation.
         </p>
       </div>
     </div>
