@@ -22,15 +22,15 @@ export default function Home() {
         <h1 className={cn('mb-0 text-center text-2xl')}>Alan Yang</h1>
       </div>
       <p>
-        I am a software engineer who enjoys learning and building. I currently{' '}
-        <Link href='/work'>work</Link> at the University of Florida, where I
-        develop accessible web and mobile solutions with a focus on user
-        experience.
+        I am a software engineer driven by curiosity and a passion for creating.
+        I currently <Link href='/work'>work</Link> at the University of Florida,
+        where I develop accessible web and mobile applications that prioritize
+        user experience and inclusivity.
       </p>
       <p>
-        Occasionally, I write <Link href='/posts'>posts</Link> about coding,
-        tutorials, and challenges I have encountered. Outside of programming, I
-        enjoy traveling, photography, and gaming.
+        Occasionally, I share <Link href='/posts'>posts</Link> about coding,
+        tutorials, and the challenges I have faced along the way. Outside of
+        programming, I enjoy traveling, photography, and gaming.
       </p>
     </div>
   )
