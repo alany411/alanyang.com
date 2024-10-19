@@ -144,7 +144,7 @@ export default [
   ...baseConfig,
   ...reactConfig,
   ...nextjsConfig,
+  ...readableTailwindConfig,
   ...simpleImportSortConfig,
   ...prettierConfig,
-  ...readableTailwindConfig,
 ]
