@@ -19,12 +19,12 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: `
-                    default-src 'self' vercel.live;
+                    default-src 'self' https://vercel.live;
                     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://vercel.live https://va.vercel-scripts.com;
                     style-src 'self' https://vercel.live 'unsafe-inline';
-                    img-src https://vercel.live https://vercel.com data: blob:;
+                    img-src 'self' https://vercel.live https://vercel.com data: blob:;
                     media-src 'none';
-                    connect-src https://vercel.live wss://ws-us3.pusher.com;
+                    connect-src 'self' https://vercel.live wss://ws-us3.pusher.com;
                     font-src 'self' https://vercel.live https://assets.vercel.com;
                     frame-src https://vercel.live;
                   `.replace(/\n/g, ''),
