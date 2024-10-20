@@ -20,7 +20,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self' https://vercel.live;
+<<<<<<< Updated upstream
               script-src 'self' 'strict-dynamic' https://cdn.vercel-insights.com https://vercel.live https://va.vercel-scripts.com;
+=======
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://vercel.live https://va.vercel-scripts.com;
+>>>>>>> Stashed changes
               style-src 'self' 'unsafe-inline' https://vercel.live;
               img-src 'self' https://vercel.live https://vercel.com;
               media-src 'none';
