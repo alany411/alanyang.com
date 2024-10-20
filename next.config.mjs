@@ -19,23 +19,18 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: `
-              default-src 'self' https://vercel.live;
-<<<<<<< Updated upstream
-              script-src 'self' 'strict-dynamic' https://cdn.vercel-insights.com https://vercel.live https://va.vercel-scripts.com;
-=======
-              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://vercel.live https://va.vercel-scripts.com;
->>>>>>> Stashed changes
-              style-src 'self' 'unsafe-inline' https://vercel.live;
-              img-src 'self' https://vercel.live https://vercel.com;
+              default-src 'self';
+              script-src 'self' https://cdn.vercel-insights.com https://va.vercel-scripts.com;
+              style-src 'self' 'unsafe-inline';
+              img-src 'self';
               media-src 'none';
-              connect-src 'self' https://vercel.live wss://ws-us3.pusher.com;
-              font-src 'self' https://vercel.live https://assets.vercel.com;
-              frame-src 'self' https://vercel.live;
+              connect-src 'self';
+              font-src 'self';
+              frame-src 'self';
               object-src 'none';
               base-uri 'self';
               upgrade-insecure-requests;
               frame-ancestors 'none';
-              require-trusted-types-for 'script';
             `.replace(/\n/g, ''),
           },
           {
