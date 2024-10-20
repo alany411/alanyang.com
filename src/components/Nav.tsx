@@ -1,12 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Link } from 'next-view-transitions'
 import { Fragment } from 'react'
 
 import { cn } from '~/utils/cn'
 import { toCapitalize } from '~/utils/toCapitalize'
+
+import ProfilePicture from './ProfilePicture'
 
 const home = {
   href: '/',
@@ -27,20 +28,7 @@ export default function Nav() {
 
   return (
     <div className={cn('flex flex-row items-center space-x-2')}>
-      <Image
-        alt='Alan Yang profile'
-        height={24}
-        priority={true}
-        src='/me.jpg'
-        width={24}
-        className={cn(
-          `
-            my-0 size-6 select-none overflow-hidden rounded-full
-
-            [view-transition-name:profile-picture]
-          `
-        )}
-      />
+      <ProfilePicture className={cn('size-6')} height={24} width={24} />
       <nav className={cn('text-lg', links.length > 0 && 'space-x-1')}>
         {links.map(({ href, title }, index) => (
           <Fragment key={href}>

@@ -1,23 +1,16 @@
-import Image from 'next/image'
 import { Link } from 'next-view-transitions'
 
+import ProfilePicture from '~/components/ProfilePicture'
 import { cn } from '~/utils/cn'
 
 export default function Home() {
   return (
     <div>
       <div className={cn('inline-flex flex-col')}>
-        <Image
-          alt='Alan Yang profile'
+        <ProfilePicture
+          className={cn('mb-4 size-36')}
           height={144}
-          priority={true}
-          src='/me.jpg'
           width={144}
-          className={cn(`
-            mb-4 mt-0 h-36 w-36 select-none overflow-hidden rounded-full
-
-            [view-transition-name:profile-picture]
-          `)}
         />
         <h1 className={cn('mb-0 text-center text-2xl')}>Alan Yang</h1>
       </div>
