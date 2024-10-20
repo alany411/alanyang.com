@@ -20,12 +20,12 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' https://cdn.vercel-insights.com https://va.vercel-scripts.com https://vercel.live 'sha256-OBTN3RiyCV4Bq7dFqZ5a2pAXjnCcCYeTJMO2I/LYKeo=' 'sha256-JQMxaFGDmeqTJsj5aZwkXDUj15Vi4w3cVdckV5APT0Q=' 'sha256-4gNMjCUgSqEbm/c1qsMc4ikMSrVyoMwGmKsBJ6vrNV0=' 'sha256-I58WLd8b6rWZqcm3Rs8ziPrevCZ7Q+kN208hUBa32CQ=' 'sha256-T2jo8MOEy/DgLn7vrieYAcHgXXI8IIs4znenPmr6A6Y=' 'sha256-s9uSRn7dRbXci0NwvDbS8ZCjtbN+I99eWAze17HVXME=' 'sha256-6Tn+5fOrALmOpmYCtqeBqhvUTNx9siW+NKMvd5MXdMc=' 'sha256-65wXGMP64twMZ1EAWvWQG4ximWxOOTHXlO1hK2KwabE=';
-              style-src 'self' 'unsafe-inline';
-              img-src 'self';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://va.vercel-scripts.com https://vercel.live;
+              style-src 'self' 'unsafe-inline' https://vercel.live;
+              img-src 'self' https://vercel.live https://vercel.com data: blob:;
               media-src 'none';
-              connect-src 'self';
-              font-src 'self';
+              connect-src 'self' https://vercel.live wss://ws-us3.pusher.com;
+              font-src 'self' https://vercel.live https://assets.vercel.com;
               frame-src 'self' https://vercel.live;
               object-src 'none';
               base-uri 'self';
