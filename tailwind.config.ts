@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)', ...defaultTheme.fontFamily.sans],
-        mono: ['var(--font-geist-mono)', ...defaultTheme.fontFamily.mono],
+        mono: ['var(--font-jetbrains-mono)', ...defaultTheme.fontFamily.mono],
       },
     },
   },
