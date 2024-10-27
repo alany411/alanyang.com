@@ -2,15 +2,21 @@ import '~/styles/globals.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
+import { JetBrains_Mono } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
 
 import ScrollToTop from '~/components/ScrollToTop'
 import SkipToMain from '~/components/SkipToMain'
 import SocialLinks from '~/components/SocialLinks'
 import { cn } from '~/utils/cn'
+
+const JetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: 'variable',
+  variable: '--font-jetbrains-mono',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alanyang.com'),
@@ -54,7 +60,7 @@ export default function RootLayout({
         <body
           className={cn(
             GeistSans.variable,
-            GeistMono.variable,
+            JetBrainsMono.variable,
             `
               bg-white font-sans antialiased
 
