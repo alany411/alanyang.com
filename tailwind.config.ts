@@ -6,7 +6,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './mdx-components.tsx'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       fontFamily: {
