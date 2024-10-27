@@ -1,10 +1,10 @@
 import createMDX from '@next/mdx'
+import type { NextConfig } from 'next'
 import rehypeMdxCodeProps from 'rehype-mdx-code-props'
 import rehypePrismPlus from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
   reactStrictMode: true,
   experimental: {

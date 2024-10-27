@@ -109,6 +109,12 @@ const nextjsConfig = [
       '@next/next/no-duplicate-head': 'off',
     },
   },
+  {
+    files: ['next.config.ts'],
+    rules: {
+      '@typescript-eslint/require-await': 'off',
+    },
+  },
 ]
 
 const readableTailwindConfig = [
