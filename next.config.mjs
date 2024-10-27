@@ -22,10 +22,10 @@ const nextConfig = {
               default-src 'self';
               script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://va.vercel-scripts.com https://vercel.live;
               style-src 'self' 'unsafe-inline' https://vercel.live;
-              img-src 'self' https://vercel.live https://vercel.com data: blob:;
+              img-src 'self' data: blob: https://vercel.com https://vercel.live;
               media-src 'none';
               connect-src 'self' https://vercel.live wss://ws-us3.pusher.com;
-              font-src 'self' https://vercel.live https://assets.vercel.com;
+              font-src 'self' https://assets.vercel.com https://vercel.live;
               frame-src 'self' https://vercel.live;
               object-src 'none';
               base-uri 'self';
@@ -56,6 +56,10 @@ const nextConfig = {
           {
             key: 'X-Frame-Options',
             value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
           },
         ],
       },
