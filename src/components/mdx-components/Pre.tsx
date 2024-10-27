@@ -72,8 +72,10 @@ export default function Pre({ className, title, ...otherProps }: PreProps) {
               `
                 my-0 rounded-none
 
-                dark:scrollbar:bg-neutral-800
+                dark:focus:outline-sky-400 dark:scrollbar:bg-neutral-800
                 dark:scrollbar-thumb:bg-neutral-700
+
+                focus:rounded-b-2xl focus:outline-sky-500
 
                 scrollbar-thumb:bg-neutral-300
 
