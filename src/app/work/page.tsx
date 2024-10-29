@@ -12,9 +12,7 @@ export default function Work() {
     <div>
       <Nav />
       <div className={cn('mb-6 flex')}>
-        <h1 className={cn('m-0')} id='work-title'>
-          Work
-        </h1>
+        <h1 className={cn('m-0')}>Work</h1>
       </div>
       <div>
         <h2 className={cn('mb-0')}>
