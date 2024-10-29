@@ -44,6 +44,18 @@ const NETWORKS: Network[] = [
   },
 ]
 
+const commonClassName = cn(`
+  relative block overflow-hidden rounded-full p-2 text-[var(--tw-prose-body)]
+  outline-none transition-all
+
+  dark:focus:ring-sky-400
+
+  focus:scale-125 focus:rounded-full focus:text-[var(--tw-prose-links)]
+  focus:outline-none focus:ring-2 focus:ring-sky-500
+
+  hover:scale-125 hover:text-[var(--tw-prose-links)]
+`)
+
 export default function SocialLinks() {
   return (
     <ul
@@ -59,40 +71,18 @@ export default function SocialLinks() {
             {href === 'email' ? (
               <Email
                 aria-label='Send Alan Yang an email'
+                className={commonClassName}
                 email='me@alanyang.com'
-                className={cn(`
-                  relative block overflow-hidden rounded-full p-2
-                  text-[var(--tw-prose-body)] outline-none transition-all
-
-                  dark:focus:ring-sky-400
-
-                  focus:scale-125 focus:rounded-full
-                  focus:text-[var(--tw-prose-links)] focus:outline-none
-                  focus:ring-2 focus:ring-sky-500
-
-                  hover:scale-125 hover:text-[var(--tw-prose-links)]
-                `)}
               >
                 <Icon className={cn('pointer-events-none')} size={32} />
               </Email>
             ) : (
               <a
                 aria-label={`View Alan Yang's ${name} profile, opens in new tab`}
+                className={commonClassName}
                 href={href}
                 rel='noopener noreferrer'
                 target='_blank'
-                className={cn(`
-                  relative block overflow-hidden rounded-full p-2
-                  text-[var(--tw-prose-body)] outline-none transition-all
-
-                  dark:focus:ring-sky-400
-
-                  focus:scale-125 focus:rounded-full
-                  focus:text-[var(--tw-prose-links)] focus:outline-none
-                  focus:ring-2 focus:ring-sky-500
-
-                  hover:scale-125 hover:text-[var(--tw-prose-links)]
-                `)}
               >
                 <Icon className={cn('pointer-events-none')} size={32} />
               </a>
