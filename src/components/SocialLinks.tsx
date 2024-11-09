@@ -1,5 +1,6 @@
 import type { IconType } from '@icons-pack/react-simple-icons'
 import {
+  SiBluesky,
   SiGithub,
   SiInstagram,
   SiLinkedin,
@@ -26,6 +27,11 @@ const NETWORKS: Network[] = [
     name: 'GitHub',
     href: 'https://github.com/alany411',
     icon: SiGithub,
+  },
+  {
+    name: 'Bluesky',
+    href: 'https://bsky.app/profile/alanyang.com',
+    icon: SiBluesky,
   },
   {
     name: 'X',
