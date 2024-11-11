@@ -1,0 +1,84 @@
+import Date from '~/components/Date'
+
+export const metadata = {
+  title: 'Standardize Naming Conventions',
+  date: 'November 10, 2024',
+  description:
+    'Standardize how you name your variables, functions, and files in your codebase.',
+}
+
+# {metadata.title}
+
+<Date>{metadata.date}</Date>
+
+Naming conventions are an essential part of writing clean and maintainable code. With consistent naming conventions, it allows developers to more quickly understand and navigate through the codebase. Naming things is definitely hard, but there are some things you can consider to make it easier.
+
+## Choose a Language
+
+English is the most common language used in programming, but it may not be the best choice if most of your team speaks a different language. Choose a language that is commonly used in your team and stick to it.
+
+```ts title="language.ts"
+/* Bad */
+const 名字 = 'Alan'
+const lastName = 'Yang'
+
+/* Good */
+const firstName = 'Alan'
+const lastName = 'Yang'
+```
+
+## Choose a Casing
+
+Depending on the programming language, there are different traditional casing conventions. Pick a convention and stick to it.
+
+```ts title="casing.ts"
+/* Bad */
+const refresh_count = 0
+const shouldRefresh = true
+const SET_REFRESH_COUNT = () => {
+  /* Return refresh count */
+}
+someComponent.tsx
+another_component.tsx
+
+/* Good */
+const refreshCount = 0
+const shouldRefresh = true
+const setRefreshCount = () => {
+  /* Return refresh count */
+}
+SomeComponent.tsx
+AnotherComponent.tsx
+```
+
+## Use Intuitive and Descriptive Names
+
+When naming things, it is important to try to use names that are easy to understand and describes its purpose.
+
+```ts title="descriptive-names.ts"
+/* Bad */
+const init = () => {
+  /* Return post count */
+}
+const a = init()
+const b = a > 10
+
+/* Good */
+const getPostCount = () => {
+  /* Return post count */
+}
+const postCount = getPostCount()
+const hasPagination = postCount > 10
+```
+
+## Do Not Use Contractions
+
+Do not sacrifice readability for brevity. Contractions can be confusing and make code harder to understand.
+
+```ts title="contractions.ts"
+/* Bad */
+const clkEvts = 0
+
+/* Good */
+const clickEvents = 0
+```
