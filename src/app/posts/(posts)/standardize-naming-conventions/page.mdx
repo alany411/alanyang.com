@@ -17,7 +17,7 @@ Naming conventions are an essential part of writing clean and maintainable code.
 
 English is the most common language used in programming, but it may not be the best choice if most of your team speaks a different language. Choose a language that is commonly used in your team and stick to it.
 
-```ts title="language.ts"
+```ts title="single-language" showCopy={false}
 /* Bad */
 const 名字 = 'Alan'
 const lastName = 'Yang'
@@ -31,7 +31,7 @@ const lastName = 'Yang'
 
 Depending on the programming language, there are different traditional casing conventions. Pick a convention and stick to it.
 
-```ts title="casing.ts"
+```ts title="consistent-casing" showCopy={false}
 /* Bad */
 const refresh_count = 0
 const shouldRefresh = true
@@ -55,7 +55,7 @@ AnotherComponent.tsx
 
 When naming things, it is important to try to use names that are easy to understand and describes its purpose.
 
-```ts title="descriptive-names.ts"
+```ts title="descriptive-names" showCopy={false}
 /* Bad */
 const init = () => {
   /* Return post count */
@@ -75,7 +75,7 @@ const hasPagination = postCount > 10
 
 Do not sacrifice readability for brevity. Contractions can be confusing and make code harder to understand.
 
-```ts title="contractions.ts"
+```ts title="no-contractions" showCopy={false}
 /* Bad */
 const clkEvts = 0
 
