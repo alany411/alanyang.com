@@ -2,6 +2,7 @@ import createMDX from '@next/mdx'
 import type { NextConfig } from 'next'
 import rehypeMdxCodeProps from 'rehype-mdx-code-props'
 import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
@@ -109,7 +110,7 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrismPlus, rehypeMdxCodeProps],
+    rehypePlugins: [rehypeSlug, rehypePrismPlus, rehypeMdxCodeProps],
   },
 })
 
