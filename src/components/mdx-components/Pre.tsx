@@ -10,9 +10,15 @@ import { cn } from '~/utils/cn'
 type PreProps = HTMLAttributes<HTMLPreElement> & {
   showLineNumbers?: string
   title?: string
+  showCopy?: boolean
 }
 
-export default function Pre({ className, title, ...otherProps }: PreProps) {
+export default function Pre({
+  className,
+  title,
+  showCopy = true,
+  ...otherProps
+}: PreProps) {
   const contentRef = useRef<HTMLDivElement | null>(null)
   const [isCopied, setIsCopied] = useState(false)
 
@@ -30,21 +36,23 @@ export default function Pre({ className, title, ...otherProps }: PreProps) {
 
   return (
     <div className={cn('relative my-8')}>
-      <IconButton
-        aria-label={`Copy ${title} code`}
-        className={cn('absolute right-4 top-[3px]')}
-        icon={{
-          lucideIcon: isCopied ? (
-            <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
-          ) : (
-            <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
-          ),
-          position: 'right',
-        }}
-        onClick={handleOnClick}
-      >
-        {isCopied ? 'Copied' : 'Copy'}
-      </IconButton>
+      {showCopy && (
+        <IconButton
+          aria-label={`Copy ${title} code`}
+          className={cn('absolute right-4 top-[3px]')}
+          icon={{
+            lucideIcon: isCopied ? (
+              <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
+            ) : (
+              <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />
+            ),
+            position: 'right',
+          }}
+          onClick={handleOnClick}
+        >
+          {isCopied ? 'Copied' : 'Copy'}
+        </IconButton>
+      )}
       <figure className={cn('my-0')}>
         <figcaption
           className={cn(
