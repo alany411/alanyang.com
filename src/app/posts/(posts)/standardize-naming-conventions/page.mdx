@@ -53,14 +53,14 @@ AnotherComponent.tsx
 
 ## Use Intuitive and Descriptive Names
 
-When naming things, it is important to try to use names that are easy to understand and describes its purpose.
+When naming things, it is important to try to use names that are easy to understand and describes their purpose.
 
 ```ts title="descriptive-names" showCopy={false}
 /* Bad */
-const init = () => {
+const pc = () => {
   /* Return post count */
 }
-const a = init()
+const a = pc()
 const b = a > 10
 
 /* Good */
@@ -78,7 +78,13 @@ Do not sacrifice readability for brevity. Contractions can be confusing and make
 ```ts title="no-contractions" showCopy={false}
 /* Bad */
 const clkEvts = 0
+const MenuBtn = () => {
+  /* Button component */
+}
 
 /* Good */
 const clickEvents = 0
+const MenuButton = () => {
+  /* Button component */
+}
 ```
