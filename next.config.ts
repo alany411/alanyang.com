@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
+  poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
     mdxRs: false,
