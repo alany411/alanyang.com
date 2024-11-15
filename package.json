@@ -22,8 +22,8 @@
     "lucide-react": "0.456.0",
     "next": "15.0.3",
     "next-view-transitions": "0.3.2",
-    "react": "19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
     "react-obfuscate-email": "1.1.5"
   },
   "devDependencies": {
