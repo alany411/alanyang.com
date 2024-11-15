@@ -33,7 +33,7 @@ export default function ScrollToTop() {
   return (
     <span
       className={cn(
-        'absolute -top-4 right-0 shrink-0 transition-opacity',
+        'absolute -top-4 right-0 z-10 shrink-0 transition-opacity',
         isVisible
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0'
