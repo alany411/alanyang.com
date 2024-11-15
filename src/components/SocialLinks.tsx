@@ -35,7 +35,7 @@ const NETWORKS: Network[] = [
     icon: SiBluesky,
   },
   {
-    name: 'X',
+    name: 'Twitter',
     href: 'https://x.com/iam_alanyang',
     icon: SiX,
   },
@@ -56,47 +56,52 @@ const NETWORKS: Network[] = [
   },
 ]
 
-const commonClassName = cn(`
-  relative block overflow-hidden rounded-full p-2 text-[var(--tw-prose-body)]
-  outline-none transition-all
+const linkClasses = cn(`
+  group prose prose-neutral inline-flex cursor-pointer items-center
+  justify-center space-x-1 bg-neutral-200 p-2 text-xs font-semibold no-underline
+  transition-all
 
-  dark:focus:ring-sky-400
+  dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
 
-  focus:scale-125 focus:rounded-full focus:text-[var(--tw-prose-links)]
   focus:outline-none focus:ring-2 focus:ring-sky-500
+`)
 
-  hover:scale-125 hover:text-[var(--tw-prose-links)]
+const iconClasses = cn(`
+  transition-colors
+
+  dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
+
+  group-focus:text-sky-500
+
+  group-hover:text-sky-500
 `)
 
 export default function SocialLinks() {
   return (
     <ul
       className={cn(`
-        prose prose-neutral flex w-full flex-row flex-wrap gap-3
+        prose prose-neutral flex w-full flex-row flex-wrap items-center gap-2
 
         dark:prose-invert
       `)}
     >
       {NETWORKS.map(({ name, href, icon: Icon }) => {
         return (
-          <li key={name} className={cn('m-0 list-none')}>
+          <li key={name} className='m-0 list-none p-0'>
             {href === 'email' ? (
-              <Email
-                aria-label='Send Alan Yang an email'
-                className={commonClassName}
-                email='me@alanyang.com'
-              >
-                <Icon className={cn('pointer-events-none')} size={32} />
+              <Email className={linkClasses} email='me@alanyang.com'>
+                <Icon aria-hidden={true} className={iconClasses} size={16} />
+                <span>{name}</span>
               </Email>
             ) : (
               <a
-                aria-label={`View Alan Yang's ${name} profile, opens in new tab`}
-                className={commonClassName}
+                className={linkClasses}
                 href={href}
                 rel='noopener noreferrer'
                 target='_blank'
               >
-                <Icon className={cn('pointer-events-none')} size={32} />
+                <Icon aria-hidden={true} className={iconClasses} size={16} />
+                <span>{name}</span>
               </a>
             )}
           </li>
