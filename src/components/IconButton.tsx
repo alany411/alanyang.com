@@ -10,6 +10,7 @@ type LucideIconElement = ReactElement<LucideIcon>
 
 const Icon = ({ lucideIcon }: { lucideIcon: LucideIconElement }) => (
   <span
+    aria-hidden={true}
     className={cn(`
       transition-colors
 
