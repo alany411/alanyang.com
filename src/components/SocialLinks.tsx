@@ -4,6 +4,7 @@ import {
   SiGithub,
   SiInstagram,
   SiLinkedin,
+  SiThreads,
   SiX,
 } from '@icons-pack/react-simple-icons'
 import { MailIcon } from 'lucide-react'
@@ -42,6 +43,11 @@ const NETWORKS: Network[] = [
     name: 'Instagram',
     href: 'https://www.instagram.com/iam.alanyang/',
     icon: SiInstagram,
+  },
+  {
+    name: 'Threads',
+    href: 'https://www.threads.net/@iam.alanyang',
+    icon: SiThreads,
   },
   {
     name: 'LinkedIn',
