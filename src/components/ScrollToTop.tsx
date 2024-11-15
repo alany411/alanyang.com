@@ -43,10 +43,9 @@ export default function ScrollToTop() {
         aria-hidden={!isVisible}
         aria-label='Scroll to top'
         tabIndex={isVisible ? 0 : -1}
+        variant='function'
         icon={{
-          lucideIcon: (
-            <CircleArrowUpIcon absoluteStrokeWidth={true} size={16} />
-          ),
+          component: <CircleArrowUpIcon absoluteStrokeWidth={true} size={16} />,
           position: 'right',
         }}
         onClick={handleOnClick}

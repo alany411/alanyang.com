@@ -8,9 +8,10 @@ import {
   SiX,
 } from '@icons-pack/react-simple-icons'
 import { MailIcon } from 'lucide-react'
-import { Email } from 'react-obfuscate-email'
 
 import { cn } from '~/utils/cn'
+
+import IconButton from './IconButton'
 
 type Network = {
   name: string
@@ -56,26 +57,6 @@ const NETWORKS: Network[] = [
   },
 ]
 
-const linkClasses = cn(`
-  group prose prose-neutral inline-flex cursor-pointer items-center
-  justify-center space-x-1 bg-neutral-200 p-2 text-xs font-semibold no-underline
-  transition-all
-
-  dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
-
-  focus:outline-none focus:ring-2 focus:ring-sky-500
-`)
-
-const iconClasses = cn(`
-  transition-colors
-
-  dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
-
-  group-focus:text-sky-500
-
-  group-hover:text-sky-500
-`)
-
 export default function SocialLinks() {
   return (
     <ul
@@ -89,20 +70,29 @@ export default function SocialLinks() {
         return (
           <li key={name} className='m-0 list-none p-0'>
             {href === 'email' ? (
-              <Email className={linkClasses} email='me@alanyang.com'>
-                <Icon aria-hidden={true} className={iconClasses} size={16} />
-                <span>{name}</span>
-              </Email>
-            ) : (
-              <a
-                className={linkClasses}
-                href={href}
-                rel='noopener noreferrer'
-                target='_blank'
+              <IconButton
+                className='no-underline'
+                email='me@alanyang.com'
+                variant='email'
+                icon={{
+                  component: <Icon aria-hidden={true} size={16} />,
+                  position: 'left',
+                }}
               >
-                <Icon aria-hidden={true} className={iconClasses} size={16} />
-                <span>{name}</span>
-              </a>
+                {name}
+              </IconButton>
+            ) : (
+              <IconButton
+                className='no-underline'
+                href={href}
+                variant='external'
+                icon={{
+                  component: <Icon aria-hidden={true} size={16} />,
+                  position: 'left',
+                }}
+              >
+                {name}
+              </IconButton>
             )}
           </li>
         )

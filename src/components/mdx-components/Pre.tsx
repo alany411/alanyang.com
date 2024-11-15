@@ -40,8 +40,9 @@ export default function Pre({
         <IconButton
           aria-label={`Copy ${title} code`}
           className={cn('absolute right-4 top-[3px]')}
+          variant='function'
           icon={{
-            lucideIcon: isCopied ? (
+            component: isCopied ? (
               <ClipboardCheckIcon absoluteStrokeWidth={true} size={16} />
             ) : (
               <ClipboardCopyIcon absoluteStrokeWidth={true} size={16} />

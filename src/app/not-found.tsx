@@ -34,10 +34,11 @@ export default function NotFound() {
         back to the homepage.
       </p>
       <IconButton
-        navigate='/'
+        href='/'
+        variant='internal'
         icon={{
           position: 'left',
-          lucideIcon: <HouseIcon absoluteStrokeWidth={true} size={16} />,
+          component: <HouseIcon absoluteStrokeWidth={true} size={16} />,
         }}
       >
         Home
