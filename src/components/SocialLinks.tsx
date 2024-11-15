@@ -15,7 +15,7 @@ import IconButton from './IconButton'
 
 type Network = {
   name: string
-  href: string
+  href: 'email' | `https://${string}`
   icon: IconType
 }
 
