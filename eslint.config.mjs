@@ -1,18 +1,26 @@
-import { includeIgnoreFile } from '@eslint/compat'
+import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
-import nextPlugin from '@next/eslint-plugin-next'
 import importPlugin from 'eslint-plugin-import'
 import prettierPluginConfig from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
-import reactCompilerPlugin from 'eslint-plugin-react-compiler'
+import reactCompiler from 'eslint-plugin-react-compiler'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import path from 'path'
 import tseslint from 'typescript-eslint'
+import { fileURLToPath } from 'url'
 
-const baseConfig = tseslint.config(
-  includeIgnoreFile(path.join(import.meta.dirname, './.gitignore')),
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
+
+const nextjsConfig = [...compat.extends('plugin:@next/next/recommended')]
+
+const typescriptConfig = tseslint.config(
   {
     files: ['**/*.{js,ts,tsx}'],
     plugins: {
@@ -67,8 +75,8 @@ const reactConfig = [
     files: ['**/*.{ts,tsx}'],
     plugins: {
       react: reactPlugin,
+      'react-compiler': reactCompiler,
       'react-hooks': reactHooksPlugin,
-      'react-compiler': reactCompilerPlugin,
     },
     rules: {
       ...reactPlugin.configs['jsx-runtime'].rules,
@@ -87,32 +95,17 @@ const reactConfig = [
         },
       ],
       'react-compiler/react-compiler': 'error',
+      'react-hooks/exhaustive-deps': [
+        'warn',
+        {
+          additionalHooks: 'useMutation',
+        },
+      ],
     },
     languageOptions: {
       globals: {
         React: 'writable',
       },
-    },
-  },
-]
-
-const nextjsConfig = [
-  {
-    files: ['**/*.{ts,tsx}'],
-    plugins: {
-      '@next/next': nextPlugin,
-    },
-    rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs['core-web-vitals'].rules,
-      // TypeError: context.getAncestors is not a function
-      '@next/next/no-duplicate-head': 'off',
-    },
-  },
-  {
-    files: ['next.config.ts'],
-    rules: {
-      '@typescript-eslint/require-await': 'off',
     },
   },
 ]
@@ -145,9 +138,10 @@ const simpleImportSortConfig = [
 const prettierConfig = [prettierPluginConfig]
 
 export default [
-  ...baseConfig,
-  ...reactConfig,
+  { ignores: ['.next/**'] },
   ...nextjsConfig,
+  ...typescriptConfig,
+  ...reactConfig,
   ...readableTailwindConfig,
   ...simpleImportSortConfig,
   ...prettierConfig,
