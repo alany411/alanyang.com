@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import createMDX from '@next/mdx'
 import type { NextConfig } from 'next'
 import rehypeMdxCodeProps from 'rehype-mdx-code-props'
