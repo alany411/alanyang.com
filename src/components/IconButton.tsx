@@ -122,7 +122,7 @@ export default function IconButton(props: IconButtonProps) {
 
     return (
       <a
-        aria-label={ariaLabel ? ariaLabel : children}
+        aria-label={ariaLabel ?? children}
         className={cn(containerClasses, className)}
         href={href}
         rel='noopener noreferrer'
@@ -147,7 +147,7 @@ export default function IconButton(props: IconButtonProps) {
 
     return (
       <button
-        aria-label={ariaLabel ? ariaLabel : children}
+        aria-label={ariaLabel ?? children}
         className={cn(containerClasses, className)}
         type='button'
         onClick={() => {
@@ -172,7 +172,7 @@ export default function IconButton(props: IconButtonProps) {
 
   return (
     <button
-      aria-label={ariaLabel ? ariaLabel : children}
+      aria-label={ariaLabel ?? children}
       className={cn(containerClasses, className)}
       type='button'
       onClick={onClick}
