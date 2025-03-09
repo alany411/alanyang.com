@@ -28,7 +28,7 @@ export default function Work() {
         </ul>
         <p>
           The User Experience and Portal Solutions team is responsible for the
-          design and development of the university's central platform,{' '}
+          design and development of the university&apos;s central platform,{' '}
           <a
             aria-label='ONE.UF, opens in a new tab'
             href='https://one.uf.edu/'
@@ -37,16 +37,17 @@ export default function Work() {
           >
             ONE.UF
           </a>
-          , and other apps, ensuring alignment with the university's goals while
-          advocating for best practices in user experience and accessibility.
+          , and other apps, ensuring alignment with the university&apos;s goals
+          while advocating for best practices in user experience and
+          accessibility.
         </p>
         <p>
           Since joining this team, I have played a pivotal role in several
           high-impact projects. I successfully spearheaded the development of
-          one of the university's first mobile apps, overseeing the process from
-          initial concept to launch. Additionally, I led the frontend
-          development of the university's first embeddable AI chatbot widget,
-          ensuring seamless integration and user-friendly experience.
+          one of the university&apos;s first mobile apps, overseeing the process
+          from initial concept to launch. Additionally, I led the frontend
+          development of the university&apos;s first embeddable AI chatbot
+          widget, ensuring seamless integration and user-friendly experience.
         </p>
       </div>
       <div>
