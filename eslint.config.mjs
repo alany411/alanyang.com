@@ -2,9 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
 import importPlugin from 'eslint-plugin-import'
 import prettierPluginConfig from 'eslint-plugin-prettier/recommended'
-import reactPlugin from 'eslint-plugin-react'
-import reactCompiler from 'eslint-plugin-react-compiler'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import path from 'path'
@@ -18,7 +15,26 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-const nextjsConfig = [...compat.extends('plugin:@next/next/recommended')]
+const nextjsConfig = [
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
+    rules: {
+      'react/jsx-boolean-value': ['error', 'always'],
+      'react/jsx-sort-props': [
+        'error',
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          reservedFirst: true,
+          multiline: 'last',
+          ignoreCase: true,
+          noSortAlphabetically: false,
+          locale: 'en',
+        },
+      ],
+    },
+  },
+]
 
 const typescriptConfig = tseslint.config(
   {
@@ -70,46 +86,6 @@ const typescriptConfig = tseslint.config(
   }
 )
 
-const reactConfig = [
-  {
-    files: ['**/*.{ts,tsx}'],
-    plugins: {
-      react: reactPlugin,
-      'react-compiler': reactCompiler,
-      'react-hooks': reactHooksPlugin,
-    },
-    rules: {
-      ...reactPlugin.configs['jsx-runtime'].rules,
-      ...reactHooksPlugin.configs.recommended.rules,
-      'react/jsx-boolean-value': ['error', 'always'],
-      'react/jsx-sort-props': [
-        'error',
-        {
-          callbacksLast: true,
-          shorthandFirst: true,
-          reservedFirst: true,
-          multiline: 'last',
-          ignoreCase: true,
-          noSortAlphabetically: false,
-          locale: 'en',
-        },
-      ],
-      'react-compiler/react-compiler': 'error',
-      'react-hooks/exhaustive-deps': [
-        'warn',
-        {
-          additionalHooks: 'useMutation',
-        },
-      ],
-    },
-    languageOptions: {
-      globals: {
-        React: 'writable',
-      },
-    },
-  },
-]
-
 const readableTailwindConfig = [
   {
     files: ['**/*.{ts,tsx}'],
@@ -137,12 +113,13 @@ const simpleImportSortConfig = [
 
 const prettierConfig = [prettierPluginConfig]
 
-export default [
+const eslintConfig = [
   { ignores: ['.next/**'] },
   ...nextjsConfig,
   ...typescriptConfig,
-  ...reactConfig,
   ...readableTailwindConfig,
   ...simpleImportSortConfig,
   ...prettierConfig,
 ]
+
+export default eslintConfig
