@@ -19,7 +19,6 @@ export default async function Posts() {
         <h1
           className={cn(`
             m-0
-
             [view-transition-name:posts-title]
           `)}
         >

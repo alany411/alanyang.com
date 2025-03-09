@@ -21,12 +21,9 @@ const Icon = ({ component }: IconProps) => (
     aria-hidden={true}
     className={cn(`
       transition-colors
-
-      dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
-
-      group-focus:text-sky-500
-
       group-hover:text-sky-500
+      group-focus:text-sky-500
+      dark:group-hover:text-sky-400 dark:group-focus:text-sky-400
     `)}
   >
     {component}
@@ -77,9 +74,7 @@ type IconButtonProps = ButtonContentProps &
 const containerClasses = cn(`
   group prose prose-neutral inline-flex items-center justify-center space-x-1
   bg-neutral-200 p-2 text-xs font-semibold transition-all
-
   dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
-
   focus:outline-none focus:ring-2 focus:ring-sky-500
 `)
 

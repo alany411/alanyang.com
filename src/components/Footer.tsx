@@ -8,7 +8,6 @@ export default function Footer() {
     <footer
       className={cn(`
         relative border-t border-neutral-200
-
         dark:border-neutral-800
       `)}
     >
@@ -28,7 +27,6 @@ export default function Footer() {
             xmlns='http://www.w3.org/2000/svg'
             className={cn(`
               m-0 flex-shrink-0 select-none
-
               dark:invert
             `)}
           >

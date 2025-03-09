@@ -62,12 +62,9 @@ export default function RootLayout({
             JetBrainsMono.variable,
             `
               bg-white font-sans antialiased
-
-              dark:bg-neutral-900 dark:scrollbar-thumb:bg-neutral-700
-
-              scrollbar-thumb:rounded-full scrollbar-thumb:bg-neutral-300
-
               scrollbar:w-3.5 scrollbar:bg-transparent
+              scrollbar-thumb:rounded-full scrollbar-thumb:bg-neutral-300
+              dark:bg-neutral-900 dark:scrollbar-thumb:bg-neutral-700
             `
           )}
         >
@@ -78,33 +75,22 @@ export default function RootLayout({
                 id='main-content'
                 className={cn(`
                   prose prose-neutral max-w-none
-
                   dark:prose-invert dark:hover:prose-a:decoration-sky-400
                   dark:focus:prose-a:ring-sky-400
                   dark:focus:prose-a:ring-offset-neutral-900
-
+                  prose-h1:text-2xl
+                  prose-h2:text-xl
+                  prose-h3:text-lg
+                  prose-h4:text-base
+                  prose-h5:text-base
+                  prose-h6:text-base
+                  prose-p:text-pretty
+                  prose-a:decoration-transparent prose-a:decoration-2
+                  prose-a:underline-offset-[3.5px] prose-a:transition-colors
+                  hover:prose-a:decoration-sky-500
                   focus:prose-a:outline-none focus:prose-a:ring-2
                   focus:prose-a:ring-sky-500 focus:prose-a:ring-offset-0
                   focus:prose-a:ring-offset-white
-
-                  hover:prose-a:decoration-sky-500
-
-                  prose-a:decoration-transparent prose-a:decoration-2
-                  prose-a:underline-offset-[3.5px] prose-a:transition-colors
-
-                  prose-h1:text-2xl
-
-                  prose-h2:text-xl
-
-                  prose-h3:text-lg
-
-                  prose-h4:text-base
-
-                  prose-h5:text-base
-
-                  prose-h6:text-base
-
-                  prose-p:text-pretty
                 `)}
               >
                 {children}

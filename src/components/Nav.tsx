@@ -36,7 +36,6 @@ export default function Nav() {
               <span
                 className={cn(`
                   text-sky-500
-
                   dark:text-sky-400
                 `)}
               >

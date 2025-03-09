@@ -99,7 +99,6 @@ export default function SocialLinks() {
     <ul
       className={cn(`
         prose prose-neutral flex w-full flex-row flex-wrap items-center gap-2
-
         dark:prose-invert
       `)}
     >
