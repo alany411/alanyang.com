@@ -85,7 +85,7 @@ export default function RootLayout({
                   prose-h5:text-base
                   prose-h6:text-base
                   prose-p:text-pretty
-                  prose-a:decoration-transparent prose-a:decoration-2
+                  prose-a:decoration-sky-500 prose-a:decoration-2
                   prose-a:underline-offset-[3.5px] prose-a:transition-colors
                   hover:prose-a:decoration-sky-500
                   focus:prose-a:outline-none focus:prose-a:ring-2
