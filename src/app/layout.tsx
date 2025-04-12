@@ -75,9 +75,9 @@ export default function RootLayout({
                 id='main-content'
                 className={cn(`
                   prose prose-neutral max-w-none
-                  dark:prose-invert dark:hover:prose-a:decoration-sky-400
-                  dark:focus:prose-a:ring-sky-400
-                  dark:focus:prose-a:ring-offset-neutral-900
+                  dark:prose-invert dark:prose-a:hover:decoration-sky-400
+                  dark:prose-a:focus:ring-sky-400
+                  dark:prose-a:focus:ring-offset-neutral-900
                   prose-h1:text-2xl
                   prose-h2:text-xl
                   prose-h3:text-lg
@@ -87,10 +87,10 @@ export default function RootLayout({
                   prose-p:text-pretty
                   prose-a:decoration-sky-500 prose-a:decoration-2
                   prose-a:underline-offset-[3.5px] prose-a:transition-colors
-                  hover:prose-a:decoration-sky-500
-                  focus:prose-a:outline-none focus:prose-a:ring-2
-                  focus:prose-a:ring-sky-500 focus:prose-a:ring-offset-0
-                  focus:prose-a:ring-offset-white
+                  prose-a:hover:decoration-sky-500
+                  prose-a:focus:outline-hidden prose-a:focus:ring-2
+                  prose-a:focus:ring-sky-500 prose-a:focus:ring-offset-0
+                  prose-a:focus:ring-offset-white
                 `)}
               >
                 {children}
