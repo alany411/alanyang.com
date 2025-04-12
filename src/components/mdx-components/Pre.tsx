@@ -81,7 +81,7 @@ export default function Pre({
                 scrollbar-thumb:bg-neutral-300
                 dark:scrollbar:bg-neutral-800
                 dark:scrollbar-thumb:bg-neutral-700 dark:focus:outline-sky-400
-                my-0 rounded-none
+                mt-0 mb-0 rounded-none font-mono
                 focus:rounded-b-2xl focus:outline-sky-500
               `,
               className
