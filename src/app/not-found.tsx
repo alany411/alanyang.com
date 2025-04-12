@@ -25,7 +25,7 @@ export default function NotFound() {
         <span
           aria-hidden={true}
           className={cn(
-            'whitespace-nowrap font-semibold text-[var(--tw-prose-headings)]'
+            'font-semibold whitespace-nowrap text-[var(--tw-prose-headings)]'
           )}
         >
           ¯\_(ツ)_/¯

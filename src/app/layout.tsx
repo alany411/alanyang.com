@@ -61,15 +61,15 @@ export default function RootLayout({
             GeistSans.variable,
             JetBrainsMono.variable,
             `
-              bg-white font-sans antialiased
               scrollbar:w-3.5 scrollbar:bg-transparent
               scrollbar-thumb:rounded-full scrollbar-thumb:bg-neutral-300
-              dark:bg-neutral-900 dark:scrollbar-thumb:bg-neutral-700
+              dark:scrollbar-thumb:bg-neutral-700 dark:bg-neutral-900
+              bg-white font-sans antialiased
             `
           )}
         >
           <SkipToMain />
-          <div className={cn('flex flex-col px-8 pb-8 pt-24')}>
+          <div className={cn('flex flex-col px-8 pt-24 pb-8')}>
             <div className={cn('mx-auto w-full max-w-[55ch] space-y-6')}>
               <main
                 id='main-content'
@@ -87,10 +87,9 @@ export default function RootLayout({
                   prose-p:text-pretty
                   prose-a:decoration-sky-500 prose-a:decoration-2
                   prose-a:underline-offset-[3.5px] prose-a:transition-colors
-                  prose-a:hover:decoration-sky-500
-                  prose-a:focus:outline-hidden prose-a:focus:ring-2
-                  prose-a:focus:ring-sky-500 prose-a:focus:ring-offset-0
-                  prose-a:focus:ring-offset-white
+                  prose-a:hover:decoration-sky-500 prose-a:focus:outline-hidden
+                  prose-a:focus:ring-2 prose-a:focus:ring-sky-500
+                  prose-a:focus:ring-offset-0 prose-a:focus:ring-offset-white
                 `)}
               >
                 {children}
