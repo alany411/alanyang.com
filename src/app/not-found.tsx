@@ -14,7 +14,7 @@ export default function NotFound() {
     <div>
       <Nav />
       <div className={cn('mb-6 flex')}>
-        <h1 className={cn('m-0')}>Not Found</h1>
+        <h1 className={cn('mt-0 mb-0')}>Not Found</h1>
       </div>
       <p className={cn('text-xl font-medium text-[var(--tw-prose-headings)]')}>
         You seem to be lost...
@@ -25,7 +25,7 @@ export default function NotFound() {
         <span
           aria-hidden={true}
           className={cn(
-            'whitespace-nowrap font-semibold text-[var(--tw-prose-headings)]'
+            'font-semibold whitespace-nowrap text-[var(--tw-prose-headings)]'
           )}
         >
           ¯\_(ツ)_/¯

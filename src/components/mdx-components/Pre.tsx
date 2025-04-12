@@ -39,7 +39,7 @@ export default function Pre({
       {showCopy && (
         <IconButton
           aria-label={`Copy ${title} code`}
-          className={cn('absolute right-4 top-[3px]')}
+          className={cn('absolute top-[3px] right-4')}
           variant='function'
           icon={{
             component: isCopied ? (
@@ -59,7 +59,7 @@ export default function Pre({
           className={cn(
             `
               prose prose-neutral my-0 rounded-t-2xl border-2 border-b-0
-              border-neutral-200 bg-neutral-200 py-1 pl-5 pr-24 font-mono
+              border-neutral-200 bg-neutral-200 py-1 pr-24 pl-5 font-mono
               font-bold
               dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
             `
@@ -77,12 +77,12 @@ export default function Pre({
           <pre
             className={cn(
               `
-                my-0 rounded-none
-                focus:rounded-b-2xl focus:outline-sky-500
                 scrollbar:h-3.5 scrollbar:bg-neutral-200
                 scrollbar-thumb:bg-neutral-300
-                dark:focus:outline-sky-400 dark:scrollbar:bg-neutral-800
-                dark:scrollbar-thumb:bg-neutral-700
+                dark:scrollbar:bg-neutral-800
+                dark:scrollbar-thumb:bg-neutral-700 dark:focus:outline-sky-400
+                mt-0 mb-0 rounded-none font-mono
+                focus:rounded-b-2xl focus:outline-sky-500
               `,
               className
             )}

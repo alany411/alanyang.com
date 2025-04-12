@@ -12,7 +12,7 @@ export default function Work() {
     <div>
       <Nav />
       <div className={cn('mb-6 flex')}>
-        <h1 className={cn('m-0')}>Work</h1>
+        <h1 className={cn('mt-0 mb-0')}>Work</h1>
       </div>
       <div>
         <h2 className={cn('mb-0')}>
@@ -22,7 +22,7 @@ export default function Work() {
           </div>
         </h2>
         <ul>
-          <li className={cn('my-0 pl-0')}>
+          <li className={cn('mt-0 mb-0 pl-0')}>
             <small>Senior Software Engineer, 2022 - Present</small>
           </li>
         </ul>
@@ -58,10 +58,10 @@ export default function Work() {
           </div>
         </h2>
         <ul>
-          <li className={cn('my-0 pl-0')}>
+          <li className={cn('mt-0 mb-0 pl-0')}>
             <small>Software Engineer, 2019 - 2022</small>
           </li>
-          <li className={cn('my-0 pl-0')}>
+          <li className={cn('mt-0 mb-0 pl-0')}>
             <small>IT Professional, 2017 - 2019</small>
           </li>
         </ul>

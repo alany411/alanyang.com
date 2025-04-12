@@ -104,7 +104,7 @@ export default function SocialLinks() {
     >
       {NETWORKS.map(({ name, href, icon: Icon }) => {
         return (
-          <li key={name} className='m-0 list-none p-0'>
+          <li key={name} className='mt-0 mb-0 list-none p-0'>
             {href === 'email' ? (
               <IconButton
                 className='no-underline'

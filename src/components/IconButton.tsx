@@ -75,7 +75,7 @@ const containerClasses = cn(`
   group prose prose-neutral inline-flex items-center justify-center space-x-1
   bg-neutral-200 p-2 text-xs font-semibold transition-all
   dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
-  focus:outline-none focus:ring-2 focus:ring-sky-500
+  focus:ring-2 focus:ring-sky-500 focus:outline-hidden
 `)
 
 export default function IconButton(props: IconButtonProps) {

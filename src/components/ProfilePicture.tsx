@@ -21,7 +21,7 @@ export default function ProfilePicture({
       width={width}
       className={cn(
         `
-          m-0 select-none overflow-hidden rounded-full
+          mt-0 mb-0 overflow-hidden rounded-full select-none
           [view-transition-name:profile-picture]
         `,
         className

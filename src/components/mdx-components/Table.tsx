@@ -15,7 +15,7 @@ export default function Table({
         dark:scrollbar-thumb:bg-neutral-700
       `)}
     >
-      <table className={cn('m-0')} {...otherProps}>
+      <table className={cn('mt-0 mb-0')} {...otherProps}>
         {children}
       </table>
     </div>

@@ -14,8 +14,8 @@ export default function SkipToMain() {
         dark:prose-invert dark:hover:decoration-sky-400 dark:focus:ring-sky-400
         dark:focus:ring-offset-neutral-900
         hover:decoration-sky-500
-        focus:top-4 focus:outline-none focus:ring-2 focus:ring-sky-500
-        focus:ring-offset-0 focus:ring-offset-white
+        focus:top-4 focus:ring-2 focus:ring-sky-500 focus:ring-offset-0
+        focus:ring-offset-white focus:outline-hidden
       `)}
     >
       Skip to main content

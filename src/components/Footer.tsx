@@ -26,7 +26,7 @@ export default function Footer() {
             width={144}
             xmlns='http://www.w3.org/2000/svg'
             className={cn(`
-              m-0 flex-shrink-0 select-none
+              m-0 shrink-0 select-none
               dark:invert
             `)}
           >

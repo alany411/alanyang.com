@@ -18,7 +18,7 @@ export default async function Posts() {
       <div className={cn('mb-6 flex')}>
         <h1
           className={cn(`
-            m-0
+            mt-0 mb-0
             [view-transition-name:posts-title]
           `)}
         >
