@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './prism-one.css' layer(base);
+@import './prism-one.css' layer(utility);
 
 @plugin '@tailwindcss/typography';
 
@@ -27,6 +27,11 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
   }
 
   @media (prefers-reduced-motion) {
