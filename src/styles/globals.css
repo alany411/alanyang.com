@@ -28,14 +28,24 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
-}
 
-@layer base {
   @media (prefers-reduced-motion) {
     ::view-transition-group(*),
     ::view-transition-old(*),
     ::view-transition-new(*) {
       animation: none !important;
     }
+  }
+}
+
+@custom-variant scrollbar {
+  &::-webkit-scrollbar {
+    @slot;
+  }
+}
+
+@custom-variant scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
+    @slot;
   }
 }
