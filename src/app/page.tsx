@@ -16,7 +16,8 @@ export default function Home() {
       </div>
       <p>
         I am a software engineer driven by curiosity and a passion for creating.
-        I currently <Link href='/work'>work</Link> at the University of Florida,
+        I enjoy working on <Link href='projects'>projects</Link> of all kinds. I
+        currently <Link href='/work'>work</Link> at the University of Florida,
         where I develop accessible web and mobile applications that prioritize
         user experience and inclusivity.
       </p>

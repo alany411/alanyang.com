@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import path from 'path'
 
-import { getPostSlugs } from '~/utils/getPostSlugs'
+import { getSlugs } from '~/utils/getSlugs'
 
 const baseUrl = 'https://alanyang.com'
 
@@ -17,7 +17,12 @@ export default function sitemap() {
     },
   ]
 
-  const routes: MetadataRoute.Sitemap = ['/posts', '/work'].map((route) => ({
+  const routes: MetadataRoute.Sitemap = [
+    '/photos',
+    '/posts',
+    '/projects',
+    '/work',
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
     changeFrequency: 'daily',
@@ -31,14 +36,28 @@ export default function sitemap() {
     'posts',
     '(posts)'
   )
-  const slugs = getPostSlugs(postsDirectory)
-
-  const posts: MetadataRoute.Sitemap = slugs.map((slug) => ({
-    url: `${baseUrl}/posts/${slug}`,
+  const postSlugs = getSlugs(postsDirectory)
+  const posts: MetadataRoute.Sitemap = postSlugs.map((postSlug) => ({
+    url: `${baseUrl}/posts/${postSlug}`,
     lastModified,
     changeFrequency: 'daily',
     priority: 0.5,
   }))
 
-  return [...home, ...routes, ...posts]
+  const projectsDirectory = path.join(
+    process.cwd(),
+    'src',
+    'app',
+    'projects',
+    '(projects)'
+  )
+  const projectSlugs = getSlugs(projectsDirectory)
+  const projects: MetadataRoute.Sitemap = projectSlugs.map((projectSlug) => ({
+    url: `${baseUrl}/projects/${projectSlug}`,
+    lastModified,
+    changeFrequency: 'daily',
+    priority: 0.5,
+  }))
+
+  return [...home, ...routes, ...posts, ...projects]
 }

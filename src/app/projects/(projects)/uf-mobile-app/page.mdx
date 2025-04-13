@@ -1,0 +1,66 @@
+import Image from 'next/image'
+import UfMobileApp from '~/assets/projects/uf-mobile-app.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'UF Mobile App',
+  date: 'June 23, 2023',
+  description: `University of Florida's official mobile app.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 md:-mx-20')}>
+  <Image
+    src={UfMobileApp}
+    alt='Device screenshots of UF mobile app'
+    priority={true}
+  />
+</div>
+
+<blockquote
+  className={cn('[&_*]:before:content-none [&_*]:after:content-none')}
+>
+  <Subheading>
+    Live at [Apple App
+    Store](https://apps.apple.com/us/app/university-of-florida/id652898611?platform=iphone)
+    and [Google Play
+    Store](https://play.google.com/store/apps/details?id=edu.ufl.mobile)
+  </Subheading>
+</blockquote>
+
+## Overview
+
+The University of Florida's original mobile app was a vendor-provided solution that consistently fell short of both our internal goals and user expectations. To address these issues, our team built a proof of concept and proposal to demonstrate the feasibility and benefits of bringing development in-house. This initiative ultimately led to a successful transition away from the vendor and the launch of a fully in-house mobile app.
+
+### Technical Overview
+
+- [React Native](https://reactnative.dev)
+- [Expo](https://expo.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/)
+- [Expo SecureStore](https://docs.expo.dev/versions/latest/sdk/securestore/)
+- [OIDC](https://openid.net/connect/)
+
+## My Role
+
+**Lead Developer**. I spearheaded the development of the mobile app from inception to completion. This involved architecting the overall structure, detailing its implementation, and developing the mobile app in close collaboration with UX/UI designers and QA analysts to ensure a seamless and accessible experience that met the needs of both stakeholders and end users.
+
+## Key Features
+
+- **Multi-Platform** - Available on iOS and Android.
+- **Multi-Device** - Available on phones and tablets.
+- **Themes** - Users can choose between light and dark modes.
+- **Accessible** - Designed with accessibility in mind.
+
+## Upcoming Features
+
+As of Q1 2025, the following features are planned for the next upcoming major release in Q3/Q4 2025:
+
+- **Authentication** - Users will be able to sign into the app using their credentials.
+- **Action Items** - Users will be able to view and complete action items.
+- **Class Schedule** - Users will be able to view their class schedule and class details.
+- **Campus Finances** - Users will be able to view their campus finances.
+- **Offline Mode** - Users will be able to see their authenticated content even when offline.

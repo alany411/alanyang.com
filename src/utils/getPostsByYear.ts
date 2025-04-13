@@ -1,7 +1,7 @@
 import path from 'path'
 
-import { getPostMetadata } from './getPostMetadata'
-import { getPostSlugs } from './getPostSlugs'
+import { getMetadata } from './getMetadata'
+import { getSlugs } from './getSlugs'
 
 export async function getPostsByYear() {
   const postsDirectory = path.join(
@@ -12,8 +12,8 @@ export async function getPostsByYear() {
     '(posts)'
   )
 
-  const postsPromises = getPostSlugs(postsDirectory).map(async (slug) => {
-    const metadata = await getPostMetadata(slug)
+  const postsPromises = getSlugs(postsDirectory).map(async (slug) => {
+    const metadata = await getMetadata('posts', slug)
     return metadata
   })
 
@@ -29,8 +29,8 @@ export async function getPostsByYear() {
     {}
   )
 
-  const sortedPostsByYear = Object.entries(postsByYearObject).sort((a, b) =>
-    b[0].localeCompare(a[0])
+  const sortedPostsByYear = Object.entries(postsByYearObject).sort(
+    (a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime()
   )
 
   return sortedPostsByYear

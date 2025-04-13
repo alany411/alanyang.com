@@ -10,3 +10,7 @@ type Metadata = {
 type Post = Required<Omit<Metadata, 'alternates'>> & {
   slug: string
 }
+
+type Project = Required<Omit<Metadata, 'alternates'>> & {
+  slug: string
+}
