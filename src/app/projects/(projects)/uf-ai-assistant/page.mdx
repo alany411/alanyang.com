@@ -1,0 +1,46 @@
+import Image from 'next/image'
+import UfAiAssistant from '~/assets/projects/uf-ai-assistant.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'UF AI Assistant',
+  date: 'January 1, 2025',
+  description: `University of Florida's first in-house, AI-powered, embeddable chat assistant.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 px-0 md:-mx-24 md:px-4')}>
+  <Image
+    src={UfAiAssistant}
+    alt='Device screenshots of UF AI Assistant on UFIT website'
+  />
+</div>
+
+<blockquote>
+  <Subheading>Live at [it.ufl.edu](https://it.ufl.edu)</Subheading>
+</blockquote>
+
+## Overview
+
+To better support students, faculty, and staff, the University of Florida has begun building and using AI-powered solutions. One of these solutions is an embeddable chat assistant that helps users find answers from a curated knowledge base of documents.
+
+### Technical Overview
+
+- [React](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Webpack](https://webpack.js.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Motion](https://motion.dev)
+
+## My Role
+
+**Lead Developer**. I spearheaded the frontend development of the widget from inception to completion. This involved architecting the overall structure, detailing its implementation, and developing the widget in close collaboration with UX/UI designers and backend engineers to ensure a seamless, responsive, and accessible experience that met the needs of both stakeholders and end users.
+
+## Key Features
+
+- **Easily Embeddable** - Quickly integrates into any approved website by adding a simple script tag.
+- **Responsive** - Designed to be used on any device.
+- **Accessible** - Compatible with screen readers and keyboard navigation.
+- **Session Persistence** - Retains session context so users can navigate between pages and keep the same conversation going.
