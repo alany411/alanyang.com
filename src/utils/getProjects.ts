@@ -20,7 +20,7 @@ export async function getProjects() {
   const projects = await Promise.all(projectsPromises)
 
   const sortedProjects = projects.sort((a, b) => {
-    return b.date.localeCompare(a.date)
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
   return sortedProjects

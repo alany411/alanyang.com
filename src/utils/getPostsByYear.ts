@@ -29,8 +29,8 @@ export async function getPostsByYear() {
     {}
   )
 
-  const sortedPostsByYear = Object.entries(postsByYearObject).sort((a, b) =>
-    b[0].localeCompare(a[0])
+  const sortedPostsByYear = Object.entries(postsByYearObject).sort(
+    (a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime()
   )
 
   return sortedPostsByYear
