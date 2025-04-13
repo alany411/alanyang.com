@@ -58,9 +58,9 @@ export default function Pre({
         <figcaption
           className={cn(
             `
-              prose prose-neutral my-0 rounded-t-2xl border-2 border-b-0
-              border-neutral-200 bg-neutral-200 py-1 pr-24 pl-5 font-mono
-              font-bold
+              prose prose-neutral my-0 w-full max-w-full rounded-t-2xl border-2
+              border-b-0 border-neutral-200 bg-neutral-200 pt-1 pr-24 pb-1 pl-5
+              font-mono text-base leading-7 font-bold
               dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
             `
           )}
