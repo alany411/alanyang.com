@@ -1,4 +1,4 @@
-import Date from '~/components/Date'
+import Subheading from '~/components/Subheading'
 
 export const metadata = {
   title: 'Using Remark and Rehype Plugins with Next.js 14 and MDX',
@@ -9,7 +9,7 @@ export const metadata = {
 
 # {metadata.title}
 
-<Date>{metadata.date}</Date>
+<Subheading>{metadata.date}</Subheading>
 
 I have been redesigning and redeveloping my personal website for a couple of weeks now. Before when I was using the Pages Router, I used [contentlayer](https://github.com/contentlayerdev/contentlayer) with Remark and Rehype plugins to transform my MDX content. Since I was basically redoing my entire website and [contentlayer is kind of no longer maintained](https://github.com/contentlayerdev/contentlayer/issues/429), I thought it would be a good time to try [@next/mdx](https://nextjs.org/docs/app/building-your-application/configuring/mdx#nextmdx) instead.
 
