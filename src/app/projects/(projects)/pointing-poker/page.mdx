@@ -1,0 +1,44 @@
+import Image from 'next/image'
+import PointingPoker from '~/assets/projects/pointing-poker.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'Pointing Poker',
+  date: 'July 22, 2023',
+  description: `Tool for estimating story points in an Agile/Scrum team.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 px-0 md:-mx-24 md:px-4')}>
+  <Image
+    src={PointingPoker}
+    alt='Device screenshots of Pointing Poker'
+    priority={true}
+  />
+</div>
+
+## Overview
+
+When the service my team was using become unreliable, I decided to build my own. Pointing Poker is a real-time, collaborative tool that allows my team to estimate, discuss, and align on story points during sprint planning sessions.
+
+### Technical Overview
+
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Motion](https://motion.dev)
+- [Liveblocks](https://liveblocks.io)
+
+## My Role
+
+**Lead Developer and Designer**. As this was a personal project, I was responsible for the entire product lifecycle from conception and design to development and deployment.
+
+## Key Features
+
+- **Real-Time** - Votes are updated as they are cast.
+- **Spectator Mode** - Non-participating users can view the current votes.
+- **Themes** - Users can choose between light and dark modes.
+- **Responsive** - Designed to be used on any device.
+- **Accessible** - Compatible with screen readers and keyboard navigation.
