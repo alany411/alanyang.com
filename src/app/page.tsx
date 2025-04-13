@@ -23,7 +23,8 @@ export default function Home() {
       <p>
         Occasionally, I share <Link href='/posts'>posts</Link> about coding,
         tutorials, and the challenges I have faced along the way. Outside of
-        programming, I enjoy traveling, photography, and gaming.
+        programming, I enjoy traveling, <Link href='/photos'>photography</Link>,
+        and gaming.
       </p>
     </div>
   )
