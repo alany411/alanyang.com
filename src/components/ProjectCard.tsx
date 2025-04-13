@@ -16,7 +16,7 @@ export default function ProjectCard({ title, description, slug }: Project) {
       <div className={cn('inline-block')}>
         <Link
           aria-label={`View details for ${title}`}
-          className='inline align-baseline'
+          className={cn('inline align-baseline')}
           href={`/projects/${slug}`}
         >
           View Details
