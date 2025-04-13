@@ -1,8 +1,12 @@
-import Image from 'next/image'
-
 import Nav from '~/components/Nav'
+import PhotoGrid from '~/components/PhotoGrid'
 import { cn } from '~/utils/cn'
 import { getPhotos } from '~/utils/getPhotos'
+
+export const metadata: Metadata = {
+  title: 'Photos',
+}
+
 export default async function Photos() {
   const photos = await getPhotos()
 
@@ -12,20 +16,8 @@ export default async function Photos() {
       <div className={cn('mb-6 flex')}>
         <h1 className={cn('mt-0 mb-0')}>Photos</h1>
       </div>
-      <div className={cn(`mt-10 grid grid-cols-2 gap-1`)}>
-        {photos.map((photo) => {
-          return (
-            <Image
-              key={`${photo.date}-${photo.title}`}
-              alt={photo.title}
-              loading='lazy'
-              src={photo.src}
-              className={cn(
-                `mt-0 mb-0 aspect-square overflow-hidden object-cover`
-              )}
-            />
-          )
-        })}
+      <div className={cn('mt-10')}>
+        <PhotoGrid photos={photos} />
       </div>
     </div>
   )
