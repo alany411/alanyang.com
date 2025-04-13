@@ -64,6 +64,7 @@ export default function PhotoGrid({ photos }: PhotoGridProps) {
             <Image
               alt={photo.title}
               loading='lazy'
+              placeholder='blur'
               src={photo.src}
               className={cn(
                 `mt-0 mb-0 aspect-square overflow-hidden object-cover`
