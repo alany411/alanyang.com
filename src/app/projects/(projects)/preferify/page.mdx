@@ -1,0 +1,43 @@
+import Image from 'next/image'
+import Preferify from '~/assets/projects/preferify.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'Preferify',
+  date: 'April 22, 2022',
+  description: `Find your top artists and tracks. Easily create Spotify playlists from your favorites.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 px-0 md:-mx-24 md:px-4')}>
+  <Image src={Preferify} alt='Device screenshots of Preferify' />
+</div>
+
+<blockquote>
+  <Subheading>Live at [preferify.me](https://preferify.me)</Subheading>
+</blockquote>
+
+## Overview
+
+As a daily Spotify user, I wanted to see my top artists and tracks without having to wait for Spotify Wrapped. Preferify leverages the Spotify API to fetch a user's top artists and tracks, and can generate playlists based on their recent listening history.
+
+### Technical Overview
+
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
+- [Auth.js](https://authjs.dev)
+
+## My Role
+
+**Lead Developer and Designer**. As this was a personal project, I was responsible for the entire product lifecycle from conception and design to development and deployment.
+
+## Key Features
+
+- **Top Artists and Tracks** - Fetches and displays a user's top artists and tracks from Spotify.
+- **Playlist Generation** - Generates a playlist based on a user's recent listening history.
+- **Responsive** - Designed to be used on any device.
+- **Accessible** - Compatible with screen readers and keyboard navigation.
