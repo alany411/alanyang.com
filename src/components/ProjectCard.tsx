@@ -12,7 +12,7 @@ export default function ProjectCard({ title, description, slug }: Project) {
       `)}
     >
       <h2 className={cn('mt-0 mb-0')}>{title}</h2>
-      <p className={cn('mt-0 mb-4')}>{description}</p>
+      <p className={cn('mt-0 mb-2 text-sm')}>{description}</p>
       <div className={cn('inline-block')}>
         <Link
           aria-label={`View details for ${title}`}
