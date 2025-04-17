@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import Nav from '~/components/Nav'
 import PhotoGrid from '~/components/PhotoGrid'
 import { cn } from '~/utils/cn'
