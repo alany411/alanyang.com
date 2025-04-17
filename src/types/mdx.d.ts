@@ -1,4 +1,4 @@
-type Metadata = {
+type MdxMetadata = {
   title?: string
   date?: string
   description?: string
@@ -7,10 +7,10 @@ type Metadata = {
   }
 }
 
-type Post = Required<Omit<Metadata, 'alternates'>> & {
+type Post = Required<Omit<MdxMetadata, 'alternates'>> & {
   slug: string
 }
 
-type Project = Required<Omit<Metadata, 'alternates'>> & {
+type Project = Required<Omit<MdxMetadata, 'alternates'>> & {
   slug: string
 }

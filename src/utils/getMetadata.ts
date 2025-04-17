@@ -2,7 +2,7 @@ export async function getMetadata(folder: string, slug: string) {
   const file = (await import(
     `../app/${folder}/(${folder})/${slug}/page.mdx`
   )) as {
-    metadata?: Metadata
+    metadata?: MdxMetadata
   }
 
   if (file.metadata) {
