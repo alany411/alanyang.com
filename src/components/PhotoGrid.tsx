@@ -46,14 +46,14 @@ export default function PhotoGrid({ photos }: PhotoGridProps) {
             className={cn(
               `
                 transition-all
-                group-hover:opacity-50 group-hover:grayscale
-                hover:!opacity-100 hover:!grayscale-0
+                group-hover:opacity-50
+                hover:!opacity-100
                 focus:ring-2 focus:ring-sky-500 focus:outline-hidden
                 dark:focus:ring-sky-400
               `,
               selectedPhoto &&
                 `
-                  opacity-50 grayscale-100
+                  opacity-50
                   focus:ring-0
                 `
             )}
