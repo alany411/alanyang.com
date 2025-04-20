@@ -31,6 +31,7 @@ const getContentSecurityPolicy = () => {
     contentSecurityPolicyDirective['img-src'].push('https://vercel.com')
     contentSecurityPolicyDirective['font-src'].push('https://vercel.live')
     contentSecurityPolicyDirective['frame-src'].push('https://vercel.live')
+    contentSecurityPolicyDirective['script-src'].push('https://vercel.live')
     contentSecurityPolicyDirective['style-src'].push('https://vercel.live')
   }
 
