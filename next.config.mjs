@@ -137,6 +137,11 @@ const nextConfig = {
         destination: '/work',
         permanent: true,
       },
+      {
+        source: '/projects/uf-ai-assistant',
+        destination: '/projects/uf-navigator-assistant',
+        permanent: true,
+      },
     ]
   },
 }
