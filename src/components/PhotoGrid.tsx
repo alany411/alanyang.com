@@ -37,7 +37,7 @@ export default function PhotoGrid({ photos }: PhotoGridProps) {
 
   return (
     <>
-      <div className={cn(`group grid grid-cols-2 gap-1`)}>
+      <div className={cn(`grid grid-cols-2 gap-1`)}>
         {photos.map((photo, index) => (
           <button
             key={`${photo.date}-${photo.title}`}
@@ -46,8 +46,6 @@ export default function PhotoGrid({ photos }: PhotoGridProps) {
             className={cn(
               `
                 transition-all
-                group-hover:opacity-50
-                hover:!opacity-100
                 focus:ring-2 focus:ring-sky-500 focus:outline-hidden
                 dark:focus:ring-sky-400
               `,
