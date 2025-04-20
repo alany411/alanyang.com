@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/require-await */
 import createMDX from '@next/mdx'
-import type { NextConfig } from 'next'
 import rehypeMdxCodeProps from 'rehype-mdx-code-props'
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
@@ -36,12 +34,22 @@ const getContentSecurityPolicy = () => {
     contentSecurityPolicyDirective['style-src'].push('https://vercel.live')
   }
 
+  if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'production') {
+    contentSecurityPolicyDirective['connect-src'].push(
+      `https://www.google-analytics.com`
+    )
+    contentSecurityPolicyDirective['script-src'].push(
+      `https://www.googletagmanager.com`
+    )
+  }
+
   return Object.entries(contentSecurityPolicyDirective)
     .map(([key, value]) => `${key} ${value.join(' ')}`)
     .join('; ')
 }
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
   poweredByHeader: false,
   reactStrictMode: true,

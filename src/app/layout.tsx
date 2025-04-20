@@ -1,5 +1,6 @@
 import '~/styles/globals.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
@@ -96,6 +97,12 @@ export default function RootLayout({
             </div>
           </div>
         </body>
+        {process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' &&
+          process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+            <GoogleAnalytics
+              gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+            />
+          )}
       </html>
     </ViewTransitions>
   )
