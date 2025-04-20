@@ -105,31 +105,18 @@ export default function SocialLinks() {
       {NETWORKS.map(({ name, href, icon: Icon }) => {
         return (
           <li key={name} className={cn('mt-0 mb-0 list-none p-0')}>
-            {href === 'email' ? (
-              <IconButton
-                className={cn('no-underline')}
-                email='me@alanyang.com'
-                variant='email'
-                icon={{
-                  component: <Icon aria-hidden={true} size={16} />,
-                  position: 'left',
-                }}
-              >
-                {name}
-              </IconButton>
-            ) : (
-              <IconButton
-                className={cn('no-underline')}
-                href={href}
-                variant='external'
-                icon={{
-                  component: <Icon aria-hidden={true} size={16} />,
-                  position: 'left',
-                }}
-              >
-                {name}
-              </IconButton>
-            )}
+            <IconButton
+              className={cn('no-underline')}
+              {...(href === 'email'
+                ? { email: 'me@alanyang.com', variant: 'email' }
+                : { href, variant: 'external' })}
+              icon={{
+                component: <Icon aria-hidden={true} size={16} />,
+                position: 'left',
+              }}
+            >
+              {name}
+            </IconButton>
           </li>
         )
       })}
