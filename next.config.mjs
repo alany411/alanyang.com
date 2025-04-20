@@ -1,12 +1,56 @@
-/* eslint-disable @typescript-eslint/require-await */
 import createMDX from '@next/mdx'
-import type { NextConfig } from 'next'
 import rehypeMdxCodeProps from 'rehype-mdx-code-props'
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-const nextConfig: NextConfig = {
+const getContentSecurityPolicy = () => {
+  const contentSecurityPolicyDirective = {
+    'base-uri': [`'self'`],
+    'default-src': [`'none'`],
+    'frame-ancestors': [`'none'`],
+    'font-src': [`'self'`],
+    'form-action': [`'self'`],
+    'frame-src': [`'self'`],
+    'connect-src': [`'self'`],
+    'img-src': [`'self'`],
+    'manifest-src': [`'self'`],
+    'object-src': [`'none'`],
+    'report-to': ['csp'],
+    'script-src': [`'self'`, `'unsafe-inline'`],
+    'style-src': [`'self'`, `'unsafe-inline'`],
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    contentSecurityPolicyDirective['script-src'].push(`'unsafe-eval'`)
+  }
+
+  if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview') {
+    contentSecurityPolicyDirective['connect-src'].push('https://vercel.live')
+    contentSecurityPolicyDirective['connect-src'].push('wss://*.pusher.com')
+    contentSecurityPolicyDirective['img-src'].push('https://vercel.com')
+    contentSecurityPolicyDirective['font-src'].push('https://vercel.live')
+    contentSecurityPolicyDirective['frame-src'].push('https://vercel.live')
+    contentSecurityPolicyDirective['script-src'].push('https://vercel.live')
+    contentSecurityPolicyDirective['style-src'].push('https://vercel.live')
+  }
+
+  if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'production') {
+    contentSecurityPolicyDirective['connect-src'].push(
+      `https://www.google-analytics.com`
+    )
+    contentSecurityPolicyDirective['script-src'].push(
+      `https://www.googletagmanager.com`
+    )
+  }
+
+  return Object.entries(contentSecurityPolicyDirective)
+    .map(([key, value]) => `${key} ${value.join(' ')}`)
+    .join('; ')
+}
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
   poweredByHeader: false,
   reactStrictMode: true,
@@ -21,24 +65,12 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `
-              default-src 'self';
-              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.vercel-insights.com https://va.vercel-scripts.com https://vercel.live;
-              style-src 'self' 'unsafe-inline' https://vercel.live;
-              img-src 'self' data: blob: https://vercel.com https://vercel.live;
-              media-src 'none';
-              connect-src 'self' https://vercel.live wss://ws-us3.pusher.com;
-              font-src 'self' https://assets.vercel.com https://vercel.live;
-              frame-src 'self' https://vercel.live;
-              object-src 'none';
-              base-uri 'self';
-              upgrade-insecure-requests;
-              frame-ancestors 'none';
-            `.replace(/\n/g, ''),
+            value: getContentSecurityPolicy(),
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
+            value:
+              'camera=(), microphone=(), geolocation=(), interest-cohort=()',
           },
           {
             key: 'Referrer-Policy',
