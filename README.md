@@ -3,7 +3,7 @@
 - Framework: [Next.js](https://nextjs.org)
 - Styling: [Tailwind CSS](https://tailwindcss.com)
 - Deployment: [Vercel](https://vercel.com)
-- Analytics: [Vercel Web Analytics](https://vercel.com/docs/analytics)
+- Analytics: [Google Analytics](https://developers.google.com/analytics)
 
 ## Licenses
 
