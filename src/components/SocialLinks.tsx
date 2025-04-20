@@ -1,3 +1,5 @@
+'use client'
+
 import type { IconType } from '@icons-pack/react-simple-icons'
 import {
   SiBluesky,
@@ -6,6 +8,7 @@ import {
   SiThreads,
   SiX,
 } from '@icons-pack/react-simple-icons'
+import { sendGAEvent } from '@next/third-parties/google'
 import { MailIcon } from 'lucide-react'
 import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef } from 'react'
@@ -103,6 +106,17 @@ export default function SocialLinks() {
       `)}
     >
       {NETWORKS.map(({ name, href, icon: Icon }) => {
+        const onClick = () => {
+          if (
+            process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' &&
+            process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+          ) {
+            sendGAEvent('event', 'social_link_click', {
+              platform: name,
+            })
+          }
+        }
+
         return (
           <li key={name} className={cn('mt-0 mb-0 list-none p-0')}>
             <IconButton
@@ -114,6 +128,7 @@ export default function SocialLinks() {
                 component: <Icon aria-hidden={true} size={16} />,
                 position: 'left',
               }}
+              onClick={onClick}
             >
               {name}
             </IconButton>
