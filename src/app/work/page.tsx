@@ -23,7 +23,7 @@ export default function Work() {
         </h2>
         <ul>
           <li className={cn('mt-0 mb-0 pl-0')}>
-            <small>Senior Software Engineer, 2022 - Present</small>
+            <small>Senior Software Engineer, 2022 - 2025</small>
           </li>
         </ul>
         <p>
