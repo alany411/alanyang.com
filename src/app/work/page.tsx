@@ -18,6 +18,33 @@ export default function Work() {
         <h2 className={cn('mb-0')}>
           <div>University of Florida</div>
           <div className={cn('text-sm font-normal')}>
+            Warrington College of Business Technology Solutions
+          </div>
+        </h2>
+        <ul>
+          <li className={cn('mt-0 mb-0 pl-0')}>
+            <small>Senior Software Engineer, 2025 - Present</small>
+          </li>
+        </ul>
+        <p>
+          The Technology Solutions team supports the{' '}
+          <a
+            aria-label='Warrington College of Business, opens in a new tab'
+            href='https://warrington.ufl.edu/'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            Warrington College of Business
+          </a>{' '}
+          by delivering custom applications, data services, and web solutions
+          that enhance the educational experience, improve business processes,
+          and provide valuable insights through reporting and integration tools.
+        </p>
+      </div>
+      <div>
+        <h2 className={cn('mb-0')}>
+          <div>University of Florida</div>
+          <div className={cn('text-sm font-normal')}>
             User Experience and Portal Solutions
           </div>
         </h2>
