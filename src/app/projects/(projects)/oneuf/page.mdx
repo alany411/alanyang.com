@@ -1,0 +1,45 @@
+import Image from 'next/image'
+import OneUf from '~/assets/projects/oneuf.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'ONE.UF',
+  date: 'July 29, 2022',
+  description: `University of Florida's central portal for students, faculty, and staff.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 md:-mx-20')}>
+  <Image src={OneUf} alt='Device screenshots of ONE.UF' priority={true} />
+</div>
+
+<blockquote
+  className={cn('[&_*]:before:content-none [&_*]:after:content-none')}
+>
+  <Subheading>Live at [one.ufl.edu](https://one.ufl.edu/)</Subheading>
+</blockquote>
+
+## Overview
+
+ONE.UF is a platform of over 50 applications and services that are used by over 15,000 users daily with peak traffic of over 60,000 concurrent users. It serves as the central portal for students, faculty, and staff to access information and services such as class schedules, campus finances, and more.
+
+### Technical Overview
+
+- [React](https://react.dev)
+- [Webpack](https://webpack.js.org)
+- [Express](https://expressjs.com)
+- [MSSQL](https://www.microsoft.com/en-us/sql-server)
+- [MUI](https://mui.com)
+- [React Router](https://reactrouter.com)
+- [TanStack Query](https://tanstack.com/query/latest)
+
+## My Role
+
+**Senior Developer**. Developed and maintained ONE.UF applications and services on an agile/scrum team of full-stack developers, UX/UI designers, and QA analysts in collaboration with product owners and stakeholders to ensure the platform met the needs of the university. In addition, I provided mentorship to other developers and student interns through code reviews, pair programming, and knowledge sharing sessions.
+
+## Key Features
+
+- **Responsive** - Designed to be used on any device.
+- **Accessible** - Designed with accessibility in mind.
