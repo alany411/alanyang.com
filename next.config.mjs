@@ -13,7 +13,7 @@ const getContentSecurityPolicy = () => {
     'form-action': [`'self'`],
     'frame-src': [`'self'`],
     'connect-src': [`'self'`],
-    'img-src': [`'self'`],
+    'img-src': [`'self'`, `data:`],
     'manifest-src': [`'self'`],
     'object-src': [`'none'`],
     'report-to': ['csp'],
