@@ -139,7 +139,12 @@ const nextConfig = {
       },
       {
         source: '/projects/uf-ai-assistant',
-        destination: '/projects/uf-navigator-assistant',
+        destination: '/projects/navigator-assistant',
+        permanent: true,
+      },
+      {
+        source: '/projects/uf-navigator-assistant',
+        destination: '/projects/navigator-assistant',
         permanent: true,
       },
     ]
