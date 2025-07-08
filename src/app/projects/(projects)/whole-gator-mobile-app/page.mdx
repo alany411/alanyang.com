@@ -1,0 +1,54 @@
+import Image from 'next/image'
+import WholeGatorMobileApp from '~/assets/projects/whole-gator-mobile-app.png'
+import Subheading from '~/components/Subheading'
+import { cn } from '~/utils/cn'
+
+export const metadata = {
+  title: 'Whole Gator Mobile App',
+  date: 'June 24, 2025',
+  description: `University of Florida's health and wellness app.`,
+}
+
+# {metadata.title}
+
+<div className={cn('mx-0 md:-mx-20')}>
+  <Image
+    src={WholeGatorMobileApp}
+    alt='Device screenshots of Whole Gator mobile app'
+    priority={true}
+  />
+</div>
+
+<blockquote
+  className={cn('[&_*]:before:content-none [&_*]:after:content-none')}
+>
+  <Subheading>
+    Live at [Apple App
+    Store](https://apps.apple.com/us/app/whole-gator/id1669260359) and [Google
+    Play
+    Store](https://play.google.com/store/apps/details?id=edu.ufl.studentlife.wellnessapp)
+  </Subheading>
+</blockquote>
+
+## Overview
+
+Whole Gator was originally a solution that was developed by a third-party contractor and then transitioned into our hands. When it was time to make updates and changes to the app, it became clear that we would need to refactor and rewrite the app so that it would be easier to maintain.
+
+### Technical Overview
+
+- [React Native](https://reactnative.dev)
+- [Expo](https://expo.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Expo Router](https://expo.dev/router)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/)
+
+## My Role
+
+**Lead Developer**. I completely rewrote the app from the ground up in a short amount of time due to time constraints. During the rewrite, I was able to implement new features, improve accessibility, and improve the overall architecture and code quality of the app.
+
+## Key Features
+
+- **Multi-Platform** - Available on iOS and Android.
+- **Offline-First** - Data is cached locally.
+- **Accessible** - Designed with accessibility in mind.
