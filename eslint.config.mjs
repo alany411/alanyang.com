@@ -1,8 +1,8 @@
 import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
+import betterTailwindcssPlugin from 'eslint-plugin-better-tailwindcss'
 import importPlugin from 'eslint-plugin-import'
 import prettierPluginConfig from 'eslint-plugin-prettier/recommended'
-import readableTailwindPlugin from 'eslint-plugin-readable-tailwind'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import path from 'path'
 import tseslint from 'typescript-eslint'
@@ -90,11 +90,16 @@ const readableTailwindConfig = [
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
-      'readable-tailwind': readableTailwindPlugin,
+      'better-tailwindcss': betterTailwindcssPlugin,
     },
     rules: {
-      ...readableTailwindPlugin.configs.warning.rules,
-      ...readableTailwindPlugin.configs.error.rules,
+      ...betterTailwindcssPlugin.configs['recommended-warn']?.rules,
+      ...betterTailwindcssPlugin.configs['recommended-error']?.rules,
+    },
+    settings: {
+      'better-tailwindcss': {
+        entryPoint: 'src/styles/globals.css',
+      },
     },
   },
 ]
