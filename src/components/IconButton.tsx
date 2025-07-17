@@ -72,10 +72,10 @@ type IconButtonProps = ButtonContentProps &
   }[keyof ButtonVariants]
 
 const containerClasses = cn(`
-  group prose prose-neutral inline-flex items-center justify-center space-x-1
-  bg-neutral-200 p-2 text-xs font-semibold transition-all
-  dark:prose-invert dark:bg-neutral-800 dark:focus:ring-sky-400
+  group prose inline-flex items-center justify-center space-x-1 bg-neutral-200
+  p-2 text-xs font-semibold transition-all prose-neutral
   focus:ring-2 focus:ring-sky-500 focus:outline-hidden
+  dark:bg-neutral-800 dark:prose-invert dark:focus:ring-sky-400
 `)
 
 export default function IconButton(props: IconButtonProps) {

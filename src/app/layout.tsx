@@ -60,10 +60,11 @@ export default function RootLayout({
             GeistSans.variable,
             JetBrainsMono.variable,
             `
+              bg-white font-sans antialiased
+              dark:bg-neutral-900
               scrollbar:w-3.5 scrollbar:bg-transparent
               scrollbar-thumb:rounded-full scrollbar-thumb:bg-neutral-300
-              dark:scrollbar-thumb:bg-neutral-700 dark:bg-neutral-900
-              bg-white font-sans antialiased
+              dark:scrollbar-thumb:bg-neutral-700
             `
           )}
         >
@@ -73,10 +74,8 @@ export default function RootLayout({
               <main
                 id='main-content'
                 className={cn(`
-                  prose prose-neutral max-w-none
-                  dark:prose-invert dark:prose-a:hover:decoration-sky-400
-                  dark:prose-a:focus:ring-sky-400
-                  dark:prose-a:focus:ring-offset-neutral-900
+                  prose max-w-none prose-neutral
+                  dark:prose-invert
                   prose-h1:text-2xl
                   prose-h2:text-xl
                   prose-h3:text-lg
@@ -86,9 +85,12 @@ export default function RootLayout({
                   prose-p:text-pretty
                   prose-a:decoration-sky-500 prose-a:decoration-2
                   prose-a:underline-offset-[3.5px] prose-a:transition-colors
-                  prose-a:hover:decoration-sky-500 prose-a:focus:outline-hidden
-                  prose-a:focus:ring-2 prose-a:focus:ring-sky-500
-                  prose-a:focus:ring-offset-0 prose-a:focus:ring-offset-white
+                  prose-a:hover:decoration-sky-500 prose-a:focus:ring-2
+                  prose-a:focus:ring-sky-500 prose-a:focus:ring-offset-0
+                  prose-a:focus:ring-offset-white prose-a:focus:outline-hidden
+                  dark:prose-a:hover:decoration-sky-400
+                  dark:prose-a:focus:ring-sky-400
+                  dark:prose-a:focus:ring-offset-neutral-900
                 `)}
               >
                 {children}

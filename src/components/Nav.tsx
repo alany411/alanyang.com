@@ -30,30 +30,27 @@ export default function Nav() {
     <div className={cn('flex flex-row items-center space-x-2')}>
       <ProfilePicture className={cn('size-6')} height={24} width={24} />
       <nav className={cn('text-lg', links.length > 0 && 'space-x-1')}>
-        {links.map(({ href, title }, index) => (
-          <Fragment key={href}>
-            {index !== 0 && (
-              <span
-                className={cn(`
-                  text-sky-500
-                  dark:text-sky-400
-                `)}
-              >
-                /
-              </span>
-            )}
-            <Link
-              href={href}
-              className={cn(
-                `
-                  [view-transition-name:${title.toLowerCase()}-title]
-                `
+        {links.map(({ href, title }, index) => {
+          const viewTransition = `[view-transition-name:${title.toLowerCase()}-title]`
+
+          return (
+            <Fragment key={href}>
+              {index !== 0 && (
+                <span
+                  className={cn(`
+                    text-sky-500
+                    dark:text-sky-400
+                  `)}
+                >
+                  /
+                </span>
               )}
-            >
-              {title}
-            </Link>
-          </Fragment>
-        ))}
+              <Link className={cn(viewTransition)} href={href}>
+                {title}
+              </Link>
+            </Fragment>
+          )
+        })}
       </nav>
     </div>
   )

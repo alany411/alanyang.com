@@ -58,10 +58,10 @@ export default function Pre({
         <figcaption
           className={cn(
             `
-              prose prose-neutral my-0 w-full max-w-full rounded-t-2xl border-2
-              border-b-0 border-neutral-200 bg-neutral-200 pt-1 pr-24 pb-1 pl-5
-              font-mono text-base leading-7 font-bold
-              dark:prose-invert dark:border-neutral-800 dark:bg-neutral-800
+              my-0 prose w-full max-w-full rounded-t-2xl border-2 border-b-0
+              border-neutral-200 bg-neutral-200 pt-1 pr-24 pb-1 pl-5 font-mono
+              text-base leading-7 font-bold prose-neutral
+              dark:border-neutral-800 dark:bg-neutral-800 dark:prose-invert
             `
           )}
         >
@@ -77,12 +77,13 @@ export default function Pre({
           <pre
             className={cn(
               `
-                scrollbar:h-3.5 scrollbar:bg-neutral-200
-                scrollbar-thumb:bg-neutral-300
-                dark:scrollbar:bg-neutral-800
-                dark:scrollbar-thumb:bg-neutral-700 dark:focus:outline-sky-400
                 mt-0 mb-0 rounded-none font-mono
                 focus:rounded-b-2xl focus:outline-sky-500
+                dark:focus:outline-sky-400
+                scrollbar:h-3.5 scrollbar:bg-neutral-200
+                dark:scrollbar:bg-neutral-800
+                scrollbar-thumb:bg-neutral-300
+                dark:scrollbar-thumb:bg-neutral-700
               `,
               className
             )}

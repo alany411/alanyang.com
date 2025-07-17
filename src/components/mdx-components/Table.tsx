@@ -9,7 +9,7 @@ export default function Table({
   return (
     <div
       className={cn(`
-        table-container my-8 overflow-x-auto
+        my-8 overflow-x-auto
         scrollbar:h-3.5 scrollbar:bg-transparent
         scrollbar-thumb:bg-neutral-300
         dark:scrollbar-thumb:bg-neutral-700
