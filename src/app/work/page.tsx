@@ -69,10 +69,10 @@ export default function Work() {
           accessibility.
         </p>
         <p>
-          Since joining this team, I have played a pivotal role in several
-          high-impact projects. I successfully spearheaded the development of
-          one of the university&apos;s first mobile apps, overseeing the process
-          from initial concept to launch. Additionally, I led the frontend
+          I played a pivotal role in several high-impact projects. I
+          successfully spearheaded the development of one of the
+          university&apos;s first mobile apps, overseeing the process from
+          initial concept to launch. Additionally, I led the frontend
           development of the university&apos;s first embeddable AI chatbot
           widget, ensuring seamless integration and user-friendly experience.
         </p>
@@ -107,11 +107,11 @@ export default function Work() {
           technology to enhance and sustain the quality of life.
         </p>
         <p>
-          During my time there, I worked with many different researchers and
-          labs to provide technical support and assistance. I gained valuable
-          experience with a wide range of software tools and technologies, while
-          also contributing to the development of tools, automation processes,
-          and comprehensive documentation.
+          I worked with many different researchers and labs to provide technical
+          support and assistance. I gained valuable experience with a wide range
+          of software tools and technologies, while also contributing to the
+          development of tools, automation processes, and comprehensive
+          documentation.
         </p>
       </div>
     </div>
