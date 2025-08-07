@@ -26,7 +26,7 @@ export default function Pre({
 
   const handleOnClick = async () => {
     if (contentRef.current) {
-      await navigator.clipboard.writeText(contentRef.current.textContent ?? '')
+      await navigator.clipboard.writeText(contentRef.current.textContent || '')
       setIsCopied(true)
       setTimeout(() => {
         setIsCopied(false)
